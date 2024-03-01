@@ -1,0 +1,12 @@
+<section>
+  <div class="music-container">
+    <div *ngFor="let song of songs" class="card" (click)="goToPlay(song.id)">
+      <img id img *ngIf="song.image" [src]="'assets/' + song.image" alt="{{ song.title }}">
+      <div class="song-details">
+        <h3>{{ song.title }}</h3>
+          <p>{{ song.artist }}</p>
+          <p>{{ song.album }}</p>
+    </div>
+  </div>
+</div>
+</section>
