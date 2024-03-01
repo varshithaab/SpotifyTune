@@ -1,13 +1,46 @@
-<nav class="navbar">
-    <div class="container">
-      <a routerLink="/" class="logo">
-       SpotifyTune
-      </a>
-      <div class="nav-links">
-        <a routerLink="/login" class="nav-link">Login</a>
-        <a routerLink="/signup" class="nav-link">Signup</a>
-        <a routerLink="/faq" class="nav-link">FAQ</a>
+<div class="main">
+
+  <div class="container d-flex cont">
+      <div class="img">
+          <img src="assets/main2.jpg" alt="">
       </div>
+      <div class="hbtn">
+          <h1>
+            Music For EveryOne<br>
+              Play millions of songs and podcast,<bR> for free.
+          </h1>
+          
+      </div>
+  </div>
+</div>
+<div class="sctn2 container">
+  <h1 class="h1">
+      Why Spotify?
+  </h1>
+<br>
+  <div class="d-flex dcon"> 
+    <div  *ngFor="let c of content" class="sctn2main">
+        <div class="mb-3">
+            <img [src]="c.img" alt="">
+        </div>
+        <div>
+            <h4 class="fb" >
+                {{c.title}}
+            </h4>
+            <p class="clrgfb">
+                {{c.des}}
+            </p>
+        </div>
     </div>
-  </nav>
-  
+
+</div>
+</div>
+<div class="sectn5">
+   
+  <h1>
+      Ready? Let's play.
+  </h1>
+  <button>
+     Get SpotifyTune Free
+  </button>
+</div>

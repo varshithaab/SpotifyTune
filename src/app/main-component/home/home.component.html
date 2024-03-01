@@ -1,1 +1,77 @@
-<p>home works!</p>
+
+<div class="container-fluid">
+    <div class="row top">
+        <div class="col-2 left">
+
+        <img class="icon"src="assets/spotify.jpg">
+            <div class="left-options"   (click)="onNavigation('home')">
+                <mat-icon>
+                    home
+                </mat-icon> <span>Home</span>
+            </div>
+            <div class="left-options"   (click)="onNavigation('music')">
+                <mat-icon>
+                    music_note
+
+                </mat-icon> <span>Music</span>
+            </div>
+            <div class="left-options"  (click)="onNavigation('podcast')">
+                <mat-icon>
+                    podcasts
+                </mat-icon> <span>Podcast</span>
+            </div>
+           
+            <div class="left-options" (click)="onNavigation('search')">
+                <mat-icon>
+                    search
+                </mat-icon> <span  >Search</span>
+               
+            </div>
+            <div class="left-options" (click)="onNavigation('filter')">
+                <mat-icon>
+                    filter_alt
+                </mat-icon> <span>Filter</span>
+            </div>
+            <div class="left-options">
+                <mat-icon>
+                    video_library
+                </mat-icon><span>My Library</span>
+            </div>
+        
+            <div class="left-options">
+                <mat-icon>
+                    add_box
+                </mat-icon> <span>Create Playlist</span>
+            </div>
+            <div class="left-options">
+                <mat-icon>
+                    star
+                </mat-icon> <span>Premium</span>
+            </div>
+
+            <div class="left-options">
+                <mat-icon>
+                    help_outline
+                </mat-icon> <span>FAQ</span>
+            </div>
+            
+
+            <div class="left-options">
+                <mat-icon>
+                 chat_bubble
+                </mat-icon> <span>Customer Support</span>
+            </div>
+           
+            
+
+        </div>
+        <div class="col-10 right">
+            <app-navigation></app-navigation>
+
+            
+           
+    
+        </div>
+
+    </div>
+</div>

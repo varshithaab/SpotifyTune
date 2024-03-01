@@ -1,25 +1,92 @@
-.navbar {
-    background-color: hsl(141, 73%, 42%);
-    padding: 10px 0;
-  }
-  
-  .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .nav-links {
-    display: flex;
-  }
-  
-  .nav-link {
-    color: #fff;
-    text-decoration: none;
-    margin-right: 20px;
-  }
-  
-  .nav-link:hover {
-    text-decoration: underline;
-  }
-  
+.main {
+  background-color: black;
+  height: 600px;
+  overflow: hidden;
+}
+
+.bg-img img {
+  /* Adjust background properties as needed */
+  background: no-repeat;
+  background-size: cover; /* Using cover for background-size */
+  background-position: center;
+}
+
+.cont {
+  position: absolute;
+  top: 100px;
+  left: 12%; /* Adjust left margin instead of margin-left */
+  display: flex;
+  align-items: center;
+}
+
+.cont .img img {
+  /* Adjust image styles as needed */
+  height: 400px;
+  width: 400px;
+}
+
+.cont .hbtn {
+  margin-right: auto;
+}
+
+.cont .hbtn h1 {
+  color: white;
+  font-weight: bold;
+  font-size: 45px;
+  line-height: 1.5;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.sctn2 {
+  background-color: green;
+  height: 300px;
+  color: white;
+  text-align: center; /* Center text */
+}
+
+.sctn2 .h1 {
+  font-weight: bold;
+  font-size: 50px;
+}
+
+.clrgfb {
+  color: rgb(158, 158, 158);
+  font-weight: bold;
+}
+
+.fb {
+  font-weight: bold;
+}
+
+.sectn5 {
+  background-color: #212121;
+  height: 450px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.sectn5 h1 {
+  color: white;
+  font-weight: bold;
+  font-size: 80px;
+}
+
+.sectn5 button {
+  height: 45px;
+  width: 200px;
+  margin-top: 30px;
+  border-radius: 20px;
+  text-align: center;
+  font-weight: bold;
+  border: none;
+}
+
+.d-flex {
+  text-align: center;
+}
