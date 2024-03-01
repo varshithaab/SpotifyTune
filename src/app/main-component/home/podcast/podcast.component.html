@@ -1,0 +1,63 @@
+<main class="container">
+  <div class="section-banner mat-elevation-z2">
+    <p class="section-banner-title">Music <br> For <br> Everyone</p>
+  </div>
+
+  <div class="col-md-6 mt-3 fl po">
+    <ul id="musiclist">
+      <li *ngFor="let podcast of podcasts" class="podcast-item mat-elevation-z2">
+        <div class="podcast-image">
+          <img class="post__card__image-2" *ngIf="podcast.image" [src]="'assets/' + podcast.image" alt="{{ podcast.title }}">
+        </div>
+        <div class="podcast-info">
+          <p class="post__card_title-2">{{ podcast.title }}</p>
+          <p class="post__card_alttitle-2">{{ podcast.artist }}</p>
+          <p class="post__card_alttitle-2">{{ podcast.album }}</p>
+        </div>
+      </li>
+    </ul>
+  </div>
+</main>
+
+<div class="music">
+  <div class="container">
+    <div id="abl" class="album">
+      <div class="circle"></div>
+      <img class="cover">
+      <img class="shadow">
+    </div>
+    <div class="musicname"></div>
+    <div class="artist"></div>
+
+    <div class="controll-panel">
+      <div class="center">
+        <span class="prev-btn controll-btn">
+          <mat-icon>skip_previous</mat-icon>
+        </span>
+      </div>
+      <div class="center">
+        <span class="play-btn controll-btn">
+          <mat-icon>play_circle_filled</mat-icon>
+        </span>
+        <span class="pause-btn controll-btn hidden">
+          <mat-icon>pause_circle_filled</mat-icon>
+        </span>
+      </div>
+      <div class="center">
+        <span class="next-btn controll-btn">
+          <mat-icon>skip_next</mat-icon>
+        </span>
+      </div>
+    </div>
+    <div class="progress-panel">
+      <progress id="progress-bar" value="0" max="100"></progress>
+      <div class="time">
+        <label id="start-time">00:00</label>
+        <label>/</label>
+        <label id="end-time">00:00</label>
+      </div>
+    </div>
+  </div>
+</div>
+
+<audio id="music"></audio>

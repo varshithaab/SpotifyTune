@@ -1,0 +1,39 @@
+<section>
+<body>
+    <div *ngIf="song">
+        <div class="music-container">
+            <div class="music-body">
+                <div class="music-img">
+                    <img id="img" [src]="'assets/' + song.image" alt="{{ song.image }}">
+                </div>
+                
+                <div class="music-info">
+                    <h2>{{ song.title}}</h2>
+                    <p>{{ song.artist }}</p>
+                    <p>{{ song.album }}</p>
+                </div>
+                <audio [src]="'assets/' + song.audio" id="audio"></audio>
+
+                <div class="music-progress">
+                    <div class="progress-bar">
+                        <mat-slider class="progress" id="progress" min="0" max="100" value="0"></mat-slider>
+                    </div>
+                    <div class="duration">
+                        <span class="current-time">00:00</span>
+                        <span class="duration-time">00:00</span>
+                        <button mat-icon-button class="addbtn" id="add" (click)="addToPlaylist()"><mat-icon id="addicon">add</mat-icon></button>
+                    </div>
+                </div>
+
+                <div class="music-controls">
+                    <div class="main-controls">
+                        <button mat-icon-button class="prevbtn" id="prevbtn" (click)="previousSong()"><mat-icon>skip_previous</mat-icon></button>
+                        <button mat-icon-button class="playpause" id="playpause" (click)="togglePlayPause()"><mat-icon id="playpause-btn">{{ isPlaying ? 'pause' : 'play_arrow' }}</mat-icon></button>
+                        <button mat-icon-button class="nextbtn" id="nextbtn" (click)="nextSong()"><mat-icon>skip_next</mat-icon></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+</body>
+</section>
