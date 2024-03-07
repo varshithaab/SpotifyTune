@@ -1,7 +1,7 @@
 import { Schema, model } from "mongoose";
 
 export interface Music {
-    id: string;
+    id: number;
     title: string;
     artist: string;
     album: string;
@@ -12,7 +12,6 @@ export interface Music {
 
 const MusicSchema = new Schema<Music>(
     {
-        id: { type: String, required: true },
         title: { type: String, required: true },
         artist: { type: String, required: true },
         album: { type: String, required: true },
@@ -31,5 +30,5 @@ const MusicSchema = new Schema<Music>(
     }
 );
 
-export const MusicModel = model<Music>('Music', MusicSchema);
 
+export const MusicModel = model<Music>('Music', MusicSchema);

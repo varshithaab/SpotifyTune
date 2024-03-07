@@ -7,16 +7,15 @@ const cors = require('cors');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// Middleware
 app.use(cors());
 app.use(express.json());
 
-// Connect to MongoDB
+// MongoDB Connection
 mongoose.connect('mongodb://localhost:27017/Spotify-Tune', { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => console.log('Connected to MongoDB'))
     .catch(err => console.error('Error connecting to MongoDB', err));
 
-// Define Mongoose schema and model
+// Mongo model songs
 const songSchema = new mongoose.Schema({
     id: Number,
     title: String,
@@ -25,7 +24,7 @@ const songSchema = new mongoose.Schema({
     image: String,
     audio: String
 });
-// Define Mongoose schema and model for podcasts
+// Mongoose model podcasts
 const podcastSchema = new mongoose.Schema({
     id: Number,
     title: String,
@@ -38,7 +37,7 @@ const podcastSchema = new mongoose.Schema({
 const Podcast = mongoose.model('Podcast', podcastSchema);
 const Song = mongoose.model('Song', songSchema);
 
-// API routes
+//songs
 app.get('/api/songs', async (req, res) => {
     try {
         const songs = await Song.find();
@@ -48,8 +47,6 @@ app.get('/api/songs', async (req, res) => {
         res.status(500).json({ error: 'Internal Server Error' });
     }
 });
-
-// Retrieve song by id
 app.get('/api/songs/:id', async (req, res) => {
     try {
         const song = await Song.findOne({ id: req.params.id });
@@ -63,7 +60,7 @@ app.get('/api/songs/:id', async (req, res) => {
     }
 });
 
-// API routes for podcasts
+//podcasts
 app.get('/api/podcasts', async (req, res) => {
     try {
         const podcasts = await Podcast.find();
@@ -73,8 +70,6 @@ app.get('/api/podcasts', async (req, res) => {
         res.status(500).json({ error: 'Internal Server Error' });
     }
 });
-
-// Retrieve podcast by id
 app.get('/api/podcasts/:id', async (req, res) => {
     try {
         const podcast = await Podcast.findOne({ id: req.params.id });
@@ -87,7 +82,6 @@ app.get('/api/podcasts/:id', async (req, res) => {
         res.status(500).json({ error: 'Internal Server Error' });
     }
 });
-// Start the server
 app.listen(PORT, () => {
     console.log(`Server is running on port:${PORT}`);
 });

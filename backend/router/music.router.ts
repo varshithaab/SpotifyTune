@@ -1,3 +1,5 @@
+//music router
+
 import express, { Router } from "express";
 import asyncHandler from "express-async-handler";
 import { MusicModel } from "../models/music.model";
@@ -20,4 +22,3 @@ router.get("/:id", asyncHandler(async (req, res) => {
 }));
 
 export default router;
-

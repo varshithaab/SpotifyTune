@@ -8,6 +8,7 @@ import musicRouter from "../router/music.router"
 import playlistRouter from '../router/playlist.router';
  import cors from "cors";
  import bodyParser from 'body-parser';
+import podcastRouter from '../router/podcast.router';
 
 
 
@@ -27,6 +28,7 @@ app.use(
 );
 app.use("/api/songs",songRouter);
 app.use("/api/music",musicRouter);
+app.use("/api/podcast", podcastRouter);
 app.use("/api/playlists",playlistRouter);
 
 const port = 5000;

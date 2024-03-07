@@ -1,12 +1,16 @@
 <section>
   <div class="music-container">
-    <div *ngFor="let song of songs" class="card" (click)="goToPlay(song.id)">
-      <img id img *ngIf="song.image" [src]="'assets/' + song.image" alt="{{ song.title }}">
-      <div class="song-details">
-        <h3>{{ song.title }}</h3>
-          <p>{{ song.artist }}</p>
-          <p>{{ song.album }}</p>
+    <div *ngFor="let music of musics" class="card" (click)="goToPlay(music.id)">
+      <img id img *ngIf="music.image" [src]="music.image" alt="{{ music.title }}">
+      <div class="music-details">
+        <h3>{{ music.title }}</h3>
+          <p>{{ music.artist }}</p>
+          <p>{{ music.album }}</p>
+    </div>
+    <div class="controls">
+      <button mat-icon-button id="add" (click)="addToPlaylist()"><mat-icon id="addicon">add</mat-icon></button>
+      <button mat-icon-button id="play"(click)="play(music.id)"><mat-icon id="playicon">play_arrow</mat-icon></button>
     </div>
   </div>
 </div>
-</section> 
+</section>

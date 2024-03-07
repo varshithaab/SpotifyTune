@@ -1,3 +1,5 @@
+// Databse.config.ts
+
 import {connect,ConnectOptions} from 'mongoose';
 
 export const dbConnect =() =>
@@ -10,4 +12,3 @@ export const dbConnect =() =>
         (error)=>console.log(error)
     )
 }
-
