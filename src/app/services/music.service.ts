@@ -6,14 +6,14 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class MusicService {
-  private apiUrl = 'http://localhost:3000';
+  private apiUrl = 'http://localhost:5000/api/music';
   constructor(private http: HttpClient) { }
 
   getSongs(): Observable<any[]> {
-    return this.http.get<any[]>('http://localhost:3000/api/songs');
+    return this.http.get<any[]>(`${this.apiUrl}`);
   }
-
+  
   getSongById(id: number): Observable<any> {
-    return this.http.get<any>(`${this.apiUrl}/songs/${id}`);
+    return this.http.get<any>(`${this.apiUrl}/${id}`);
   }
 }
