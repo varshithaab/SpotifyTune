@@ -14,9 +14,11 @@ import { HomeComponent } from './main-component/home/home.component';
 import { MusicComponent } from './main-component/home/music/music.component';
 import { PodcastComponent } from './main-component/home/podcast/podcast.component';
 import { PlayComponent } from './main-component/home/play/play.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { MylibraryComponent } from './main-component/home/mylibrary/mylibrary.component';
+import { CreatePlaylistComponent } from './main-component/home/create-playlist/create-playlist.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +28,9 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
     MusicComponent,
     PodcastComponent,
     PlayComponent,
+    MylibraryComponent,
+    CreatePlaylistComponent
+    
   ],
   imports: [
     BrowserModule,
@@ -33,6 +38,7 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
     HttpClientModule,
     FormsModule,
     RouterModule,
+    ReactiveFormsModule,
     MatSliderModule,
     MatIconModule,
     MatButtonModule,

@@ -1,0 +1,145 @@
+*{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.library{
+    background-color:white;
+    color:#212121;
+}
+
+#homeicon{
+    color:blue;
+    
+    font-size: 24px; 
+    margin-right: 5px; 
+    cursor: pointer;
+}
+.playlist-container {
+  margin-top: 20px;
+}
+
+.playlist-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.playlist-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  margin-right: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.playlist-item:hover {
+  background-color: #f5f5f5;
+}
+
+.playlist-name {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.playlist:hover{
+    scale:1.1;
+    cursor: pointer;
+}
+
+
+
+
+.playlist-card {
+  margin: 16px;
+  background-color: #212121;
+  color:white;
+}
+
+.playlist-card mat-card-title {
+  font-size: 24px;
+  font-weight: bold;
+  padding: 16px;
+  background-color: #212121;
+  
+  
+
+}
+
+.playlist-card mat-card-content {
+  padding: 16px;
+  display: flex;
+}
+
+.playlist-card mat-card-actions {
+  padding: 16px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.song-card {
+  margin: 7px;
+  background-color:#212121;
+  border-radius: 5px;
+  border:1px solid #f5f5f5;
+ 
+  
+}
+
+.song-card mat-card-title {
+  font-size: 18px;
+  font-weight: bold;
+  padding: 8px;
+}
+
+.song-card mat-card-content {
+  padding: 7px;
+  background-color:#212121;
+  
+}
+
+.song-card mat-card-actions {
+  padding: 8px;
+  display: flex;
+  justify-content: flex-end;
+  background-color: #212121;
+}
+
+#playbutton {
+    color: green;
+    background-color: transparent; /* Ensure the background is transparent if you want the button to have no background color */
+    border: 1px solid green; /* Add a border to the button */
+    padding: 5px 10px; /* Adjust padding to your preference */
+    font-size: 16px; /* Adjust font size to your preference */
+    cursor: pointer; /* Change cursor to indicate it's clickable */
+    outline: none; /* Remove outline on focus for better appearance */
+}
+
+#playbutton:hover {
+    background-color: lightgreen; /* Change background color on hover */
+}
+
+
+
+@media (min-width: 768px) {
+  .playlist-item {
+    flex: 1 1 20rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .playlist-item {
+    flex: 1 1 25rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .playlist-item {
+    flex: 1 1 30rem;
+  }
+}
