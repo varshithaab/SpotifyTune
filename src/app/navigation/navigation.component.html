@@ -2,19 +2,13 @@
     <nav class="spotify__top-nav">
       <div class="spotify__top-nav_focus_title">
         <ul class="spotify__top-nav_auth">
-          <li><button class="forward_btn"><</button></li>
-          <li><button class="backward_btn">></button></li>
+          <li><button class="forward_btn"(click)="onForwardButtonClick()"><</button></li>
+          <li><button class="backward_btn" (click)="onBackwardButtonClick()">></button></li>
           <li *ngIf="isSearchFieldVisible">
-            <input
-              class="search_playlist"
-              type="search"
-              placeholder="What do you want to listen to?"
-              #inputSearchRef
-              (keyup)="filterBrowsingList(inputSearchRef)"
-            />
+            <app-search ></app-search>
+            
           </li>
-         
-          
+
         </ul>
       </div>
     </nav>

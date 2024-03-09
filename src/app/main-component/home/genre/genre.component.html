@@ -1,0 +1,11 @@
+<div *ngIf="genres">
+    <a
+      *ngFor="let genre of genres"
+      routerLinkActive="active"
+      routerLink="/genre/{{ genre.name }}"
+    >
+      {{ genre.name }}
+    </a>
+  </div>
+
+  

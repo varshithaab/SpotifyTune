@@ -1,7 +1,0 @@
-
-  <div *ngFor="let filterOption of filterOptions">
-    <input type="checkbox" [(ngModel)]="filterOption.selected" (change)="toggleFilter(filterOption)">
-    <label>{{ filterOption.name }}</label>
-  </div>
-  <button (click)="applyFilters()">Apply Filters</button>
-  

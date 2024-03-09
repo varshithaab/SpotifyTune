@@ -1,0 +1,8 @@
+<div *ngIf="artists">
+    <a
+      *ngFor="let artist of artists"
+      routerLinkActive="active"
+      routerLink="/artist/{{ artist.name }}">
+      {{ artist.name }}({{ artist.count }})
+    </a>
+  </div>

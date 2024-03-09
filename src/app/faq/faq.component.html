@@ -1,0 +1,16 @@
+<div class="sctn2 container">
+  <h1 class="h1">
+    Got Questions?
+  </h1>
+
+  <div class="expand">
+    <div class="accordion-item" *ngFor="let item of faqItems">
+      <div class="accordion-title" (click)="toggleAccordion(item)">
+        {{ item.question }}
+      </div>
+      <div class="accordion-content" [class.open]="item.expanded">
+        <p>{{ item.answer }}</p>
+      </div>
+    </div>
+  </div>
+</div>

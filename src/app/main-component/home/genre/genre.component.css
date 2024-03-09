@@ -1,0 +1,24 @@
+div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-left: 300px;
+}
+
+div a {
+  display: inline-block; /* Add to ensure that the anchor tags behave like blocks */
+  text-align: center; /* Center the text */
+  background-color: black;
+  padding: 0.3rem 1rem;
+  margin: 0.2rem 0.15rem;
+  border-radius: 10rem;
+  font-weight: 600;
+  color: white;
+  text-decoration: none; /* Remove underline */
+  /* Ensure that the width adjusts to the content */
+}
+
+
+div a.active {
+  background-color: green;
+}

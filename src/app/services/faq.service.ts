@@ -1,16 +1,19 @@
-import { HttpClient } from '@angular/common/http';
+// faq.service.ts
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FaqItem } from '../models/faq.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class FAQService {
-
  
-  constructor(private http: HttpClient) { }
+  private faqUrl = 'assets/faq-data.json';
 
-  getFAQs(): Observable<any[]> {
-    return this.http.get<any[]>('path/to/your/faq/api/or/json');
+  constructor(private http: HttpClient) {}
+
+  getFAQ(): Observable<FaqItem[]> {
+    return this.http.get<FaqItem[]>(this.faqUrl);
   }
 }
