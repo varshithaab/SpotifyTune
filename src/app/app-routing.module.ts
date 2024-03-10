@@ -1,3 +1,4 @@
+// app-routing.module.ts
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { MusicComponent } from './main-component/home/music/music.component';
@@ -27,7 +28,6 @@ const routes: Routes = [
   { path: 'play/:id', component: PlayComponent },
   
 ];
-
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]

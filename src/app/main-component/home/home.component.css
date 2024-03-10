@@ -199,43 +199,61 @@ body {
   }
   
   /* List styles */
+ 
   ul {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    list-style-type: none;
-    padding: 0;
+    display: flex; /* Displays the list items in a flex container */
+    justify-content: flex-start; /* Aligns items to the start of the container (left side) */
+    align-items: center; /* Centers the items vertically */
+    flex-wrap: wrap; /* Allows items to wrap to the next line if they exceed the container's width */
+    list-style-type: none; /* Removes the default bullet point style */
+    padding: 0; /* Removes padding */
+    max-width: 1200px; /* Set a maximum width for the container */
+    margin: 0 auto; /* Center the container horizontally */
+  }
+  
+  
+  li {
+     width: calc(20% - 1rem); /*Sets the width of each list item to 20% of the container width (minus margin) */
+    margin: 0.5rem; /*Adds margin around each list item */
   }
   
   li a {
-    height: 350px;
-    width: 350px;
-    border: 1px solid whitesmoke;
-    border-radius: 1rem;
-    margin: 0.5rem;
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-    color: white;
+    background-color:rgb(36, 34, 34);
+    height: 380px; /* Sets the height of each link item */
+    border: 1px solid whitesmoke; /* Adds a border around each link item */
+    border-radius: 10px; /* Adds rounded corners to the border */
+    display: flex; /* Displays the link item as a flex container */
+    flex-direction: column; /* Arranges child elements vertically */
+    overflow: hidden; /* Hides any content that exceeds the dimensions of the link item */
+    color: white; /* Sets the text color */
   }
+
   
   li a:hover {
-    opacity: 0.9;
-    cursor: pointer;
+    opacity: 0.9; /* Reduces opacity of the link item when hovered over */
+    cursor: pointer; /* Changes cursor to pointer on hover */
   }
   
   li a img {
-    object-fit: cover;
-    height: 14.5rem;
+    object-fit: cover; /* Ensures the image covers the entire container */
+    height: 15rem; /* Sets the height of the image */
+    width: 100%; /* Ensures the image fills the container horizontally */
+    border-radius: 10px; /* Adds curved corners to the image */
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 15px;
   }
-  
+  li a p{
+    color: rgb(161, 155, 155);
+    margin: 0%;
+  } 
   /* Content styles */
   .content {
     margin-top: 0.3rem;
     padding: 0.5rem 1rem;
     position: relative;
     height: 7rem;
+    
   }
   
   /* Product item footer styles */
@@ -245,21 +263,7 @@ body {
     align-items: flex-start;
   }
   
-  /* Music cards styles */
-  .music-cards {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-  }
   
-  .music-card {
-    width: 200px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-  }
   
   .image-wrapper {
     width: 100px;
@@ -275,14 +279,19 @@ body {
     object-fit: cover; /* Ensure the entire image is visible */
   }
   
-  .content {
-    padding: 10px;
-  }
   
   .name {
     font-weight: bold;
+    margin-bottom: 0.2rem; /* Adjust the margin bottom */
   }
   
+  .album {
+    margin-bottom: 0.2rem; /* Adjust the margin bottom */
+  }
+  
+  .genre {
+    margin-bottom: 0; /* Remove the margin bottom */
+  }
   .audio {
     margin-top: 10px;
   }

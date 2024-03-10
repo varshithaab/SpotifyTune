@@ -5,8 +5,8 @@
       <div class="left-options">
         <mat-icon > home </mat-icon> <span>Home</span>
       </div>
-      <div class="left-options" >
-        <mat-icon> music_note </mat-icon> <span>Music</span>
+      <div class="left-options" [routerLink]="">
+        <mat-icon  > music_note </mat-icon> <span>Music</span>
       </div>
       <div class="left-options" >
         <mat-icon> podcasts </mat-icon> <span>Podcast</span>
@@ -41,8 +41,9 @@
     </div>
 
     <div class="col-10 right">
-      <div class="col-10 row-2">
+      <div class="col-10 row-2" style="width: 1300px;">
         <app-navigation></app-navigation>
+        <!-- <app-search></app-search> -->
 
         <!-- To Display filter data -->
         <div id="display" *ngIf="showFilter " class="col-10">
@@ -69,11 +70,10 @@
                   />
                   <div class="content">
                     <div class="name">
-                      <b>{{ song.title }}</b
-                      ><br>
-                      {{ song.artist }}<br>
-                      {{ song.album }}<br>
-                      {{ song.genre }}<br>
+                      <h6>{{ song.title }}</h6>
+                     <p> {{ song.artist }}</p>
+                      <p>{{ song.album }}</p>
+                      <p>{{ song.genre }}</p>
                    
                     </div>
                   

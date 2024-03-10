@@ -62,8 +62,8 @@
     font-size: 14px;
    
       position: absolute;
-      left: 400px; /* Adjust this value to move the search bar horizontally */
-      top: 50%; /* Adjust this value to position the search bar vertically */
+      left: 1000px; /* Adjust this value to move the search bar horizontally */
+      top: 30%; /* Adjust this value to position the search bar vertically */
       transform: translateY(-50%);
   
   }

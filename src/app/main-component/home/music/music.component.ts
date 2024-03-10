@@ -1,3 +1,4 @@
+// music.component.ts
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { MusicService } from '../../../services/music.service';
@@ -5,22 +6,28 @@ import { MusicService } from '../../../services/music.service';
 @Component({
   selector: 'app-music',
   templateUrl: './music.component.html',
-  styleUrl: './music.component.css'
+  styleUrls: ['./music.component.css']
 })
-export class MusicComponent  implements OnInit {
-  songs: any[]=[]
-  constructor(private router: Router,private musicService: MusicService) { }
+export class MusicComponent implements OnInit {
 
-  
-    ngOnInit(): void {
-      this.musicService.getSongs().subscribe(
-        (data: any[]) => {
-          this.songs = data;
-        } );
-       }
+  musics: any[] = [];
 
-goToPlay(id: number) {
-  this.router.navigate(['/play', id]);
-  console.log("going to play");
-}
-}
+  constructor(private router: Router, private musicService: MusicService) { }
+
+  ngOnInit(): void {
+    this.musicService.getSongs().subscribe(
+      (data: any[]) => {
+        this.musics = data;
+      });
+  }
+
+  goToPlay(id: number): void {
+    this.router.navigate(['/play/music', id]);
+  }
+  addToPlaylist() {
+    throw new Error('Method not implemented.');
+    }
+    play(musicId: number): void {
+      this.router.navigate(['/play', musicId]);
+    }
+   }

@@ -13,7 +13,7 @@
     <router-outlet></router-outlet>
 </div>
 
-<div id="display" class="col-10">
+<div id="display" class="col-10" style="width: 1300px;">
     <app-genre *ngIf="showGenreComponent"></app-genre>
     <app-artist *ngIf="showArtistComponent"></app-artist>
 
@@ -29,10 +29,10 @@
               />
               <div class="content">
                 <div class="name">
-                  <b>{{ song.title }}</b><br>
-                  {{ song.artist }}<br>
-                  {{ song.album }}<br>
-                  {{ song.genre }}<br>
+                  <h6>{{ song.title }}</h6>
+                  <p> {{ song.artist }}</p>
+                   <p>{{ song.album }}</p>
+                   <p>{{ song.genre }}</p>
                   <audio>{{ song.audio }}<bR></audio>
                 </div>
               </div>
