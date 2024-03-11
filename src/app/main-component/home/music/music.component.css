@@ -134,5 +134,25 @@ section {
   right: 35px;
   top: 28px;
   }
+
+  .playlist-title{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    border:1px solid black;
+    height:40px;
+    width:200px;
+    margin:5px;
+    padding:20px;
+    border-radius: 5px;
+    background-color: inherit;
+    color:inherit;
+    font-size:15px;
+
+  }
+  .playlist-title:hover{
+    border:1px solid green;
+    
+  }
   
   

@@ -1,4 +1,4 @@
-<div class="library container">
+<div class="library container-fluid">
  
 
     <div class="playlist-container container">
@@ -8,22 +8,24 @@
         </div>
       </div>
     </div>
-    <button><i class="material-icons">add</i></button>
-    <div *ngIf="selectedPlaylist" class="playlist-card">
-      <h2>{{selectedPlaylist.playlistName}}</h2>
-      <p>{{selectedPlaylist.description}}</p>
+  
+    <div *ngIf="selectedPlaylist" class="playlist-card container">
+      <h2 class="playlist-title">{{selectedPlaylist.playlistName}}</h2>
+      <p class="playlist-content">{{selectedPlaylist.description}}</p>
+      <button id="addbutton" (click)="addMusicToPlaylist()">&#xF4FC;</button>
       <div class="song-card" *ngFor="let song of selectedPlaylist.playlistSongs">
         <div class="row">
-          <div class="col-1 ">
+          <div class="col-1 song-cover">
             <img [src]="song.image" alt="songimage" height="90px" width="90px" >
           </div>
-          <div class="col-10" >
-            <h3>{{song.title}}</h3>
-            <p>{{song.artist}}</p>
+          <div class="col-10 song-info" >
+            <h3 class="song-title">{{song.title}}</h3>
+            <p class="song-artist">{{song.artist}}</p>
           </div>
     
           <div class="col-1 ">
-            <button id="playbutton">&#9658;</button>
+           
+            <button id="playbutton" (click)="play(song.id)" >&#9658;</button><!--(click)="play(song.id)"-->
 
             <!-- <i class="social-icon  fa-solid fa-play"></i> -->
           </div>

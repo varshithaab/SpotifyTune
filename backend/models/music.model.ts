@@ -12,6 +12,7 @@ export interface Music {
 
 const MusicSchema = new Schema<Music>(
     {
+    //    id:{type:Number,required:true},//try
         title: { type: String, required: true },
         artist: { type: String, required: true },
         album: { type: String, required: true },

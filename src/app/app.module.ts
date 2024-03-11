@@ -19,6 +19,7 @@ import { RouterModule } from '@angular/router';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { MylibraryComponent } from './main-component/home/mylibrary/mylibrary.component';
 import { CreatePlaylistComponent } from './main-component/home/create-playlist/create-playlist.component';
+import { CustomerSupportComponent } from './main-component/home/customer-support/customer-support.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { CreatePlaylistComponent } from './main-component/home/create-playlist/c
     PodcastComponent,
     PlayComponent,
     MylibraryComponent,
-    CreatePlaylistComponent
+    CreatePlaylistComponent,
+    CustomerSupportComponent
     
   ],
   imports: [

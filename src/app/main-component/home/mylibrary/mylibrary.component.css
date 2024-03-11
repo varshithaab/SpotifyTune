@@ -2,6 +2,69 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 .library{
+  background-color: black;
+  color:white;
+}
+.playlist-container{
+  margin:20px;
+
+
+}
+.playlist-row{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.playlist-item{
+  padding:30px;
+  margin:20px;
+ 
+  font-size: 30px;
+  border:1px solid white;
+  border-radius: 7px;
+  background-color: grey;
+  opacity: 50%;
+
+}
+.playlist-item:hover{
+  border-color: green;
+  background-color: black;
+  color:green;
+  cursor: pointer;
+  font-weight: bold;
+  
+
+}
+#playbutton{
+  color: green;
+  background-color:green;
+  color:grey;
+  border: 1px solid green;
+  border-radius: 100%;
+
+  padding: 5px 10px; 
+  font-size: 16px;
+  cursor: pointer; 
+  outline: none;
+}
+#addbutton{
+  color:white;
+  background-color:black;
+ 
+  border: 1px solid white;
+  border-radius: 30%;
+
+  padding: 5px 10px; 
+  font-size: 16px;
+  cursor: pointer; 
+  outline: none;
+}
+.song-card{
+  margin:15px;
+}
+
+/* 
+.library{
     background-color:white;
     color:#212121;
 }
@@ -112,18 +175,18 @@
 
 #playbutton {
     color: green;
-    background-color: transparent; /* Ensure the background is transparent if you want the button to have no background color */
-    border: 1px solid green; /* Add a border to the button */
-    padding: 5px 10px; /* Adjust padding to your preference */
-    font-size: 16px; /* Adjust font size to your preference */
-    cursor: pointer; /* Change cursor to indicate it's clickable */
-    outline: none; /* Remove outline on focus for better appearance */
+    background-color: transparent;
+    border: 1px solid green;
+    padding: 5px 10px; 
+    font-size: 16px;
+    cursor: pointer; 
+    outline: none;
 }
 
 #playbutton:hover {
-    background-color: lightgreen; /* Change background color on hover */
+    background-color: lightgreen; 
 }
-
+*/
 
 
 @media (min-width: 768px) {
@@ -142,4 +205,4 @@
   .playlist-item {
     flex: 1 1 30rem;
   }
-}
+} 

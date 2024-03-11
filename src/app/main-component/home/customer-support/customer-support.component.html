@@ -1,0 +1,13 @@
+<h1>Customer Support</h1>
+<div class="container">
+<div class="row">
+    <div class="col-12"><h2>What do you need?</h2></div>
+
+</div>
+<div *ngFor="let item of support;let i=index;">
+<div class="row supportview">
+    <div class="col-6 problem" (click)="viewSolution(i)">{{item.problem}}</div>
+    <div class="col-6 solution" *ngIf="item.visible" [ngClass]="{ 'slide-in': item.visible }">{{item.solution}}</div>
+</div>
+</div>
+</div>

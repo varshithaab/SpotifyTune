@@ -8,11 +8,12 @@ export interface PlayList {
   }
 
   export interface Music{
-    id:string,
+    id:number,//try
     title:string,
     artist:string,
     album:string,
-    genre:string,
+    
     image:string,
+    genre:string,
     audio:string
 }
