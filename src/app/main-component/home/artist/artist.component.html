@@ -1,8 +1,33 @@
 <div *ngIf="artists">
-    <a
-      *ngFor="let artist of artists"
-      routerLinkActive="active"
-      routerLink="/artist/{{ artist.name }}">
-      {{ artist.name }}({{ artist.count }})
-    </a>
-  </div>
+  <ng-container *ngFor="let artist of artists">
+    <button (click)="navigateToArtist(artist.name)" >
+      {{ artist.name }} 
+    </button>
+  </ng-container>
+</div>
+
+<ng-container *ngIf = "isshowFilter" >
+  <div class="card-container" id="display_data" class="col-10 row-5">
+ 
+        <ul>
+          <li class="filter_display" *ngFor="let song of songs">
+            <a routerLink="/music/{{ song.id }}">
+              <img
+                class="image_display"
+                [src]="song.image"
+                [alt]="song.title"
+              />
+              <div class="content">
+                <div class="name">
+                  <h6>{{ song.title }}</h6>
+                  <p> {{ song.artist }}</p>
+                   <p>{{ song.album }}</p>
+                   <p>{{ song.genre }}</p>
+                  <audio>{{ song.audio }}<bR></audio>
+                </div>
+              </div>
+            </a>
+          </li>
+        </ul>
+      </div>
+</ng-container>

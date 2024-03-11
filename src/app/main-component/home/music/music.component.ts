@@ -18,6 +18,7 @@ export class MusicComponent implements OnInit {
     this.musicService.getSongs().subscribe(
       (data: any[]) => {
         this.musics = data;
+        
       });
   }
 

@@ -9,81 +9,77 @@ import { SongService } from '../../services/song.service';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrl: './home.component.css'
+  styleUrl: './home.component.css',
 })
 export class HomeComponent {
-  isShowHome:boolean = false;
-  isshowSearch:boolean = false;
-  songs:Song[]=[];
+  isShowHome: boolean = false;
+  isshowSearch: boolean = false;
+  songs: Song[] = [];
 
-  message: boolean=false;
+  message: boolean = false;
 
-  filter : boolean =false;
-  constructor(public sb: SearchBarService,private SongService:SongService,activatedRoute:ActivatedRoute,private router: Router  ){
-    let songsObservable:Observable<Song[]>;
-    
-    activatedRoute.params.subscribe((params)=>
-    {
-      if(params.searchTerm)
-      {
-        songsObservable=this.SongService.getAllSongsBySearchTerm(params.searchTerm);
+  filter: boolean = false;
+  constructor(
+    public sb: SearchBarService,
+    private SongService: SongService,
+    activatedRoute: ActivatedRoute,
+    private router: Router
+  ) {
+    let songsObservable: Observable<Song[]>;
 
+    activatedRoute.params.subscribe((params) => {
+      if (params.searchTerm) {
+        songsObservable = this.SongService.getAllSongsBySearchTerm(
+          params.searchTerm
+        );
+      } else {
+        songsObservable = SongService.getAll();
       }
-      
-      else{
-        songsObservable=SongService.getAll();
-      }
-      songsObservable.subscribe((serverSongs)=>
-      {
-        this.songs=serverSongs;
-      })
-      
-    })
-   
+      songsObservable.subscribe((serverSongs) => {
+        this.songs = serverSongs;
+      });
+    });
   }
 
   ngOnInit(): void {
-    this.SongService.currentMessage.subscribe(message => this.message = message);
-console.log("sharanya",this.message);
-
-
+    this.SongService.currentMessage.subscribe(
+      (message) => (this.message = message)
+    );
+   
   }
 
   newMessage() {
     this.SongService.changeMessage(true);
   }
 
- 
-
- 
-
   onNavigation(pageName: string) {
     if (pageName === 'search') {
-      
       this.sb.isSearchVisible.next(true);
     } else {
       this.sb.isSearchVisible.next(false);
     }
 
-    this.isshowSearch = true;
-    //this.isShowHome=false;
+    this.isshowSearch = false;
+  
   }
 
-
-  
   showFAQ: boolean = false;
 
   toggleFAQ(): void {
-    this.isShowHome=true;
+    this.isShowHome = true;
     this.showFAQ = !this.showFAQ;
   }
 
+  showMUSIC: boolean = false;
+
+  toggleMUSIC(): void {
+    this.isShowHome = true;
+    this.showMUSIC = !this.showMUSIC;
+  }
 
   showFilter: boolean = false;
   toggleFilter(): void {
     this.isShowHome = true;
     this.showFilter = !this.showFilter;
-   
   }
-
 }

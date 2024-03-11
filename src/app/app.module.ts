@@ -1,8 +1,13 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
-import { HttpClientModule, provideHttpClient, withFetch } from '@angular/common/http';
-
-
+import {
+  BrowserModule,
+  provideClientHydration,
+} from '@angular/platform-browser';
+import {
+  HttpClientModule,
+  provideHttpClient,
+  withFetch,
+} from '@angular/common/http';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatSliderModule } from '@angular/material/slider';
 
@@ -19,20 +24,10 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { NavigationComponent } from './navigation/navigation.component';
 import { NgxExtendedPdfViewerModule } from 'ngx-extended-pdf-viewer';
-
-
-import { GenericListFilterModule } from 'generic-list-filter';
-
-
-
 import { HomeSideComponent } from './main-component/home/home-side/home-side.component';
-
-
-
 import { MusicComponent } from './main-component/home/music/music.component';
 import { PodcastComponent } from './main-component/home/podcast/podcast.component';
 import { PlayComponent } from './main-component/home/play/play.component';
-
 import { RouterModule } from '@angular/router';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { FaqComponent } from './faq/faq.component';
@@ -40,12 +35,8 @@ import { SearchComponent } from './main-component/home/search/search.component';
 import { GenreComponent } from './main-component/home/genre/genre.component';
 import { ArtistComponent } from './main-component/home/artist/artist.component';
 import { FilterComponent } from './main-component/home/filter/filter.component';
-
-
-
 import { MatExpansionModule } from '@angular/material/expansion';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -63,9 +54,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     GenreComponent,
     ArtistComponent,
     FilterComponent,
-   
-  
-   
   ],
   imports: [
     BrowserModule,
@@ -75,8 +63,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MatIconModule,
     MatGridListModule,
     NgxExtendedPdfViewerModule,
-HttpClientModule
-   ,
+    HttpClientModule,
     FormsModule,
     RouterModule,
     MatSliderModule,
@@ -84,22 +71,16 @@ HttpClientModule
     MatButtonModule,
     MatProgressBarModule,
     MatCardModule,
-    BrowserAnimationsModule, // Import BrowserAnimationsModule for Angular Material animations
-    MatExpansionModule, 
+    BrowserAnimationsModule, 
+    MatExpansionModule,
+  ],
+  exports: [MatSliderModule, MatIconModule, MatButtonModule],
 
-  ],
-  exports: [
-    MatSliderModule,
-    MatIconModule,
-    MatButtonModule
-  ],
-  
   providers: [
- 
     provideClientHydration(),
     provideAnimationsAsync(),
-    provideHttpClient(withFetch())
+    provideHttpClient(withFetch()),
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
