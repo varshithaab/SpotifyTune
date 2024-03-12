@@ -1,0 +1,66 @@
+<!-- <table>
+  <thead>
+    <tr>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Mobile</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of users">
+      <td>{{ user.firstname }}</td>
+      <td>{{ user.lastname }}</td>
+      <td>{{ user.mobile }}</td>
+      <td><button (click)="onUpdateClick(user)">Update</button></td>
+    </tr>
+  </tbody>
+</table>
+
+<div *ngIf="selectedUser">
+ 
+  <div>
+    <h2>User Details</h2>
+    <p>First Name: {{ selectedUser.firstname }}</p>
+    <p>Last Name: {{ selectedUser.lastname }}</p>
+    <p>Mobile: {{ selectedUser.mobile }}</p>
+  </div>
+
+
+  <div>
+    <h2>Edit Details</h2>
+   
+    <button (click)="updateDetails()">Update Details</button>
+  </div>
+</div> -->
+
+<!-- your.component.html -->
+<!-- <div>
+  <label for="email">Enter Email:</label>
+  <input type="text" id="email" [(ngModel)]="email" />
+  <button (click)="getUserDetails()">Fetch User Details</button>
+</div>
+
+<div *ngIf="userDetails.email">
+  <h2>User Details</h2>
+  <p>First Name: {{ userDetails.firstname }}</p>
+  <p>Last Name: {{ userDetails.lastname }}</p>
+  <p>Mobile: {{ userDetails.mobile }}</p>
+
+  <!-- Your form for updating details 
+  <form (submit)="updateUserDetails()">
+    <label for="newFirstName">New First Name:</label>
+    <input type="text" id="newFirstName" [(ngModel)]="updatedDetails.firstname" />
+    <label for="newLastName">New Last Name:</label>
+    <input type="text" id="newLastName" [(ngModel)]="updatedDetails.lastname" />
+    <label for="newMobile">New Mobile:</label>
+    <input type="text" id="newMobile" [(ngModel)]="updatedDetails.mobile" />
+
+    <button type="submit">Update User Details</button>
+  </form>
+</div> -->
+<div>
+  <label for="userEmail">Enter User Email:</label>
+  <input type="text" id="userEmail" [(ngModel)]="userEmail" />
+  <button (click)="getUserByEmail()">Get User</button>
+</div>

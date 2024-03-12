@@ -6,6 +6,7 @@ import { Song } from '../../shared/models/song';
 import { Router } from '@angular/router';
 
 import { SongService } from '../../services/song.service';
+import { LoginService } from '../../services/login.service';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -13,13 +14,16 @@ import { SongService } from '../../services/song.service';
 })
 export class HomeComponent {
   isShowHome:boolean = false;
+
+  isAdminFlow: boolean = false;
+  
   isshowSearch:boolean = false;
   songs:Song[]=[];
 
   message: boolean=false;
 
   filter : boolean =false;
-  constructor(public sb: SearchBarService,private SongService:SongService,activatedRoute:ActivatedRoute,private router: Router  ){
+  constructor(public sb: SearchBarService,private SongService:SongService,activatedRoute:ActivatedRoute,private loginService: LoginService){
     let songsObservable:Observable<Song[]>;
     
     activatedRoute.params.subscribe((params)=>
@@ -44,7 +48,8 @@ export class HomeComponent {
 
   ngOnInit(): void {
     this.SongService.currentMessage.subscribe(message => this.message = message);
-console.log("sharanya",this.message);
+    this.loginService.currentMessage.subscribe(isAdmin => this.isAdminFlow = isAdmin);
+console.log("sharanya",this.isAdminFlow);
 
 
   }

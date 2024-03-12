@@ -16,4 +16,12 @@ export class MusicService {
   getSongById(id: number): Observable<any> {
     return this.http.get<any>(`${this.apiUrl}/${id}`);
   }
+
+
+//ADMIN FUNCTIONALITY
+  deleteSong(id: number): Observable<any> {
+    const deleteUrl = `${this.apiUrl}/${id}`;
+    return this.http.delete(deleteUrl);
+  }
+
 }

@@ -1,0 +1,34 @@
+
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #1e1e1e; /* Spotify theme background color */
+      color: white;
+    }
+
+    .spotify-card {
+      background-color: #282828; /* Spotify theme card background color */
+      border: none;
+      width: 500px;
+      height:500px;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .oval-button {
+      border: none;
+      background-color: #1db954; /* Spotify theme button color */
+      color: white;
+      border-radius: 25px;
+      padding: 10px 20px;
+      margin: 5px;
+      cursor: pointer;
+    }
+    h3{
+        font-size: xx-large;
+    }
+  

@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
 import { HttpClientModule, provideHttpClient, withFetch } from '@angular/common/http';
-
-
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatSliderModule } from '@angular/material/slider';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatMenuModule } from '@angular/material/menu';
 
 import { MatButtonModule } from '@angular/material/button';
 import { AppRoutingModule } from './app-routing.module';
@@ -45,6 +45,15 @@ import { FilterComponent } from './main-component/home/filter/filter.component';
 
 import { MatExpansionModule } from '@angular/material/expansion';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { LoginComponent } from './main-component/login/login.component';
+import { RegisterComponent } from './main-component/register/register.component';
+import { UserManagementComponent } from './navigation/user-management/user-management.component';
+import { SongManagementComponent } from './navigation/song-management/song-management.component';
+import { ViewuserComponent } from './navigation/user-management/viewuser/viewuser.component';
+import { DeleteuserComponent } from './navigation/user-management/deleteuser/deleteuser.component';
+import { EdituserComponent } from './navigation/user-management/edituser/edituser.component';
+import { ViewsongsComponent } from './navigation/song-management/viewsongs/viewsongs.component';
+import { DeletesongsComponent } from './navigation/song-management/deletesongs/deletesongs.component';
 
 @NgModule({
   declarations: [
@@ -63,7 +72,16 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     GenreComponent,
     ArtistComponent,
     FilterComponent,
-   
+    LoginComponent,
+    RegisterComponent,
+    UserManagementComponent,
+    SongManagementComponent,
+    ViewuserComponent,
+    DeleteuserComponent,
+    EdituserComponent,
+    ViewsongsComponent,
+    DeletesongsComponent,
+    
   
    
   ],
@@ -75,8 +93,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MatIconModule,
     MatGridListModule,
     NgxExtendedPdfViewerModule,
-HttpClientModule
-   ,
+    ReactiveFormsModule,
+    HttpClientModule,
+    MatMenuModule,
     FormsModule,
     RouterModule,
     MatSliderModule,
@@ -86,6 +105,7 @@ HttpClientModule
     MatCardModule,
     BrowserAnimationsModule, // Import BrowserAnimationsModule for Angular Material animations
     MatExpansionModule, 
+    FormsModule
 
   ],
   exports: [

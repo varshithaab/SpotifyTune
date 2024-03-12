@@ -1,0 +1,25 @@
+ 
+<div class="container mt-5">
+    <table class="table table-bordered table-striped">
+      <thead class="thead-dark">
+        <tr>
+          <th>Firstname</th>
+          <th>Lastname</th>
+          <th>Email</th>
+          <th>Mobile Number</th>
+          <th>Gender</th>
+          <th>Delete User</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let i of userDetails">
+          <td>{{i.firstname}}</td>
+          <td>{{i.lastname}}</td>
+          <td>{{i.email}}</td>
+          <td>{{i.mobile}}</td>
+          <td>{{i.gender}}</td>
+          <td><button class="btn btn-danger" (click)="deleteUser(i.email)">Delete</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

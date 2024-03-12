@@ -21,4 +21,18 @@ router.get("/:id", asyncHandler(async (req, res) => {
     }
 }));
 
+
+//Delete Code - Admin Functionality
+// Delete music by ID
+router.delete('/:id', asyncHandler(async (req, res) => {
+    const musicId = req.params.id;
+    const deletedMusic = await MusicModel.findByIdAndDelete(musicId);
+    
+    if (!deletedMusic) {
+        res.status(404).json({ error: 'Music not found' });
+    } else {
+        res.json({ message: 'Music deleted successfully', deletedMusic });
+    }
+}));
+
 export default router;

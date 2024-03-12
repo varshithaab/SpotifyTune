@@ -1,0 +1,28 @@
+<!-- your.component.html -->
+<div class="container mt-5">
+    <table class="table table-bordered table-striped">
+      <thead class="thead-dark">
+        <tr>
+          <th>Title</th>
+          <th>Artist</th>
+          <th>Album</th>
+          <th>Genre</th>
+          <th>Image</th>
+          <th>Audio</th>
+          <th>Delete Music</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let song of musicList">
+          <td>{{ song.title }}</td>
+          <td>{{ song.artist }}</td>
+          <td>{{ song.album }}</td>
+          <td>{{ song.genre }}</td>
+          <td><img [src]="song.image" alt="{{ song.title }} Image" style="max-height: 50px;"></td>
+          <td><audio controls [src]="song.audio"></audio></td>
+          <td><button class="btn btn-danger" (click)="deleteMusic(song.id)">Delete</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

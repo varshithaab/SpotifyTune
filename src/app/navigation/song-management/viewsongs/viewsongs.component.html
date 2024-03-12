@@ -1,0 +1,26 @@
+<!-- your.component.html -->
+<table class="table  table-bordered table-striped">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Title</th>
+        <th>Artist</th>
+        <th>Album</th>
+        <th>Genre</th>
+        <th>Image</th>
+        <th>Audio</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let song of songs">
+        <td>{{ song.id }}</td>
+        <td>{{ song.title }}</td>
+        <td>{{ song.artist }}</td>
+        <td>{{ song.album }}</td>
+        <td>{{ song.genre }}</td>
+        <td><img [src]="song.image" alt="{{ song.title }} Image" style="max-height: 50px;"></td>
+        <td><audio controls [src]="song.audio"></audio></td>
+      </tr>
+    </tbody>
+  </table>
+  
