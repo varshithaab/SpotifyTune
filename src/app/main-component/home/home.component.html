@@ -64,7 +64,7 @@
           <div id="display" class="col-10 row-5">
             <ul>
               <li class="search_display" *ngFor="let song of songs">
-                <a routerLink="/music/{{ song.id }}">
+                <a routerLink="/play/{{ song.id }}">
                   <img
                     class="image_display"
                     [src]="song.image"

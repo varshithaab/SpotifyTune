@@ -1,27 +1,17 @@
-import { Component, Input } from '@angular/core';
+import { Component, ElementRef, EventEmitter, Input, Output, ViewChild } from '@angular/core';
 import { Genre } from '../../../shared/models/genre';
 import { SongService } from '../../../services/song.service';
 
-import { ActivatedRoute, Router } from '@angular/router';
-import { Observable } from 'rxjs';
+
 import { Song } from '../../../shared/models/song';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-genre',
   templateUrl: './genre.component.html',
   styleUrl: './genre.component.css',
 })
 export class GenreComponent {
-  // genres?:Genre[];
-  // constructor(SongService:SongService) {
-  //   SongService.getAllGenre().subscribe(serverGenres => {
-
-  //     this.genres = serverGenres;
-
-  //   });
-  //  }
-
-  // ngOnInit(): void {
-  // }
+ 
   @Input() isGenrePage: boolean = false;
   genres?: Genre[];
 
@@ -30,9 +20,7 @@ export class GenreComponent {
   songs: Song[] = [];
 
   constructor(
-    private songService: SongService,
-    private router: Router,
-    private activatedRoute: ActivatedRoute
+    private songService: SongService,private router:Router
   ) {}
 
   ngOnInit(): void {
@@ -52,6 +40,7 @@ export class GenreComponent {
     this.songService.getAllSongsByGenre(genreName).subscribe((res) => {
       this.songs = res;
     });
-   
+  
   }
+
 }

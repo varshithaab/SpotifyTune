@@ -24,13 +24,13 @@
 </div>
 
 <div id="display" class="col-10" style="width: 1300px">
-  <app-genre *ngIf="showGenreComponent"></app-genre>
+  <app-genre *ngIf="showGenreComponent" ></app-genre>
   <app-artist *ngIf="showArtistComponent"></app-artist>
 
   <div
     class="card-container"
     id="display_data"
-    *ngIf="showSongList && !this.isGenreFlow"
+    *ngIf="showSongList && !this.isGenreFlow && !this.isArtistFlow"
     class="col-10 row-5"
   >
     <ul>

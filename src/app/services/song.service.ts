@@ -22,6 +22,10 @@ export class SongService {
   private onGenreFlow = new BehaviorSubject<boolean>(false);
   a = this.onGenreFlow.asObservable();
 
+  private onArtistFlow = new BehaviorSubject<boolean>(false);
+  b = this.onArtistFlow.asObservable();
+
+
   constructor(private http: HttpClient) {}
 
   getAll(): Observable<Song[]> {
@@ -35,8 +39,7 @@ export class SongService {
   }
 
   getAllSongsByGenre(genre: string): Observable<Song[]> {
-    console.log('nikk', genre);
-    console.log('reft', this.http.get<Song[]>(SONGS_BY_GENRE_URL + genre));
+   
     return genre === 'All'
       ? this.getAll()
       : this.http.get<Song[]>(SONGS_BY_GENRE_URL + genre);
@@ -57,4 +60,8 @@ export class SongService {
   genreFlow(message: boolean) {
     this.onGenreFlow.next(message);
   }
+  artistFlow(message: boolean) {
+    this.onArtistFlow.next(message);
+  }
+
 }

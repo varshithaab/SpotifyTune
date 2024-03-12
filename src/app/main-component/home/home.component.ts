@@ -32,7 +32,8 @@ export class HomeComponent {
         songsObservable = this.SongService.getAllSongsBySearchTerm(
           params.searchTerm
         );
-      } else {
+       } 
+      else {
         songsObservable = SongService.getAll();
       }
       songsObservable.subscribe((serverSongs) => {
@@ -82,4 +83,5 @@ export class HomeComponent {
     this.isShowHome = true;
     this.showFilter = !this.showFilter;
   }
+
 }

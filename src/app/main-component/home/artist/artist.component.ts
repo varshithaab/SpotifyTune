@@ -18,19 +18,19 @@ export class ArtistComponent {
   constructor(private SongService: SongService) {}
 
   ngOnInit(): void {
-    this.loadGenres();
+    this.loadArtists();
     this.SongService.currentMessage.subscribe(
       (message) => (this.message = message)
     );
   }
-  loadGenres(): void {
+  loadArtists(): void {
     this.SongService.getAllArtist().subscribe((serverArtists) => {
       this.artists = serverArtists;
     });
   }
   navigateToArtist(artistName: string): void {
     this.isshowFilter = true;
-    this.SongService.genreFlow(true);
+    this.SongService.artistFlow(true);
     this.SongService.getAllSongsByArtist(artistName).subscribe((res) => {
       this.songs = res;
     });

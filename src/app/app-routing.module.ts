@@ -11,6 +11,7 @@ import { FilterComponent } from './main-component/home/filter/filter.component';
 import { GenreComponent } from './main-component/home/genre/genre.component';
 import { HomeSideComponent } from './main-component/home/home-side/home-side.component';
 import { FaqComponent } from './faq/faq.component';
+import { SearchComponent } from './main-component/home/search/search.component';
 
 const routes: Routes = [
   { path: '', component: MainComponentComponent },
@@ -25,7 +26,7 @@ const routes: Routes = [
   { path: 'music/:music', component: MusicComponent },
   { path: 'music', component: MusicComponent },
   { path: 'podcast', component: PodcastComponent },
-  { path: 'play/:id', component: PlayComponent },
+  { path: 'play', component: PlayComponent },
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

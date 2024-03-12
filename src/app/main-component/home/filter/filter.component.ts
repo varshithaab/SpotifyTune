@@ -11,6 +11,7 @@ import { SongService } from '../../../services/song.service';
 })
 export class FilterComponent {
   isGenreFlow: boolean = false;
+  isArtistFlow: boolean = false;
 
   songs: Song[] = [];
   constructor(
@@ -62,5 +63,8 @@ export class FilterComponent {
 
   ngOnInit(): void {
     this.SongService.a.subscribe((message) => (this.isGenreFlow = message));
+    this.SongService.b.subscribe((message) => (this.isArtistFlow = message));
   }
+
+  
 }
