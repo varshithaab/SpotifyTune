@@ -80,6 +80,7 @@ export class MylibraryComponent {
   //   this.router.navigate(['/play', songId]);
   // }
   play(musicId: number): void {
+    
     this.router.navigate(['/play', musicId]);
   }
 }

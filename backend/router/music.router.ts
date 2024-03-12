@@ -13,6 +13,7 @@ router.get("/", asyncHandler(async (req, res) => {
 
 router.get("/:id", asyncHandler(async (req, res) => {
     const musicId = req.params.id;
+
     const music = await MusicModel.findById(musicId);
     if (!music) {
         res.status(404).json({ error: 'Music not found' });

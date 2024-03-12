@@ -1,5 +1,3 @@
-// Databse.config.ts
-
 import {connect,ConnectOptions} from 'mongoose';
 
 export const dbConnect =() =>

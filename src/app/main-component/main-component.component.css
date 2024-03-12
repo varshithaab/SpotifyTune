@@ -1,25 +1,71 @@
-.navbar {
-    background-color: hsl(141, 73%, 42%);
-    padding: 10px 0;
-  }
-  
-  .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .nav-links {
-    display: flex;
-  }
-  
-  .nav-link {
-    color: #fff;
-    text-decoration: none;
-    margin-right: 20px;
-  }
-  
-  .nav-link:hover {
-    text-decoration: underline;
-  }
-  
+.main {
+  background-color: black;
+  height: 600px;
+  overflow: hidden;
+  position: relative; /* Add relative positioning to the parent */
+}
+
+.cont {
+  position: absolute;
+  top: 50%; /* Adjust top position to center vertically */
+  left: 12%; /* Adjust left margin instead of margin-left */
+  transform: translateY(-50%); /* Move the container up by half its height */
+}
+
+.cont .img img {
+  height: 300px; /* Set image height to auto to maintain aspect ratio */
+  width: 300px; /* Set image width to 100% */
+}
+
+.cont .hbtn {
+  margin-left: 50px; /* Add some margin between the image and text */
+}
+
+.cont .hbtn h1 {
+  color: white;
+  font-weight: bold;
+  font-size: 45px;
+  line-height: 1.5;
+}
+
+.sctn2 {
+  background-color: #212121f5;
+  color: white;
+  text-align: center;
+  padding: 50px; /* Add padding to all sides */
+  box-sizing: border-box; /* Include padding in the total width */
+  margin: 0;
+  width: 100%; /* Ensure the container spans the full width */
+}
+
+.sctn2 .h1 {
+  font-weight: bold;
+  font-size: 50px;
+}
+
+.clrgfb {
+  color: rgb(158, 158, 158);
+  font-weight: bold;
+}
+
+.sectn5 {
+  background-color: #212121;
+  color: white;
+  text-align: center;
+  padding: 50px 0; /* Add padding top and bottom to remove the gap */
+}
+
+.sectn5 h1 {
+  font-weight: bold;
+  font-size: 80px;
+}
+
+.sectn5 button {
+  height: 45px;
+  width: 200px;
+  margin-top: 30px;
+  border-radius: 20px;
+  text-align: center;
+  font-weight: bold;
+  border: none;
+}

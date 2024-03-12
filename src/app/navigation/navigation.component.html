@@ -1,0 +1,16 @@
+<header>
+    <nav class="spotify__top-nav">
+      <div class="spotify__top-nav_focus_title">
+        <ul class="spotify__top-nav_auth">
+          <li><button class="forward_btn"(click)="onForwardButtonClick()"><</button></li>
+          <li><button class="backward_btn" (click)="onBackwardButtonClick()">></button></li>
+          <li *ngIf="isSearchFieldVisible">
+            <app-search ></app-search>
+            
+          </li>
+
+        </ul>
+      </div>
+    </nav>
+  </header>
+  

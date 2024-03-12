@@ -26,6 +26,7 @@ export class MusicComponent implements OnInit {
     this.router.navigate(['/play/music', id]);
   }
   play(musicId: number): void {
+   
     this.router.navigate(['/play', musicId]);
   }
   // play(musicId: string): void {

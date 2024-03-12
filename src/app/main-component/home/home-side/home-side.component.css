@@ -1,0 +1,92 @@
+.songs {
+  color: white;
+  margin-top: 60px;
+  display: flex;
+}
+
+.c-cart
+{
+  gap: 50px;
+}
+.songs .c-cart .card {
+  float: left;
+  margin-right: 8.25px;
+  margin-bottom: 20px;
+  width: calc((100% - 50px) / 6); /* Adjust the width to fit 6 cards in one line */
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  background-color: rgb(36, 34, 34);
+}
+
+.songs .c-cart .card .card-img-top {
+  height: 170px;
+  width: 170px;
+  padding: 15px;
+
+  border-radius: 25px;
+}
+
+
+.songs .c-cart .card .card-body {
+  padding-left: 15px;
+  padding-bottom: 15px;
+  padding-top: 0px;
+}
+
+.songs .c-cart .card .card-body h5 {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 0px;
+}
+
+.songs .c-cart .card .card-body p {
+  color: rgb(161, 155, 155);
+  margin: 0%;
+}
+
+.songs .c-cart .card .card-body .play-button {
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 6px 12px;
+  background-color: #1db954;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: inline-block;
+}
+
+.songs .c-cart .card .card-body .play-button:hover {
+  background-color: #14803e;
+}
+@keyframes popup {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1.05);
+  }
+}
+
+.songs .c-cart .card:hover {
+  animation: popup 1s ease-in-out forwards;
+}
+@media (min-width: 768px) { .card { width: calc((100% - 50px) / 3); /* Adjust the width to fit 3 cards in one line */ } }
+
+@media (min-width: 992px) { .card { width: calc((100% - 50px) / 2); /* Adjust the width to fit 2 cards in one line */ } }
+
+@media (max-width: 767.98px) { .card { width: calc(100% - 20px); /* Adjust the width to fit 1 card in one line */ } }
+
+@media (min-width: 1200px) { .card { flex: 1 1 30rem; } }

@@ -39,6 +39,7 @@ export class MusicService {
   //   return this.http.get<Music>(`${this.apiUrl}/${id}`);
   // }
   getSongById(id: string): Observable<Music> {
+    
     return this.http.get<Music>(`${this.apiUrl}/${id}`);
   }
 }

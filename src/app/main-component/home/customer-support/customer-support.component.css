@@ -1,11 +1,27 @@
-
+.customer-support{
+  background-color: #515151;
+  
+}
+.heading{
+  justify-content: center;
+  align-items: center;
+  text-align:center;
+  margin:5px;
+ 
+  
+}
 .supportview{
     direction:flex;
-    border:2px solid pink;
-    background-color: green;
+    justify-content: center;
+    align-items: center;
+   
+    color:black;
 }
 .problem{
     border:1px solid black;
+    background-color: black;
+    color:white;
+    border-radius: 10px;
     justify-content: center;
     align-items: center;
     padding:20px;margin:10px;
@@ -13,11 +29,16 @@
 .solution {
     overflow: hidden;
     white-space: nowrap;
-    border:1px solid black;
+    border:1px solid #1db954;
+    background-color: #1db954;
+    color:black;
     justify-content: center;
     align-items: center;
     padding:20px;margin:10px;
-    margin-right: 50px;
+   
+  }
+  #contact{
+    text-align: center;
   }
 
   .slide-in {

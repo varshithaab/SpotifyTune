@@ -4,6 +4,8 @@ import cors from "cors";
 import asyncHandler  from "express-async-handler";
 import { SongModel } from "../models/song.model";
 
+import {PlaylistModel} from "../models/playlist.model"
+
 
 // router.get("/seed",asyncHandler(
 
@@ -29,17 +31,22 @@ async(req,res)=>{
 
 
 
+
+
 router.get("/search/:searchTerm",asyncHandler(
 async(req,res)=>
 {
     const searchRegex = new RegExp(req.params.searchTerm, 'i');
     
    
-    const songsBySongName = await SongModel.find({ songName: { $regex: searchRegex } });
+    const songsBySongName = await SongModel.find({ title: { $regex: searchRegex } });
     const songsByGenre = await SongModel.find({ genre: { $regex: searchRegex } });
-    const songsByArtistName = await SongModel.find({artistName:{$regex:searchRegex}});
+    const songsByArtistName = await SongModel.find({artist:{$regex:searchRegex}});
 
-    const songs = [...songsBySongName, ...songsByGenre, ...songsByArtistName];
+    const songsByAlbumName = await SongModel.find({album:{$regex:searchRegex}});
+
+  
+    const songs = [...songsBySongName, ...songsByGenre, ...songsByArtistName,...songsByAlbumName];
 res.send(songs);
     
 }))
@@ -82,5 +89,54 @@ router.get(
       res.send(songs);
     })
   );
+
+
+  router.get(
+    '/artist',
+    asyncHandler(async (req, res) => {
+      const artist = await SongModel.aggregate([
+        {
+          $unwind: '$artist',
+        },
+        {
+          $group: {
+            _id: '$artist',
+            count: { $sum: 1 },
+          },
+        },
+        {
+          $project: {
+            _id: 0,
+            name: '$_id',
+            count: '$count',
+          },
+        },
+      ]).sort({ count: -1 });
+  
+      const all = {
+        name: 'All',
+        count: await SongModel.countDocuments(),
+      };
+  
+      artist.unshift(all);
+      res.send(artist);
+    })
+  );
+  router.get(
+    '/artist/:artistName',
+    asyncHandler(async (req, res) => {
+      const songs = await SongModel.find({ artist: req.params.artistName });
+      res.send(songs);
+    })
+  );
+
+
+  router.get("/api/playlists",asyncHandler(
+    async(req,res)=>{
+    
+        const songs = await PlaylistModel.find();
+        res.send(songs);
+    }))
+    
 
 export default router;

@@ -1,0 +1,64 @@
+.footer {
+  background-color: black;
+  padding: 50px 120px;
+  cursor: pointer;
+  justify-content: center; /* Align content to the center */
+}
+
+.div1 img {
+  height: 20px;
+}
+
+.div2 {
+  color: white;
+  font-weight: 500;
+  margin-top: 10px;
+}
+
+.div2 p {
+  color: gray;
+}
+
+.div2 ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.div2 li {
+  line-height: 50px;
+}
+
+.div2 li:hover {
+  text-decoration: underline;
+}
+
+.socialimg {
+  text-align: center;
+}
+
+.socialimg img {
+  align-items: center;
+  height: 50px;
+  margin: 5px;
+}
+
+.fbottom {
+  margin-top: 20px;
+  color: gray;
+}
+
+.fbottom span {
+  margin-right: 20px;
+}
+
+.fbottom span:hover {
+  text-decoration: underline;
+}
+.d-flex justify-content-between fbottom
+{
+  text-align: center;
+}
+.conatiner
+{
+  text-align: center;
+}
