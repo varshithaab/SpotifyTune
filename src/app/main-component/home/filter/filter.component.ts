@@ -11,8 +11,9 @@ import { SongService } from '../../../services/song.service';
 })
 export class FilterComponent {
   isGenreFlow: boolean = false;
- isFilter:Boolean=false;
+ isFilter:boolean=false;
   songs: Song[] = [];
+  isFilterView;
   constructor(
     private router: Router,
     private SongService: SongService,
@@ -61,14 +62,15 @@ export class FilterComponent {
   }
 
   ngOnInit(): void {
+    this.isFilterView = true;
     this.SongService.a.subscribe((message) => (this.isGenreFlow = message));
-    this.SongService.c.subscribe((message)=>(this.isFilter=message));
+    this.SongService.c.subscribe((message)=>{
+      this.isFilter=message;
+      if(this.isFilter){
+        this.showFilter = true;
+      }
+    });
     console.log(this.isFilter)
+    
   }
-
-  
-  
-
-  
-
 }
