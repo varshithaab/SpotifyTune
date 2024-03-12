@@ -1,5 +1,4 @@
-
-
+<button (click)="navigateBackToFilter()">Back To Home</button>
 <div *ngIf="genres">
   <ng-container *ngFor="let genre of genres">
     <button (click)="navigateToGenre(genre.name)">

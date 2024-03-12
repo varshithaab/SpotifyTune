@@ -1,0 +1,89 @@
+*{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.library{
+  background-color: #3b3b3bf5;
+  color:white;
+}
+.playlist-container{
+  margin:20px;
+
+
+}
+.playlist-row{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.playlist-item{
+  padding:30px;
+  margin:20px;
+  
+  font-size: 30px;
+  border:1px solid white;
+  border-radius: 7px;
+  background-color:black;
+ 
+}
+.playlist-item:hover{
+  border-color: #1db954;
+  background-color: #1db954;
+
+  color:white;
+  cursor: pointer;
+  font-weight: bold;
+  
+
+}
+#playbutton:hover{
+  color:white;
+  background-color:#1db954;
+  
+  border: 1px solid #1db954;
+  border-radius: 100%;
+
+  padding: 5px 10px; 
+  font-size: 16px;
+  cursor: pointer; 
+  outline: none;
+}
+#addbutton{
+  color:white;
+  background-color:transparent;
+  
+  border: 1px solid white;
+  border-radius:10px;
+  
+  font-size: 26px;
+  cursor: pointer; 
+  outline: none;
+}
+#addbutton:hover{
+  background-color: #1db954;
+  color:black;
+}
+.song-card{
+  margin:15px;
+}
+
+
+
+@media (min-width: 768px) {
+  .playlist-item {
+    flex: 1 1 20rem;
+  }
+  
+}
+
+@media (min-width: 992px) {
+  .playlist-item {
+    flex: 1 1 25rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .playlist-item {
+    flex: 1 1 30rem;
+  }
+} 
+

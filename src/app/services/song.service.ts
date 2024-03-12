@@ -25,6 +25,9 @@ export class SongService {
   private onArtistFlow = new BehaviorSubject<boolean>(false);
   b = this.onArtistFlow.asObservable();
 
+  
+  private Filter=new BehaviorSubject<boolean>(false);
+  c=this.Filter.asObservable();
 
   constructor(private http: HttpClient) {}
 
@@ -63,5 +66,11 @@ export class SongService {
   artistFlow(message: boolean) {
     this.onArtistFlow.next(message);
   }
+
+  
+  filterdisplay(message:boolean){
+    this.Filter.next(message);
+  }
+
 
 }

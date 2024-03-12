@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Observable, filter } from 'rxjs';
 import { Song } from '../../../shared/models/song';
@@ -12,7 +12,7 @@ import { SongService } from '../../../services/song.service';
 export class FilterComponent {
   isGenreFlow: boolean = false;
   isArtistFlow: boolean = false;
-
+ isFilter:Boolean=false;
   songs: Song[] = [];
   constructor(
     private router: Router,
@@ -64,7 +64,15 @@ export class FilterComponent {
   ngOnInit(): void {
     this.SongService.a.subscribe((message) => (this.isGenreFlow = message));
     this.SongService.b.subscribe((message) => (this.isArtistFlow = message));
+    this.SongService.c.subscribe((message)=>(this.isFilter=message));
+    console.log(this.isFilter)
   }
+
+  
+  
+
+  
+
 
   
 }

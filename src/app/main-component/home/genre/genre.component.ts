@@ -42,5 +42,8 @@ export class GenreComponent {
     });
   
   }
-
+  navigateBackToFilter(): void {
+    // Navigate back to the parent route ("/home")
+    this.router.navigate(['/filter']);
+  }
 }
