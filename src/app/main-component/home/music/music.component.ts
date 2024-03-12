@@ -19,12 +19,13 @@ export class MusicComponent implements OnInit {
     this.musicService.getSongs().subscribe(
       (data: any[]) => {
         this.musics = data;
+        
       });
   }
 
-  goToPlay(id: number): void {
-    this.router.navigate(['/play/music', id]);
-  }
+  // goToPlay(id: number): void {
+  //   this.router.navigate(['/play/music', id]);
+  // }
   play(musicId: number): void {
    
     this.router.navigate(['/play', musicId]);

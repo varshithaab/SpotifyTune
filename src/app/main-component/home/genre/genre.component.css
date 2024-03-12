@@ -1,24 +1,89 @@
-div {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  /* padding-left: 300px; */
-}
 
-div a {
-  display: inline-block; /* Add to ensure that the anchor tags behave like blocks */
-  text-align: center; /* Center the text */
-  background-color: black;
-  padding: 0.3rem 1rem;
-   margin: 0.2rem 0.15rem; 
-  border-radius: 10rem;
-  font-weight: 600;
-  color: white;
-  text-decoration: none; /* Remove underline */
-  /* Ensure that the width adjusts to the content */
+
+
+
+
+
+
+
+#genreimg
+{
+
+  height: 386px;
 }
 
 
-div a.active {
-  background-color: green;
+
+
+
+/* Product item footer styles */
+
+
+.content {
+  margin-top: 0.3rem;
+  padding: 0.5rem 1rem;
+  position: relative;
+  height: 7rem;
+  
+}
+
+
+
+
+ul {
+  display: flex; /* Displays the list items in a flex container */
+  justify-content: flex-start; /* Aligns items to the start of the container (left side) */
+  align-items: center; /* Centers the items vertically */
+  flex-wrap: wrap; /* Allows items to wrap to the next line if they exceed the container's width */
+  list-style-type: none; /* Removes the default bullet point style */
+  padding: 0; /* Removes padding */
+  max-width: 1200px; /* Set a maximum width for the container */
+  margin: 0 auto; /* Center the container horizontally */
+}
+li {
+  width: calc(20% - 1rem); /*Sets the width of each list item to 20% of the container width (minus margin) */
+ margin: 0.5rem; /*Adds margin around each list item */
+}
+
+li a {
+ background-color:rgb(36, 34, 34);
+ height: 380px; /* Sets the height of each link item */
+ border: 1px solid whitesmoke; /* Adds a border around each link item */
+ border-radius: 10px; /* Adds rounded corners to the border */
+ display: flex; /* Displays the link item as a flex container */
+ flex-direction: column; /* Arranges child elements vertically */
+ overflow: hidden; /* Hides any content that exceeds the dimensions of the link item */
+ color: white; /* Sets the text color */
+ text-decoration: none;
+ margin-right: 8.5px;
+}
+li a:hover {
+opacity: 0.9; /* Reduces opacity of the link item when hovered over */
+cursor: pointer; /* Changes cursor to pointer on hover */
+}
+
+li a img {
+object-fit: cover; /* Ensures the image covers the entire container */
+height: 15rem; /* Sets the height of the image */
+width: 100%; /* Ensures the image fills the container horizontally */
+border-radius: 10px; /* Adds curved corners to the image */
+padding-left: 15px;
+padding-right: 15px;
+padding-top: 15px;
+}
+li a p{
+color: rgb(161, 155, 155);
+margin: 0%;
+} 
+.name {
+font-weight: bold;
+margin-bottom: 0.2rem; /* Adjust the margin bottom */
+}
+
+.album {
+margin-bottom: 0.2rem; /* Adjust the margin bottom */
+}
+
+.genre {
+margin-bottom: 0; /* Remove the margin bottom */
 }

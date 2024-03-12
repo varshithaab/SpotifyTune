@@ -2,23 +2,23 @@
   background-color: black;
   height: 600px;
   overflow: hidden;
-  position: relative; /* Add relative positioning to the parent */
+  position: relative; 
 }
 
 .cont {
   position: absolute;
-  top: 50%; /* Adjust top position to center vertically */
-  left: 12%; /* Adjust left margin instead of margin-left */
-  transform: translateY(-50%); /* Move the container up by half its height */
+  top: 50%; 
+  left: 12%; 
+  transform: translateY(-50%); 
 }
 
 .cont .img img {
-  height: 300px; /* Set image height to auto to maintain aspect ratio */
-  width: 300px; /* Set image width to 100% */
+  height: 300px; 
+  width: 300px; 
 }
 
 .cont .hbtn {
-  margin-left: 50px; /* Add some margin between the image and text */
+  margin-left: 50px; 
 }
 
 .cont .hbtn h1 {
@@ -32,10 +32,10 @@
   background-color: #212121f5;
   color: white;
   text-align: center;
-  padding: 50px; /* Add padding to all sides */
-  box-sizing: border-box; /* Include padding in the total width */
+  padding: 50px; 
+  box-sizing: border-box; 
   margin: 0;
-  width: 100%; /* Ensure the container spans the full width */
+  width: 100%; 
 }
 
 .sctn2 .h1 {
@@ -52,7 +52,7 @@
   background-color: #212121;
   color: white;
   text-align: center;
-  padding: 50px 0; /* Add padding top and bottom to remove the gap */
+  padding: 50px 0;
 }
 
 .sectn5 h1 {

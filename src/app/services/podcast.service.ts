@@ -3,11 +3,11 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class PodcastService {
   private apiUrl = 'http://localhost:5000/api/podcast';
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   getPodcasts(): Observable<any[]> {
     return this.http.get<any[]>(`${this.apiUrl}`);

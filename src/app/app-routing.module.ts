@@ -1,4 +1,4 @@
-// app-routing.module.ts
+
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { MusicComponent } from './main-component/home/music/music.component';
@@ -17,21 +17,33 @@ import { CustomerSupportComponent } from './main-component/home/customer-support
 
 
 const routes: Routes = [
-  {path:'',component:MainComponentComponent},
-  {path:'home',component:HomeComponent},
-  { path: 'faq', component: FaqComponent }, 
-  {path:'search/:searchTerm',component:HomeComponent},
+  { path: '', component: MainComponentComponent },
+  { path: 'home', component: HomeComponent },
+  {
+    path: 'home',
+    component: HomeComponent,
+    children: [
+      { path: '', redirectTo: 'filter', pathMatch: 'full' }, // Default route
+      { path: 'filter', component: FilterComponent },
+      { path: 'genre', component: GenreComponent },
+    ]
+  },
+
+
+  { path: 'faq', component: FaqComponent },
+  { path: 'search/:searchTerm', component: HomeComponent },
   { path: 'genre/:genre', component: HomeComponent },
   { path: 'artist/:artist', component: HomeComponent },
   // { path: 'home/filter', component: HomeComponent },
 // {path:'filter',component:FilterComponent},
 //  { path: 'genre', component: GenreComponent },
-  { path: 'music', component: MusicComponent },
+  { path: 'music', component: MusicComponent},
   {path:'music/:music',component:MusicComponent},
   { path: 'podcast', component: PodcastComponent },
   { path: 'play/:musicId', component: PlayComponent },
 
   { path: 'play/music/:musicId', component: PlayComponent },
+  {path:'podcast',component:PodcastComponent},
   {path :'library',component:MylibraryComponent},
   {path:'createplaylist',component:CreatePlaylistComponent},
   {path:'library/:musicId',component:MylibraryComponent},
@@ -39,6 +51,6 @@ const routes: Routes = [
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
