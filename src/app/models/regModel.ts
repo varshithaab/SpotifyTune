@@ -6,5 +6,5 @@ export interface Regs{
     lastname: string,
     mobile: string,
     pwd: string,
-    isAdmin:boolean,
+    
 }

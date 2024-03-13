@@ -1,6 +1,8 @@
 <section>
+  <button routerLink="/home">Back to Home</button>
   <div class="music-container">
-    <div *ngFor="let music of musics" class="card" (click)="goToPlay(music.id)">
+    
+    <div *ngFor="let music of musics" class="card">
       <img id img *ngIf="music.image" [src]="music.image" alt="{{ music.title }}">
       <div class="music-details">
         <h3>{{ music.title }}</h3>
@@ -8,7 +10,8 @@
           <p>{{ music.album }}</p>
     </div>
     <div class="controls">
-      <button mat-icon-button id="add" (click)="addToPlaylist()"><mat-icon id="addicon">add</mat-icon></button>
+      <button mat-icon-button id="add" (click)="addToPlaylist(music.id)"><mat-icon id="addicon">add</mat-icon></button>
+    
       <button mat-icon-button id="play"(click)="play(music.id)"><mat-icon id="playicon">play_arrow</mat-icon></button>
     </div>
   </div>

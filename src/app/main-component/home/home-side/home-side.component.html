@@ -1,70 +1,57 @@
 <div class="songs">
-    <div class="songs-cat">
-        <h1 class="mb-3">Listen Songs!!</h1>
+  <div class="songs-cat">
+    <h1 class="mb-3">Listen Songs!!</h1>
 
-        <div class="c-cart" style="width: 1160px;">
-            <div class="card" *ngFor="let card of cards" [routerLink]="['/home/music']">
-                <img class="card-img-top" [src]="card.image" alt="Card image cap">
-                <div class="card-body">
-                    <h5 class="card-title">{{card.title}}</h5>
-                    <p class="card-text">{{card.artist}}</p>
-                    
-                   
-                    <!-- <audio controls>
-                        <source [src]="card.audio" type="audio/mpeg">
-                        Your browser does not support the audio element.
-                      </audio> -->
+    <div class="c-cart" style="width: 1160px">
+      <div
+        class="card"
+        *ngFor="let card of cards"
+        [routerLink]="['/home/music']">
+        <img class="card-img-top" [src]="card.image" alt="Card image cap" />
+        <div class="card-body">
+          <h5 class="card-title">{{ card.title }}</h5>
+          <p class="card-text">{{ card.artist }}</p>
 
-                      <a [routerLink]="['/music', card.id]" class="play-button">&#9658;</a>
- 
-                </div>
-            </div>
+          <a [routerLink]="['/music', card.id]" class="play-button">&#9658;</a>
         </div>
+      </div>
     </div>
+  </div>
 </div>
 
 <!-- PODCASTS  -->
 
 <div class="songs">
-    <div class="songs-cat">
-        <h1 class="mb-3">Listen Podcasts!!</h1>
+  <div class="songs-cat">
+    <h1 class="mb-3">Podcasts!!</h1>
 
-        <div class="c-cart"style="width: 1160px;">
-            <div class="card" *ngFor="let card of podcast" [routerLink]="['/play']">
-                <img class="card-img-top" [src]="card.image" alt="Card image cap">
-                <div class="card-body">
-                    <h5 class="card-title">{{card.title}}</h5>
-                    <p class="card-text">{{card.artist}}</p>
-                    
-                   
-                    <!-- <audio controls>
-                        <source [src]="card.audio" type="audio/mpeg">
-                        Your browser does not support the audio element.
-                      </audio> -->
+    <div class="c-cart" style="width: 1160px">
+      <div class="card" *ngFor="let card of podcast" [routerLink]="['/play']">
+        <img class="card-img-top" [src]="card.image" alt="Card image cap" />
+        <div class="card-body">
+          <h5 class="card-title">{{ card.title }}</h5>
+          <p class="card-text">{{ card.artist }}</p>
 
-                      <a [routerLink]="['/play', card.id]" class="play-button">&#9658;</a>
- 
-                </div>
-            </div>
+          <a [routerLink]="['/play', card.id]" class="play-button">&#9658;</a>
         </div>
+      </div>
     </div>
+  </div>
 </div>
-<br><BR>
+<br /><BR />
 
-    <div class="songs">
-        <div class="songs-cat">
-            <h1 class="mb-3">Artists!!</h1>
-    
-            <div class="c-cart"style="width: 1160px;">
-                <div class="card" *ngFor="let card of artist" [routerLink]="['/filter']">
-                    <img class="card-img-top" [src]="card.image" alt="Card image cap">
-                     
-                       <div class="card-body">
-                        <h3>{{card.name}}</h3>
-                       </div>
-                    </div>
-                </div>
-            </div>
+<div class="songs">
+  <div class="songs-cat">
+    <h1 class="mb-3">Artists!!</h1>
+
+    <div class="c-cart" style="width: 1160px">
+      <div class="card" *ngFor="let card of artist" [routerLink]="['/filter']">
+        <img class="card-img-top" [src]="card.image" alt="Card image cap" />
+
+        <div class="card-body">
+          <h5>{{ card.name }}</h5>
         </div>
-        
-    
+      </div>
+    </div>
+  </div>
+</div>     

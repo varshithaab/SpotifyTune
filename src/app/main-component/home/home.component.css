@@ -1,4 +1,4 @@
-/* Global styles */
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -9,8 +9,8 @@ body {
     text-decoration: none;
     color: inherit;
   }
-  
-  /* Header styles */
+
+
   header {
     background-color: #333;
     color: white;
@@ -82,7 +82,7 @@ body {
     background-color: rgb(53, 47, 47);
   }
   
-  /* Main content styles */
+
   .right {
     padding-top: 20px;
     color: rgb(190, 190, 190);
@@ -97,7 +97,6 @@ body {
     right: 0;
   }
   
-  /* Top section styles */
   .mid-top {
     display: flex;
     justify-content: space-between;
@@ -112,7 +111,6 @@ body {
     margin-right: 10px;
   }
   
-  /* Main content section styles */
   .right h2 {
     color: white;
   }
@@ -140,7 +138,6 @@ body {
     font-weight: 500;
   }
   
-  /* Bottom section styles */
   .bottom {
     position: fixed;
     bottom: 0;
@@ -170,13 +167,11 @@ body {
     text-overflow: ellipsis;
   }
   
-  /* Audio styles */
   .aud audio {
     outline: none;
     border: none;
   }
   
-  /* Image styles */
   img {
     width: 100px;
     height: 100px;
@@ -188,117 +183,109 @@ body {
    
   }
   
-  /* Display area styles */
   #display {
     margin-top: 100px;
   }
   
-  /* Scrollable container styles */
   .scrollable-container {
     overflow: auto;
   }
   
-  /* List styles */
+
  
   ul {
-    display: flex; /* Displays the list items in a flex container */
-    justify-content: flex-start; /* Aligns items to the start of the container (left side) */
-    align-items: center; /* Centers the items vertically */
-    flex-wrap: wrap; /* Allows items to wrap to the next line if they exceed the container's width */
-    list-style-type: none; /* Removes the default bullet point style */
-    padding: 0; /* Removes padding */
-    max-width: 1200px; /* Set a maximum width for the container */
-    margin: 0 auto; /* Center the container horizontally */
+    display: flex; 
+    justify-content: flex-start; 
+    align-items: center;
+    flex-wrap: wrap; 
+    list-style-type: none; 
+    padding: 0;
+    max-width: 1200px;
+    margin: 0 auto; 
   }
   
   
   li {
-     width: calc(20% - 1rem); /*Sets the width of each list item to 20% of the container width (minus margin) */
-    margin: 0.5rem; /*Adds margin around each list item */
+     width: calc(20% - 1rem); 
+    margin: 0.5rem; 
   }
   
   li a {
     background-color:rgb(36, 34, 34);
-    height: 380px; /* Sets the height of each link item */
-    border: 1px solid whitesmoke; /* Adds a border around each link item */
-    border-radius: 10px; /* Adds rounded corners to the border */
-    display: flex; /* Displays the link item as a flex container */
-    flex-direction: column; /* Arranges child elements vertically */
-    overflow: hidden; /* Hides any content that exceeds the dimensions of the link item */
-    color: white; /* Sets the text color */
-  }
+    height: 380px;
+    border: 1px solid whitesmoke;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    color: white;
+}
 
-  
-  li a:hover {
-    opacity: 0.9; /* Reduces opacity of the link item when hovered over */
-    cursor: pointer; /* Changes cursor to pointer on hover */
-  }
-  
-  li a img {
-    object-fit: cover; /* Ensures the image covers the entire container */
-    height: 15rem; /* Sets the height of the image */
-    width: 100%; /* Ensures the image fills the container horizontally */
-    border-radius: 10px; /* Adds curved corners to the image */
+li a:hover {
+    opacity: 0.9;
+    cursor: pointer;
+}
+
+li a img {
+    object-fit: cover;
+    height: 15rem;
+    width: 100%;
+    border-radius: 10px;
     padding-left: 15px;
     padding-right: 15px;
     padding-top: 15px;
-  }
-  li a p{
+}
+
+li a p{
     color: rgb(161, 155, 155);
     margin: 0%;
-  } 
-  /* Content styles */
-  .content {
+} 
+
+.content {
     margin-top: 0.3rem;
     padding: 0.5rem 1rem;
     position: relative;
     height: 7rem;
-    
-  }
-  
-  /* Product item footer styles */
-  .product-item-footer {
+}
+
+.product-item-footer {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-  }
-  
-  
-  
-  .image-wrapper {
+}
+
+.image-wrapper {
     width: 100px;
     height: 100px;
     border-radius: 50%;
     overflow: hidden;
     margin: 0 auto;
-  }
-  
-  .image_display {
-    width: 200px; /* Set the width to a medium size */
-    height: 200px; /* Set the height to a medium size */
-    object-fit: cover; /* Ensure the entire image is visible */
-  }
-  
-  
-  .name {
-    font-weight: bold;
-    margin-bottom: 0.2rem; /* Adjust the margin bottom */
-  }
-  
-  .album {
-    margin-bottom: 0.2rem; /* Adjust the margin bottom */
-  }
-  
-  .genre {
-    margin-bottom: 0; /* Remove the margin bottom */
-  }
-  .audio {
-    margin-top: 10px;
-  }
- 
-  
+}
 
-  .songs .c-cart .card .card-body .play-button {
+.image_display {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+}
+
+.name {
+    font-weight: bold;
+    margin-bottom: 0.2rem;
+}
+
+.album {
+    margin-bottom: 0.2rem;
+}
+
+.genre {
+    margin-bottom: 0;
+}
+
+.audio {
+    margin-top: 10px;
+}
+
+.songs .c-cart .card .card-body .play-button {
     position: absolute;
     bottom: 15px;
     left: 50%;
@@ -313,4 +300,4 @@ body {
     cursor: pointer;
     transition: background-color 0.3s ease;
     display: inline-block;
-  }
+}

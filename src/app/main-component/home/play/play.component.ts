@@ -29,21 +29,27 @@ export class PlayComponent implements OnInit {
   constructor(private route: ActivatedRoute, private router: Router, private musicService: MusicService, private podcastService: PodcastService, private http: HttpClient) { }
 
   ngOnInit(): void {
+  
     this.loadMusics();
     this.loadPodcasts();
+
     this.route.params.subscribe(params => {
+     
       const musicId = params['musicId'];
       const podcastId = params['podcastId'];
+     
 
       if (podcastId) {
         this.loadPodcast(podcastId);
       } else if (musicId) {
         this.loadMusic(musicId);
+        console.log("in load muisc ngoninit:",musicId);
       }
     });
   }
 
   loadMusic(id: number): void {
+  
     this.http.get<any>(`http://localhost:5000/api/music/${id}`).subscribe(
       (music: any) => {
         this.music = music;

@@ -9,6 +9,8 @@ import { BehaviorSubject, Observable } from 'rxjs';
 export class LoginService {
   private adminLogin=new BehaviorSubject<boolean>(false);
   currentMessage=this.adminLogin.asObservable();
+  private hasLogin=new BehaviorSubject<boolean>(false);
+  currentMessage1=this.hasLogin.asObservable();
   private apiUrl = 'http://localhost:5000/api/login'; 
   //priavte apiUrl='/api/login';
 
@@ -19,5 +21,9 @@ export class LoginService {
   onAdminLogin(message:boolean){
     console.log("Sharanya",message);
     this.adminLogin.next(message);
+  }
+  isLogged(message:boolean){
+    console.log("paaaaa",message);
+    this.hasLogin.next(message);
   }
 }

@@ -6,7 +6,13 @@ form{
     height: 50px; /* Adjust the height as needed */
     margin-right: 20px; /* Adjust the margin as needed */
   }
- #female{
-  accent-color:green;
- } 
+  .white-outline input:focus {
+    outline-color: #ffffff; /* Change this to the desired color (white) */
+  }
+  input[type='radio'] {
+    accent-color: #232323;
+}
+.success-snackbar{
+background-color: #121212;
+}
   

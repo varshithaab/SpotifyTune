@@ -2,67 +2,91 @@
   <div class="row top">
     <div class="col-2 left">
       <img class="icon" src="assets/spotify.jpg" />
-      <div class="left-options">
-        <mat-icon > home </mat-icon> <span>Home</span>
+      <div class="left-options"  (click)="displayContent('home-side')" >
+        <mat-icon> home </mat-icon> <span>Home</span>
       </div>
-      <div class="left-options" [routerLink]="">
-        <mat-icon  > music_note </mat-icon> <span>Music</span>
+      <div class="left-options" (click)="displayContent('music')">
+        <mat-icon> music_note </mat-icon> <span>Music</span>
       </div>
-      <div class="left-options" >
+      <div class="left-options"  (click)="displayContent('podcast')">
         <mat-icon> podcasts </mat-icon> <span>Podcast</span>
       </div>
 
-      <div class="left-options" (click)="onNavigation('search')">
+      <div class="left-options"  (click)="onNavigation('search')" >
         <mat-icon> search </mat-icon> <span>Search</span>
       </div>
-      <div class="left-options" (click)="toggleFilter()">
+      <div class="left-options"  (click)="displayContent('filter')" (click)="navigateToFilter()" >
         <mat-icon> filter_alt </mat-icon> <span>Filter</span>
       </div>
-      <div class="left-options">
+      <div class="left-options"  (click)="displayContent('library')">
         <mat-icon> video_library </mat-icon><span>My Library</span>
       </div>
 
-      <div class="left-options">
+      <div class="left-options" (click)="displayContent('createplaylist')">
         <mat-icon> add_box </mat-icon> <span>Create Playlist</span>
       </div>
       <div class="left-options">
         <mat-icon> star </mat-icon> <span>Premium</span>
       </div>
 
-      <div class="left-options" (click)="toggleFAQ()">
+      <div class="left-options" (click)="displayContent('faq')">
         <mat-icon>help_outline</mat-icon> <span>FAQ</span>
       </div>
      
 
-      <div class="left-options">
+      <div class="left-options" (click)="displayContent('support')">
         <mat-icon> chat_bubble </mat-icon> <span>Customer Support</span>
       </div>
-      
     </div>
 
     <div class="col-10 right">
-      <div class="col-10 row-2" style="width: 1300px;">
+      <div class="col-10 row-2" style="width: 1300px">
         <app-navigation></app-navigation>
+        <button class="btn btn-primary">Back To Home</button>
         <!-- <app-search></app-search> -->
 
         <!-- To Display filter data -->
-        <div id="display" *ngIf="showFilter " class="col-10">
+        <div id="display" *ngIf="showFilter" class="col-10">
+          --parenitaa
+          <!-- <router-outlet></router-outlet> -->
           <app-filter></app-filter>
         </div>
-
 
         <!-- To display FAQ Data -->
         <ng-container id="display" *ngIf="showFAQ" class="col-10">
           <app-faq></app-faq>
         </ng-container>
 
+        <!--to display music -->
+        <ng-container *ngIf="showMUSIC" class="col-10">
+          <app-music></app-music>
+        </ng-container>
+
+         <!--to display podcast -->
+         <ng-container *ngIf="showPODCAST" class="col-10">
+          <app-podcast></app-podcast>
+        </ng-container>
+
+          <!--to display library-->
+          <ng-container *ngIf="showLIBRARY" class="col-10">
+            <app-mylibrary></app-mylibrary>
+          </ng-container>
+          <!--to display playlist-->
+          <ng-container *ngIf="showPLAYLIST" class="col-10">
+            <app-create-playlist></app-create-playlist>
+          </ng-container>
+          <!--to display support-->
+          <ng-container *ngIf="showSUPPORT" class="col-10">
+            <app-customer-support></app-customer-support>
+          </ng-container>
+
         <!-- To display Search Data -->
-        <ng-container id="display" *ngIf="isshowSearch || this.message ">
-         
-          <div id="display"class="col-10 row-5">
+        <ng-container id="display" *ngIf="isshowSearch || this.message">
+          
+          <div id="display" class="col-10 row-5">
             <ul>
               <li class="search_display" *ngFor="let song of songs">
-                <a routerLink="/music/{{ song.id }}">
+                <a >
                   <img
                     class="image_display"
                     [src]="song.image"
@@ -71,36 +95,23 @@
                   <div class="content">
                     <div class="name">
                       <h6>{{ song.title }}</h6>
-                     <p> {{ song.artist }}</p>
+                      <p>{{ song.artist }}</p>
                       <p>{{ song.album }}</p>
                       <p>{{ song.genre }}</p>
-                   
                     </div>
-                  
                   </div>
                 </a>
               </li>
             </ul>
-          </div>   
-        
-        </ng-container> 
+          </div>
+        </ng-container>
 
         <!-- TO display Home data -->
-       
-        <ng-container *ngIf = "!isShowHome && !isshowSearch  && !this.message ">
-          <!-- {{isshowSearch}} -->
-        
+
+        <ng-container *ngIf="isShowHome && !isshowSearch && !message && !showFilter && !showPODCAST && !showMUSIC">
           <app-home-side></app-home-side>
         </ng-container>
-     
-        
       </div>
-     
-
     </div>
-
-
   </div>
-
-
-  
+</div>

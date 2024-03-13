@@ -1,0 +1,48 @@
+
+
+
+
+<div class="library container-fluid">
+ 
+
+    <div class="playlist-container container">
+      <div class="playlist-row row">
+        <div class="playlist-item col-md-3" *ngFor="let pl of playlistData" (click)="showPlaylist(pl.id)">
+          <div class="playlist-name">{{pl.playlistName}}</div>
+        </div>
+      </div>
+    </div>
+  
+    <div *ngIf="selectedPlaylist" class="playlist-card container">
+      <h2 class="playlist-title">{{selectedPlaylist.playlistName}}</h2>
+      <p class="playlist-content">{{selectedPlaylist.description}}</p>
+      <button id="addbutton" (click)="addMusicToPlaylist()">+ Add</button>
+      <div class="song-card" *ngFor="let song of selectedPlaylist.playlistSongs">
+        <div class="row">
+          <div class="col-1 col-sm-3 song-cover">
+            <img [src]="song.image" alt="songimage" height="90px" width="90px" >
+          </div>
+          <div class="col-10 col-sm-7 song-info" >
+            <h3 class="song-title">{{song.title}}</h3>
+            <p class="song-artist">{{song.artist}}</p>
+          </div>
+    
+          <div class="col-1 col-sm-2 ">
+
+           <button mat-icon-button id="playbutton" (click)="play(song.id)">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-play-fill" viewBox="0 0 16 16">
+              <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393"/>
+            </svg>
+         </button>
+    
+            <!-- <button id="playbutton" (click)="play(song.id)" >&#9658;</button> -->
+
+          </div>
+      
+        </div>
+        <hr>
+        
+      </div>
+    </div>
+  </div>

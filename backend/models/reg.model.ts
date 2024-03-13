@@ -9,7 +9,7 @@ export interface Regs{
     lastname: string,
     mobile: string,
     pwd: string,
-    isAdmin: boolean
+
 }
 export const RegSchema = new Schema<Regs>(
     {

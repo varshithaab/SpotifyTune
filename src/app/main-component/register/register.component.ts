@@ -1,13 +1,10 @@
-import { Component,OnInit,EventEmitter,Output } from '@angular/core';
+import { Component,OnInit } from '@angular/core';
 import { FormsModule,FormControl,FormGroup ,Validators} from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
-
 import { Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { log } from 'console';
 import { AbstractControl, ValidationErrors } from '@angular/forms';
-
-import { json } from 'stream/consumers';
 import { RegisterService } from '../../services/register.service';
 import { Regs } from '../../../../backend/models/reg.model';
 
@@ -18,11 +15,7 @@ import { Regs } from '../../../../backend/models/reg.model';
 })
 export class RegisterComponent implements OnInit{
   confirmpass:string='none';
-  // isAdmin:boolean = false;
-
   hide = true;
-
-
   allusers:Regs[]=[];
   registrationError: string = '';
 
@@ -42,10 +35,10 @@ getAllUsers(){
   });
   }
   
-navigateToLogin() {
-  // Navigate to the login page
-  this.router.navigate(['/login']);
-}
+// navigateToLogin() {
+//   // Navigate to the login page
+//   this.router.navigate(['/login']);
+// }
 registerform=new FormGroup({
   firstname:new FormControl("",
   [Validators.required , Validators.minLength(2) , Validators.pattern("[a-zA-z].*")]),
@@ -53,7 +46,7 @@ registerform=new FormGroup({
    [Validators.required , Validators.minLength(2) , Validators.pattern("[a-zA-z].*")]),
   email:new FormControl("" , 
   [Validators.required , Validators.email]),
- 
+
   mobile:new FormControl("" , 
   [Validators.required , Validators.maxLength(10) , Validators.minLength
   (10) , Validators.pattern("[0-9]*")]),
@@ -62,8 +55,7 @@ registerform=new FormGroup({
   pwd:new FormControl("" ,
    [Validators.required , Validators.minLength(6) , Validators.maxLength(16)]),
   cpwd:new FormControl("" , [ Validators.required, this.confirmPasswordValidator.bind(this)]),
-  // isAdmin: new FormControl(false), // Default value is false
-  // adminCode: new FormControl(''),
+
 
 });
 
@@ -88,8 +80,6 @@ if(this.Password.value !== this. Cpassword.value){
 }
 this.router.navigate(['/login']);
 console.log("Submitted");
-!!this.registerform.get('isAdmin')?.value && // Coerce to boolean;
-this.registerform.get('adminCode')?.value === '!@#$%'; // Check admin code
 
 const user: Regs = {
   firstname: this.Firstname.value,
@@ -98,49 +88,27 @@ const user: Regs = {
   mobile: this.Mobile.value,
   gender: this.Gender.value,
   pwd: this.Password.value,
-  isAdmin:!! this.registerform.get('isAdmin')?.value && this.registerform.get('adminCode')?.value === 'yourAdminCode',
+  // isAdmin:!! this.registerform.get('isAdmin')?.value && this.registerform.get('adminCode')?.value === 'yourAdminCode',
 
 };
-if (user.isAdmin) {
-  // Additional logic for admin registration
-  console.log('User is registering as an admin.');
-  // Perform actions specific to admin registration, if needed
-} else {
-  // Additional logic for regular user registration
-  console.log('User is registering as a regular user.');
-  // Perform actions specific to regular user registration, if needed
-}
+
 
 console.log('Request Payload:', user);
 
   
-  // const user = {
-  //   firstname: this.Firstname.value,
-  //   lastname: this.Lastname.value,
-  //   email: this.Email.value,
-  //   mobile: this.Mobile.value,
-  //   gender: this.Gender.value,
-  //   pwd: this.Password.value
-    
-  // };
-
-  
   console.log("Data populated in : " + JSON.stringify(user));
   
-  // Call the registration service
+  // Calling the registration service
   this.registrationService.registerUser(user).subscribe(
     (data:any) => {
       console.log('User registered successfully:', data);
 
-          this.registrationError = ''; // Reset error message
-      // You can handle success scenarios here
       this.snackBar.open('User registration successful', 'Close', {
         duration: 3000, // Adjust the duration as needed
         panelClass: ['success-snackbar'] // Add custom styles for success snackbar
       });
 
-      // You can handle other success scenarios here
-      // For example, you might want to navigate to a different page
+      
 
     },
     (error: any) => {
@@ -151,12 +119,6 @@ console.log('Request Payload:', user);
       });
     }
   );          
-
-if (this.Firstname) {
-  console.log("Firstname control is initialized");
-} else {
-  console.log("Firstname control is not initialized");
-}
 
 } 
 

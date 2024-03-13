@@ -10,7 +10,7 @@ import { LoginService } from '../services/login.service';
 @Component({
   selector: 'app-navigation',
   templateUrl: './navigation.component.html',
-  styleUrl: './navigation.component.css'
+  styleUrl: './navigation.component.css',
 })
 export class NavigationComponent {
   // message: boolean =true;
@@ -18,23 +18,33 @@ export class NavigationComponent {
   
 
   isAdminFlow:boolean = true;
+  hasLoggedUser:boolean = false;
 
   
   public isSearchFieldVisible: boolean = false;
   @Output() public inputFilterRes: EventEmitter<any> = new EventEmitter();
-  constructor(private router: Router, private sb: SearchBarService,private SongService: SongService, private loginService :LoginService) {}
+  constructor(
+    private router: Router,
+    private sb: SearchBarService,
+    private SongService: SongService, 
+    private loginService :LoginService
+  ) {}
 
   @Output() public forwardButtonClick: EventEmitter<void> = new EventEmitter();
   @Output() public backwardButtonClick: EventEmitter<void> = new EventEmitter();
 
-
   ngOnInit(): void {
+    this.loginService.currentMessage1.subscribe(isLogged => {
+      console.log("isLogged",isLogged)
+      this.hasLoggedUser = isLogged});
+console.log("sriii",this.hasLoggedUser)
     this.sb.isSearchVisible.subscribe((status) => {
       this.isSearchFieldVisible = status;
     });
+  
     this.loginService.currentMessage.subscribe(isAdmin => this.isAdminFlow = isAdmin);
-
-    // this.SongService.currentMessage.subscribe(message => this.message = message);
+    console.log("shilpa",this.isAdminFlow)
+    
   }
 
   // newMessage() {
@@ -48,12 +58,11 @@ export class NavigationComponent {
   }
   onForwardButtonClick(): void {
     this.forwardButtonClick.emit();
-   
   }
 
   onBackwardButtonClick(): void {
-    
     this.backwardButtonClick.emit();
+  
   
   
   }

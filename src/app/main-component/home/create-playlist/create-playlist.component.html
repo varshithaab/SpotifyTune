@@ -1,0 +1,25 @@
+
+
+
+<div class="container">
+    <form class="form" [formGroup]="NewPlayListForm" (ngSubmit)="onCreatePlaylist()">
+        <div class="form-group">
+            <label for="new-playlist-name">Name:</label>
+            <input type="text" name="new-playlist-name" class="form-control" placeholder="Playlist Name" formControlName="newplaylistname">
+            <div id="small" *ngIf="NewPlayListForm.get('newplaylistname').touched && NewPlayListForm.get('newplaylistname').errors?.['required']" class="error-message">
+                *Playlist Name is required
+            </div>
+        </div>
+        <br>
+        <div class="form-group">
+            <label for="new-playlist-desc">Description:</label>
+            <textarea name="new-playlist-desc" class="form-control" cols="30" rows="2" formControlName="newplaylistdesc"></textarea>
+    
+        </div>
+        <br>
+        <button class="btn btn-primary createplaylist-btn" [disabled]="NewPlayListForm.invalid"type="submit">Create</button>
+
+    </form>
+
+</div>
+

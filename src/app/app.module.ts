@@ -1,9 +1,18 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
-import { HttpClientModule, provideHttpClient, withFetch } from '@angular/common/http';
+import {
+  BrowserModule,
+  provideClientHydration,
+} from '@angular/platform-browser';
+import {
+  HttpClientModule,
+  provideHttpClient,
+  withFetch,
+} from '@angular/common/http';
+
+
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatSliderModule } from '@angular/material/slider';
-import { ReactiveFormsModule } from '@angular/forms';
+
 import { MatMenuModule } from '@angular/material/menu';
 
 import { MatButtonModule } from '@angular/material/button';
@@ -11,38 +20,34 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MainComponentComponent } from './main-component/main-component.component';
 import { HomeComponent } from './main-component/home/home.component';
-import { FormsModule } from '@angular/forms';
+
 import { HeaderComponent } from './main-component/header/header.component';
 import { FooterComponent } from './main-component/footer/footer.component';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { NavigationComponent } from './navigation/navigation.component';
-import { NgxExtendedPdfViewerModule } from 'ngx-extended-pdf-viewer';
 
 
-import { GenericListFilterModule } from 'generic-list-filter';
+
 
 
 
 import { HomeSideComponent } from './main-component/home/home-side/home-side.component';
-
-
-
 import { MusicComponent } from './main-component/home/music/music.component';
 import { PodcastComponent } from './main-component/home/podcast/podcast.component';
 import { PlayComponent } from './main-component/home/play/play.component';
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { MylibraryComponent } from './main-component/home/mylibrary/mylibrary.component';
+import { CreatePlaylistComponent } from './main-component/home/create-playlist/create-playlist.component';
+import { CustomerSupportComponent } from './main-component/home/customer-support/customer-support.component';
 import { FaqComponent } from './faq/faq.component';
 import { SearchComponent } from './main-component/home/search/search.component';
 import { GenreComponent } from './main-component/home/genre/genre.component';
 import { ArtistComponent } from './main-component/home/artist/artist.component';
 import { FilterComponent } from './main-component/home/filter/filter.component';
-
-
-
 import { MatExpansionModule } from '@angular/material/expansion';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginComponent } from './main-component/login/login.component';
@@ -67,6 +72,10 @@ import { DeletesongsComponent } from './navigation/song-management/deletesongs/d
     MusicComponent,
     PodcastComponent,
     PlayComponent,
+    MylibraryComponent,
+    CreatePlaylistComponent,
+    CustomerSupportComponent,
+    
     FaqComponent,
     SearchComponent,
     GenreComponent,
@@ -92,34 +101,28 @@ import { DeletesongsComponent } from './navigation/song-management/deletesongs/d
     MatCardModule,
     MatIconModule,
     MatGridListModule,
-    NgxExtendedPdfViewerModule,
+  
     ReactiveFormsModule,
     HttpClientModule,
     MatMenuModule,
     FormsModule,
     RouterModule,
+    ReactiveFormsModule,
     MatSliderModule,
     MatIconModule,
     MatButtonModule,
     MatProgressBarModule,
     MatCardModule,
-    BrowserAnimationsModule, // Import BrowserAnimationsModule for Angular Material animations
-    MatExpansionModule, 
-    FormsModule
+    BrowserAnimationsModule, 
+    MatExpansionModule,
+  ],
+  exports: [MatSliderModule, MatIconModule, MatButtonModule],
 
-  ],
-  exports: [
-    MatSliderModule,
-    MatIconModule,
-    MatButtonModule
-  ],
-  
   providers: [
- 
     provideClientHydration(),
     provideAnimationsAsync(),
-    provideHttpClient(withFetch())
+    provideHttpClient(withFetch()),
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

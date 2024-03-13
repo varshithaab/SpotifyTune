@@ -1,18 +1,27 @@
-<!-- login.component.html -->
-<div>
-    <h2>Login</h2>
-    <form [formGroup]="loginForm" (ngSubmit)="loginUser()">
-      <div>
-        <label for="email">Email:</label>
-        <input type="email" id="emaillogin" formControlName="email" />
+<div class="container mt-5 mb-5 ">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card bg-dark text-white">
+        <div class="card-body">
+          <h2 class="card-title mb-4">Login</h2>
+          <form [formGroup]="loginForm" (ngSubmit)="loginUser()">
+            <div class="form-group">
+              <label for="email" class="text-light">Email:</label>
+              <input type="email" class="form-control" id="emaillogin" formControlName="email" />
+            </div>
+            <div class="form-group">
+              <label for="password" class="text-light">Password:</label>
+              <input type="password" class="form-control" id="password" formControlName="password" />
+            </div><br>
+            <div class="form-group">
+              <button type="submit" class="btn btn-success">Login</button>
+            </div>
+          </form>
+          <div *ngIf="showInvalidCredentialsMessage" class="alert alert-danger mt-3" role="alert">
+            Invalid credentials. Please check your email and password.
+          </div>
+        </div>
       </div>
-      <div>
-        <label for="password">Password:</label>
-        <input type="password" id="password" formControlName="password" />
-      </div>
-      <div>
-        <button type="submit">Login</button>
-      </div>
-    </form>
+    </div>
   </div>
-  
+</div>
