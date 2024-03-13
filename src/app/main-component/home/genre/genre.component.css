@@ -41,7 +41,7 @@ button:hover {
 
 ul {
   display: flex; /* Displays the list items in a flex container */
-  justify-content: flex-start; /* Aligns items to the start of the container (left side) */
+  justify-content:center; /* Aligns items to the start of the container (left side) */
   align-items: center; /* Centers the items vertically */
   flex-wrap: wrap; /* Allows items to wrap to the next line if they exceed the container's width */
   list-style-type: none; /* Removes the default bullet point style */
@@ -59,6 +59,7 @@ li {
 li a {
   background-color: rgb(36, 34, 34);
   height: 380px; /* Sets the height of each link item */
+  width: 210px;
   border: 1px solid whitesmoke; /* Adds a border around each link item */
   border-radius: 10px; /* Adds rounded corners to the border */
   display: flex; /* Displays the link item as a flex container */

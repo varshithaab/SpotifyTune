@@ -3,39 +3,34 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-main-component',
   templateUrl: './main-component.component.html',
-  styleUrl: './main-component.component.css'
+  styleUrl: './main-component.component.css',
 })
 export class MainComponentComponent {
   content: any[] = [];
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit(): void {
-    this.array()
+    this.array();
   }
-array(){
-  this.content=[
+  array() {
+    this.content = [
       {
-        img:'assets/img/i1.png',
-       title: 'Play your favorites.',
-       des: 'Listen to the songs you love, and discover new music and podcasts.'
+        title: 'Play your favorites.',
+        des: 'Listen to the songs you love, and discover new music and podcasts.',
       },
       {
-        img:'assets/img/i2.png',
         title: 'Playlists made easy.',
-        des: `We'll help you make playlists. Or enjoy playlists made by music experts.`
+        des: `We'll help you make playlists.`,
       },
       {
-        img:'assets/img/i3.png',
-        title: 'Make it yours.',
-        des: `Tell us what you like, and we'll recommend music for you.`
+        title: 'Effortless Content Filtering',
+        des: 'Simplify your filtering experience with ease.',
       },
       {
-        img:'assets/img/i4.png',
-        title: 'Save mobile data.',
-        des: `To use less data when you play music, turn on Data Saver in Settings.`
-      }
-  ]
-}
-
+        title: 'Unlock Premium Features',
+        des: `Upgrade for ad-free music, skips, offline listening, and exclusive features.`,
+      },
+    ];
+  }
 }

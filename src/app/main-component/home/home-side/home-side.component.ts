@@ -23,57 +23,64 @@ export class HomeSideComponent {
       this.cards=[
         {  
           image: "assets/img1.jpg",
-          title: "O Maahi",
-          artist: "Arijit Singh",
-          album: "Dunki(2023)",
-          genre: "melody",
-          audio: "assets/snog1.mp3"
+          title: "Inkem Kaavaale",
+          artist: "Sid Sriram",
+          album: "Geetha Govindam",
+          genre: "Nostalgic",
+          audio: "assets/song2.mp3"
         },
         {
-          
-          image: "assets/img2.jpg",
-          title: "Apna Bana",
-          artist: "Arijit Singh, Sachin Jigar",
-          album: "Bhediya (2022)",
-          genre: "melody",
-          audio: "assets/song4.mp3"
-        },
-        {
-          image: "assets/img3.jpg",
-          title: "Ankhon Mein Teri",
-          artist: "Song by KK",
-          album: "Om Shanthi Om(2007)",
-          genre: "melody",
-          audio: "assets/song1.mp3"
-        },
-        {
-          image: "assets/img4.jpg",
-          title: "Kesariya",
-          artist: "Arijit Singh",
-          album: "Brahmastra(2022)",
-          genre: "melody",
-          audio: "assets/song4.mp3"
-        },
-        {
-          image: "assets/img5.jpg",
-          title: "Pehle Bhi Main",
-          artist: "Vishal Mishra",
-          album: "Animal(2023)",
-          genre: "folk",
-          audio: "assets/song1.mp3"
-        },
-        {
-          image: "assets/img6.jpg",
-          title: "Tere Hawaale",
-          artist: "Shilpa Rao",
-          album: "Lal Singh Chaddha(2022)",
-          genre: "folk",
-          audio: "assets/song4.mp3"
+         
+          title: "Bad Boy",
+          artist: "Badshah",
+          album: "Saaho",
+          image: "assets/img8.jpg",
+          genre: "Energetic",
+          audio: "assets/song8.mp3"
         },
        
+       
+        {
+          title: "ButtaBomma",
+          artist: "Armaan Malik",
+          album: "Ala Vaikunthapurramuloo",
+          image: "assets/img4.jpg",
+          genre: "Energetic",
+          audio: "assets/song4.mp3"
+        },
+        {
+          title: "Manohari",
+          artist: "Mohana Bhogaraju",
+          album: "Bahubali: The Beginning",
+          image: "assets/img10.jpg",
+          genre: "Enthusiastic",
+          audio: "assets/song10.mp3"
+          },
+          {
+            title: "Tum Mile",
+            artist: "Neeraj Shridhar",
+            album: "Tum Mile",
+            image: "assets/img14.jpg",
+            genre: "Soulful",
+            audio: "assets/song14.mp3"
+            },
+            {
+              title: "Shape of You",
+              artist: "Ed Sheeran",
+              album: "÷",
+              image: "assets/img17.jpg",
+              genre: "Upbeat",
+              audio: "assets/song17.mp3"
+              }
+
         
-      ] 
-      ,
+        
+      ]
+          
+        
+        
+        
+      
       this.podcast=[
         
 {
@@ -113,13 +120,12 @@ audio:"laugh_factory.mp3"
       
   },
   {
-    image:"assets/pod5.jpg",
-      title: "Murder Mysteries",
-      artist: "Crime Scene Investigators",
-      album: "Unsolved Cases",
-      genre: "True Crime",
-      audio: "murder_mysteries.mp3",
-     
+    "title": "Gadget Geek",
+    "artist": "Tech Reviewers",
+    "album": "Latest Tech Trends",
+    "image": "assets/pod13.jpg",
+    "genre": "Technology",
+    "audio": "assets/pod13.mp3"
   },
   {
     image:"assets/pod6.jpg",

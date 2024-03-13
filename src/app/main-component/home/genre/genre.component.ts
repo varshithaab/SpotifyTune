@@ -28,6 +28,7 @@ export class GenreComponent {
     this.songService.currentMessage.subscribe(
       (message) => (this.message = message)
     );
+    
   }
   loadGenres(): void {
     this.songService.getAllGenre().subscribe((serverGenres) => {
@@ -42,8 +43,5 @@ export class GenreComponent {
     });
   
   }
-  navigateBackToFilter(): void {
-    // Navigate back to the parent route ("/home")
-    this.router.navigate(['/filter']);
-  }
+ 
 }

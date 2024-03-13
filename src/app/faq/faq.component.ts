@@ -19,51 +19,36 @@ export class FaqComponent {
       expanded: false
     },
     {
-      question: 'How do I follow an artist?',
-      answer: 'To follow an artist, search for the artist\'s name, then tap on the artist profile. From there, you should see a "Follow" button. Tap on it to start following the artist and receive updates about their latest releases and activities.',
+      question: 'How do I search for songs on the app?',
+      answer: 'To search for songs, simply type keywords related to the song, artist, album, or genre you are looking for into the search bar . Press enter or click the search icon to see the results. You can then scroll through the search results to find the desired songs.',
       expanded: false
     },
     {
-      question: 'How can I discover new music?',
-      answer: 'Spotify offers various ways to discover new music. You can explore curated playlists, such as "Discover Weekly" and "Release Radar," which are personalized based on your listening preferences. Additionally, you can browse through genres, explore recommendations, and follow your friends\' playlists.',
-      expanded: false
-    },
-    {
-      question: 'Can I listen to music offline?',
-      answer: 'Yes, Spotify Premium subscribers can download music and podcasts for offline listening. Simply find the content you want to download, then tap the download icon. Once downloaded, you can listen to your downloaded content without an internet connection.',
-      expanded: false
-    },
-    {
-      question: 'How do I change my profile picture?',
-      answer: 'To change your profile picture on Spotify, go to your profile page and tap on the Edit Profile button. From there, you can upload a new profile picture from your device or choose one from your existing photos.',
-      expanded: false
-    },
-    {
-      question: 'What is Spotify Connect?',
-      answer: 'Spotify Connect allows you to seamlessly switch playback between different devices. For example, you can start listening to music on your phone and then transfer playback to your home speakers or other connected devices without interrupting the music.',
-      expanded: false
-    },
-    {
-      question: 'How do I clear my search history?',
-      answer: 'To clear your search history on Spotify, go to your settings and scroll down to the Privacy section. From there, you can find the option to clear your search history.',
-      expanded: false
-    },
-    {
-      question: 'Can I listen to podcasts on Spotify?',
+      question: 'Can I listen to podcasts on SpotifyTune?',
       answer: 'Yes, Spotify offers a wide range of podcasts on various topics, including news, entertainment, education, and more. You can find podcasts by searching for specific titles or browsing through curated collections and recommendations.',
       expanded: false
     },
     {
-      question: 'How do I share music with friends?',
-      answer: 'To share music with friends on Spotify, find the song, album, or playlist you want to share, then tap on the "..." button next to it. From there, you should see an option to share the content via various channels, such as messaging apps or social media platforms.',
+      question: 'How do I use the filter function on SpotifyTune?',
+      answer: 'To use the filter function on SpotifyTune, navigate to the filter options available in the website. Depending on the context, you may be able to filter search results by various criteria such as genre and artist. Simply select your desired filters to refine the results according to your preferences.',
       expanded: false
     },
     {
-      question: 'How do I cancel my Spotify subscription?',
-      answer: 'To cancel your Spotify subscription, go to your account settings and navigate to the subscription section. From there, you should find an option to cancel your subscription. Follow the prompts to confirm the cancellation.',
+      question: 'How do I subscribe to SpotifyTune?',
+      answer: 'To subscribe to SpotifyTune, visit the SpotifyTune website. Click on the "Sign Up" or "Subscribe" button, and then follow the prompts to create an account and choose a subscription plan. Once subscribed, you can enjoy all the features and benefits of SpotifyTune Premium.',
       expanded: false
+
     },
-    // Add more FAQ items here...
+    {
+      question: 'How do I play songs on the website?',
+      answer: 'To play a song, simply navigate to the song you want to listen to and click on its title or cover image. This will start playback of the song. You can control playback using the playback controls provided, such as play, pause, skip forward, and skip backward.',
+      expanded: false
+    },{
+    question: 'How do I access my library?',
+      answer: 'To access your library, navigate to the "My Library" section of the app. This section typically contains all the songs, albums, playlists, and other content that you have saved or added to your library. You can organize and manage your library to easily find your favorite content.',
+      expanded: false
+    }
+    
   ];
 
   toggleAccordion(item: FaqItem): void {

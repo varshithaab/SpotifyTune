@@ -1,89 +1,128 @@
+/* Responsive styles */
+@media (max-width: 768px) {
+  ul {
+    justify-content: center; /* Center items when screen size is smaller */
+  }
+  
+  li {
+    width: calc(33.333% - 2rem); /* Set width to fit three items in a row on smaller screens */
+    margin: 1rem; /* Adjust margin for smaller screens */
+  }
+}
 
+/* Button styles */
+/* Button styles */
+button {
+  background-color: whitesmoke;
+  color: black;
+  width: calc((100% - 30 * 0.5rem) / 8); /* Calculate width to fit 8 buttons in a line */
+  height: 35px;
+  transition: background-color 0.3s;
+  border-radius: 10px;
+  font-size: 0.7rem;
+  margin: 0.5rem; /* Add margin to create space between buttons */
+}
 
+/* Adjust button margin on smaller screens */
+@media (max-width: 768px) {
+  button {
+    width: calc((100% - 4 * 0.4rem) / 8); /* Adjust width for smaller screens to fit 4 buttons in a line */
+    margin: 0.5rem 0.5rem; /* Adjust margin for smaller screens */
+  }
+}
 
-
-
-
-
-
-#genreimg
-{
-
-  height: 386px;
+button:hover {
+  background-color: green; /* Change button background color to green on hover */
+  color: white; /* Change button text color to white on hover */
+  cursor: pointer; /* Change cursor to pointer on hover */
 }
 
 
 
+button:hover {
+  background-color: green; /* Change button background color to green on hover */
+  color: white; /* Change button text color to white on hover */
+  cursor: pointer; /* Change cursor to pointer on hover */
+}
 
-
-/* Product item footer styles */
-
+/* General styles */
+#genreimg {
+  height: 386px;
+}
 
 .content {
   margin-top: 0.3rem;
   padding: 0.5rem 1rem;
   position: relative;
   height: 7rem;
-  
 }
-
-
-
 
 ul {
   display: flex; /* Displays the list items in a flex container */
-  justify-content: flex-start; /* Aligns items to the start of the container (left side) */
+  justify-content:center; /* Aligns items to the start of the container (left side) */
   align-items: center; /* Centers the items vertically */
   flex-wrap: wrap; /* Allows items to wrap to the next line if they exceed the container's width */
   list-style-type: none; /* Removes the default bullet point style */
   padding: 0; /* Removes padding */
-  max-width: 1200px; /* Set a maximum width for the container */
+  /* padding-top: 3%; */
+  max-width: 1300px; /* Set a maximum width for the container */
   margin: 0 auto; /* Center the container horizontally */
 }
+
 li {
-  width: calc(20% - 1rem); /*Sets the width of each list item to 20% of the container width (minus margin) */
- margin: 0.5rem; /*Adds margin around each list item */
+  width: calc(20% - 2rem); /*Sets the width of each list item to 20% of the container width (minus margin) */
+  margin: 2rem; /*Adds margin around each list item */
 }
 
 li a {
- background-color:rgb(36, 34, 34);
- height: 380px; /* Sets the height of each link item */
- border: 1px solid whitesmoke; /* Adds a border around each link item */
- border-radius: 10px; /* Adds rounded corners to the border */
- display: flex; /* Displays the link item as a flex container */
- flex-direction: column; /* Arranges child elements vertically */
- overflow: hidden; /* Hides any content that exceeds the dimensions of the link item */
- color: white; /* Sets the text color */
- text-decoration: none;
- margin-right: 8.5px;
+  background-color: rgb(36, 34, 34);
+  height: 380px; /* Sets the height of each link item */
+  width: 210px;
+  border: 1px solid whitesmoke; /* Adds a border around each link item */
+  border-radius: 10px; /* Adds rounded corners to the border */
+  display: flex; /* Displays the link item as a flex container */
+  flex-direction: column; /* Arranges child elements vertically */
+  overflow: hidden; /* Hides any content that exceeds the dimensions of the link item */
+  color: white; /* Sets the text color */
+  text-decoration: none;
+  margin-right: 8.5px;
 }
+
 li a:hover {
-opacity: 0.9; /* Reduces opacity of the link item when hovered over */
-cursor: pointer; /* Changes cursor to pointer on hover */
+  opacity: 0.9; /* Reduces opacity of the link item when hovered over */
+  cursor: pointer; /* Changes cursor to pointer on hover */
 }
 
 li a img {
-object-fit: cover; /* Ensures the image covers the entire container */
-height: 15rem; /* Sets the height of the image */
-width: 100%; /* Ensures the image fills the container horizontally */
-border-radius: 10px; /* Adds curved corners to the image */
-padding-left: 15px;
-padding-right: 15px;
-padding-top: 15px;
+  object-fit: cover; /* Ensures the image covers the entire container */
+  height: 15rem; /* Sets the height of the image */
+  width: 100%; /* Ensures the image fills the container horizontally */
+  border-radius: 10px; /* Adds curved corners to the image */
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 15px;
 }
-li a p{
-color: rgb(161, 155, 155);
-margin: 0%;
-} 
+
+li a p {
+  color: rgb(161, 155, 155);
+  margin: 0%;
+}
+
 .name {
-font-weight: bold;
-margin-bottom: 0.2rem; /* Adjust the margin bottom */
+  font-weight: bold;
+
+  margin-bottom: 0.2rem; /* Adjust the margin bottom */
 }
 
 .album {
-margin-bottom: 0.2rem; /* Adjust the margin bottom */
+  margin-bottom: 0.2rem; /* Adjust the margin bottom */
 }
 
 .genre {
-margin-bottom: 0; /* Remove the margin bottom */
+  font-size: x-large;
+  margin-bottom: 0; /* Remove the margin bottom */
+}
+
+.card-container {
+  padding-left: 10px;
 }

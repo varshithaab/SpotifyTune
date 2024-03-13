@@ -1,7 +1,6 @@
 .songs {
   color: white;
   margin-top: 60px;
-  display: flex;
 }
 
 .c-cart
@@ -13,7 +12,7 @@
   margin-right: 8.25px;
   margin-bottom: 20px;
   width: calc((100% - 50px) / 6); /* Adjust the width to fit 6 cards in one line */
-  height: 300px;
+  height: 310px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -22,9 +21,9 @@
 }
 
 .songs .c-cart .card .card-img-top {
-  height: 170px;
-  width: 170px;
-  padding: 15px;
+  height: 200px;
+  width: 180px;
+  padding: 25px;
 
   border-radius: 25px;
 }
@@ -34,7 +33,6 @@
   padding-left: 15px;
   padding-bottom: 15px;
   padding-top: 0px;
-  color:white;
 }
 
 .songs .c-cart .card .card-body h5 {
@@ -84,10 +82,9 @@
 .songs .c-cart .card:hover {
   animation: popup 1s ease-in-out forwards;
 }
-@media (min-width: 768px) { .card { width: calc((100% - 50px) / 3); /* Adjust the width to fit 3 cards in one line */ } }
 
-@media (min-width: 992px) { .card { width: calc((100% - 50px) / 2); /* Adjust the width to fit 2 cards in one line */ } }
 
-@media (max-width: 767.98px) { .card { width: calc(100% - 20px); /* Adjust the width to fit 1 card in one line */ } }
-
-@media (min-width: 1200px) { .card { flex: 1 1 30rem; } }
+.artist_display 
+{
+ height: 250px;
+}

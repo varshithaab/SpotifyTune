@@ -178,8 +178,8 @@ body {
   }
   
   .icon {
-    width: 65px;
-    height: 65px;
+    width: 60px;
+    height: 60px;
    
   }
   
@@ -188,7 +188,9 @@ body {
   }
   
   .scrollable-container {
-    overflow: auto;
+    /* overflow: auto; */
+
+    margin-top: 100px;
   }
   
 

@@ -1,9 +1,9 @@
 
-----varshita
+
 <div *ngIf="isFilterActive" class="filter-container">
   <!-- Filter by Genre card -->
-  <div class="filter-card" *ngIf="showFilter  && isFilter">
-    --sriiii
+  <div class="filter-card" *ngIf="showFilter  ">
+
     <img
       src="assets/genre.jpg"
       alt="Genre Image"
@@ -16,7 +16,7 @@
   </div>
 
   <!-- Filter by Artist card -->
-  <div class="filter-card" *ngIf="showFilter  && isFilter">
+  <div class="filter-card" *ngIf="showFilter ">
     <img src="assets/artist.jpg" alt="Artist Image" class="filter-image" />
     <button class="filter-button" (click)="toggleGenreAndArtist('artist')">
       Filter by Artist
@@ -25,18 +25,14 @@
   <router-outlet></router-outlet>
 </div>
 
-<div id="display" class="col-10" style="width: 1300px">
+<div  id="display" class="col-10" style="width: 1300px">
   <app-genre *ngIf="showGenreComponent "></app-genre>
   <app-artist *ngIf="showArtistComponent"></app-artist>
 
   <div
     class="card-container"
     id="display_data"
-<<<<<<< HEAD
     *ngIf="showSongList && !this.isGenreFlow && !this.isArtistFlow"
-=======
-    *ngIf="showSongList && !this.isGenreFlow "
->>>>>>> f63f43071cda5c3820a55961dba797b6cbd3414a
     class="col-10 row-5"
   >
     <ul>

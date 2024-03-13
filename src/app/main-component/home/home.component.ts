@@ -127,8 +127,8 @@ export class HomeComponent {
         break;
       case 'filter':
         this.showFilter = true;
-        this.SongService.filterdisplay(true);
-        console.log("In filter");
+        // this.SongService.filterdisplay(true);
+        // console.log("In filter");
         break;
       case 'library':
         this.showLIBRARY = true;
@@ -148,7 +148,7 @@ export class HomeComponent {
     }
   }
   navigateToFilter(){
-    this.SongService.filterdisplay(true);
+    // this.SongService.filterdisplay(true);
   }
  
 

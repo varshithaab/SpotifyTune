@@ -63,7 +63,7 @@
    
       position: absolute;
       left: 1000px; /* Adjust this value to move the search bar horizontally */
-      top: 30%; /* Adjust this value to position the search bar vertically */
+      top: 50%; /* Adjust this value to position the search bar vertically */
       transform: translateY(-50%);
   
   }
@@ -74,4 +74,7 @@
     letter-spacing: 0.5px;
   }
 
-  
+  li{
+    padding-bottom: 20px;
+    padding-left: 300px;
+  }

@@ -1,12 +1,17 @@
 .sctn2 {
-  margin: 20px auto; /* Adjust margin for smaller screens */
-  max-width: 90%; /* Ensure content doesn't overflow on small screens */
+  margin: 90px auto;
+  max-width: 80%; /* Ensure content doesn't overflow on small screens */
   align-items: center;
+  padding-right: 100px;
 }
 
 .sctn2 .h1 {
-  font-size: 24px; /* Decrease font size for smaller screens */
+  font-size: 30px; /* Decrease font size for smaller screens */
   margin-bottom: 20px;
+  color: whitesmoke;
+  text-align: center;
+  font-style: bold;
+
 }
 
 .expand .accordion-item {
