@@ -130,6 +130,7 @@ export class HomeComponent {
         break;
       case 'filter':
         this.showFilter = true;
+        this.SongService.filterdisplay(true);
         console.log("In filter");
         break;
       case 'library':
