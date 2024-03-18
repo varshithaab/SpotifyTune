@@ -90,7 +90,8 @@
                   <img
                     class="image_display"
                     [src]="song.image"
-                    [alt]="song.title"
+                    [alt]="song.title" [routerLink]="['/music/musicID', song.id]" 
+                      
                   />
                   <div class="content">
                     <div class="name">

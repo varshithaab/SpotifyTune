@@ -5,8 +5,14 @@
         <a routerLink="/" class="logo">SpotifyTune</a>
       </div>
       <div class="nav-links">
-        <a routerLink="/home" class="nav-link">Login</a>
-        <a routerLink="/signup" class="nav-link">Signup</a>
+        <ng-container *ngIf="!hasLoggedUser">
+          <a routerLink="/login" class="nav-link">Login</a>
+          <a routerLink="/signup" class="nav-link">Signup</a>
+        </ng-container>
+        <ng-container *ngIf="hasLoggedUser">
+          <a routerLink="/main-component" class="nav-link">Log Out</a>
+        </ng-container>
+       
         <a routerLink="/faq" class="nav-link">FAQ</a>
       </div>
     </div>

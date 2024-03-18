@@ -6,7 +6,8 @@ import { Song } from '../../shared/models/song';
 import { Router } from '@angular/router';
 
 import { SongService } from '../../services/song.service';
-import { FilterComponent } from './filter/filter.component';
+
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -14,12 +15,14 @@ import { FilterComponent } from './filter/filter.component';
 })
 export class HomeComponent {
   isShowHome: boolean = true;
+  isAdminFlow: boolean = false;
   isshowSearch: boolean = false;
   songs: Song[] = [];
 
   message: boolean = false;
 
   filter: boolean = false;
+  loginService: any;
   constructor(
     public sb: SearchBarService,
     private SongService: SongService,
@@ -47,7 +50,7 @@ export class HomeComponent {
     this.SongService.currentMessage.subscribe(
       (message) => (this.message = message)
     );
-
+    this.loginService?.currentMessage?.subscribe(isAdmin => this.isAdminFlow = isAdmin);
   
    
   }
@@ -158,7 +161,6 @@ export class HomeComponent {
   }
   
 }
-
 
 
 

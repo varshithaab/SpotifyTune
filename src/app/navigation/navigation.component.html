@@ -1,21 +1,27 @@
 <header>
-  <nav class="spotify__top-nav">
-    <div class="spotify__top-nav_focus_title">
-      <ul class="spotify__top-nav_auth">
-        <!-- <li>
-          <button class="forward_btn" (click)="onForwardButtonClick()">
-            <
-          </button>
-        </li>
-        <li>
-          <button class="backward_btn" routerLink="/home">
-            >
-          </button> -->
-        <!-- </li> -->
-        <li *ngIf="isSearchFieldVisible">
-          <app-search></app-search>
-        </li>
-      </ul>
-    </div>
-  </nav>
+  <div class="right-buttons">
+    <nav class="spotify__top-nav">
+      <div class="spotify__top-nav_focus_title">
+        <ul class="spotify__top-nav_auth">
+  
+          <li *ngIf="isSearchFieldVisible">
+            <app-search ></app-search>
+            
+          </li>
+         
+  <li *ngIf="isAdminFlow" class="dropdown">
+    <button class="dropdown-btn" (click)="Dropdowns()">Dropdown</button>
+    <ul *ngIf="showDropdown" class="dropdown-list">
+      <li (click)="usermanagement()">User Management</li>
+      <li (click)="songmanagement()">Song Management</li>
+    </ul>
+  </li>
+  <li *ngIf="hasLoggedUser" class="dropdown">
+    <button class="dropdown-btn" (click)="Dropdowns()" routerLink="/main-component">Log Out</button>
+  </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+  
 </header>

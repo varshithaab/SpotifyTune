@@ -12,7 +12,13 @@
           <h5 class="card-title">{{ card.title }}</h5>
           <p class="card-text">{{ card.artist }}</p>
 
-          <a [routerLink]="['/music', card.id]" class="play-button">&#9658;</a>
+        
+          <a [routerLink]="['/music', card.id]" class="play-button">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-play-fill" viewBox="0 0 16 16">
+              <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393"/>
+            </svg>
+
+          </a>
         </div>
       </div>
     </div>
@@ -23,7 +29,7 @@
 
 <div class="songs">
   <div class="songs-cat">
-    <h1 class="mb-3"> Podcasts!!</h1>
+    <h1 class="mb-3"> Podcasts!!</h1><br>
 
     <div class="c-cart" style="width: 1160px">
       <div class="card" *ngFor="let card of podcast" [routerLink]="['/play']">
@@ -32,7 +38,12 @@
           <h5 class="card-title">{{ card.title }}</h5>
           <p class="card-text">{{ card.artist }}</p><br>
 
-          <a [routerLink]="['/play', card.id]" class="play-button">&#9658;</a>
+          <a [routerLink]="['/music', card.id]" class="play-button">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-play-fill" viewBox="0 0 16 16">
+              <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393"/>
+            </svg>
+
+          </a>
         </div>
       </div>
     </div>

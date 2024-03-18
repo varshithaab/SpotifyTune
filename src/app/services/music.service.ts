@@ -42,4 +42,12 @@ export class MusicService {
     
     return this.http.get<Music>(`${this.apiUrl}/${id}`);
   }
+
+
+//ADMIN FUNCTIONALITY
+  deleteSong(id: number): Observable<any> {
+    const deleteUrl = `${this.apiUrl}/${id}`;
+    return this.http.delete(deleteUrl);
+  }
+
 }

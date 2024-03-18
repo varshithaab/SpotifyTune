@@ -1,0 +1,136 @@
+<!-- Add these divs to display success and error messages -->
+
+  
+<form [formGroup]="registerform" (ngSubmit)="registersubmitted()" class="border p-3 rounded-3 mx-auto">
+    <div class="row">
+    <div class="col text-center p-2 mb-3 bg-black">
+        <img src="assets/LOGO.png" alt="logo" class="spotify-logo">
+        <span class="h3 text-white">Register</span><br>
+    </div>
+    </div>
+    <div class="row">
+
+  
+
+        <div class="col mb-3 white-outline">
+            <label for="firstname" class="form-label text-white">First Name</label>
+            <input type="text" formControlName="firstname"class="form-control" id="firstname">
+            <div class="form-text text-danger" *ngIf="Firstname.errors?.['required']&& (Firstname.touched || Firstname.dirty)">
+                Firsname is required
+            </div>
+                <div class="form-text text-danger" *ngIf="Firstname.errors?.['minlength'] && (Firstname.touched || Firstname.dirty)">
+                    Firstname is too short
+                </div>
+                <div class="form-text text-danger" *ngIf="Firstname.errors?.['pattern'] && (Firstname.touched || Firstname.dirty)">
+                    Firstname should start with Alphabet
+                </div>
+        </div>
+        <div class="col mb-3">
+            <label for="lastname" class="form-label text-white">Last Name</label>
+            <input type="text"  class="form-control" id="lastname"
+            formControlName="lastname">
+            <div class="form-text text-danger" *ngIf="Lastname.errors?.['required']&& (Lastname.touched || Lastname.dirty)">
+                Lastname is required
+            </div>
+                <div class="form-text text-danger" *ngIf="Lastname.errors?.['minlength'] && (Lastname.touched || Lastname.dirty)">
+                    Lastname is too short
+                </div>
+                <div class="form-text text-danger" *ngIf="Lastname.errors?.['pattern'] && (Lastname.touched || Lastname.dirty)">
+                    Lastname should start with Alphabet
+                </div>
+        </div>
+    </div>
+<div class="row">
+    <div class="col mb-3">
+            <label for="email" class="form-label text-white">Email</label>
+            <input type="email"  class="form-control" id="email" formControlName="email">
+            <div class="form-text text-danger" *ngIf="Email.errors?.['required']&& (Email.touched || Email.dirty)">
+                Email is required
+            </div>
+                
+                <div class="form-text text-danger" *ngIf="Email.errors?.['email'] && (Email.touched || Email.dirty)">
+                    Email is invalid
+                </div>
+    </div>
+</div>
+<div class="row">
+<div class="col mb-3">
+    <label for="mobilenum" class="form-label text-white">Mobile Number</label>
+    <input type="text" class="form-control" id="mobile" formControlName="mobile" maxlength="10">
+     <div class="form-text text-danger" *ngIf="Mobile.errors?.['required']&& (Mobile.touched || Mobile.dirty)">
+        Mobile Number is required
+    </div>
+    <div class="form-text text-danger" *ngIf="Mobile.errors?.['maxlength']&& (Mobile.touched || Mobile.dirty)">
+        Mobile Number is Long
+    </div>
+    <<div class="form-text text-danger" *ngIf="Mobile.errors?.['minlength']&& (Mobile.touched || Mobile.dirty)">
+        Mobile Number is Short
+    </div> 
+    <div class="form-text text-danger" *ngIf="Mobile.errors?.['pattern']&& (Mobile.touched || Mobile.dirty)">
+        Mobile Number is invalid
+    </div>
+    <div class="form-text"></div>
+</div>
+<div class="col mb-3 m-1">
+    <div class="m-1 text-white">Gender</div>
+    <div class="form-check form-check-inline">
+        <input formControlName="gender" type="radio" class="form-check-input" value="f" id="female">
+        <label class="form-check-label text-white" for="female">Female</label>
+    </div>
+    <div class="form-check form-check-inline">
+        <input formControlName="gender" type="radio" class="form-check-input" value="m" id="male">
+        <label class="form-check-label text-white" for="male">Male</label>
+    </div>
+    <div class="form-text text-danger" *ngIf="Gender.errors?.['required'] && (Gender.touched || Gender.dirty) ">
+        Select Gender
+    </div>
+</div>
+</div>
+<div class="row">
+    <div class="col mb-3">
+       
+
+        <label for="pw1" class="form-label text-white">Password</label>
+        <input type="password" class="form-control" id="pwd"
+        formControlName="pwd">
+       
+
+        <div class="form-text text-danger" *ngIf="Password.errors?.['required']&& (Password.touched || Password.dirty)">
+            Password  is required
+        </div>
+        <div class="form-text text-danger" *ngIf="Password.errors?.['maxlength']&& (Password.touched || Password.dirty)">
+            Password cannot exceed 15
+        </div>
+        <div class="form-text text-danger" *ngIf="Password.errors?.['minlength']&& (Password.touched || Password.dirty)">
+            Password  should be atleast 6 Characters
+        </div>
+        <div class="form-text text-danger" *ngIf="Password.errors?.['pattern']&& (Password.touched || Password.dirty)">
+            Password  is invalid
+        </div>
+    </div>
+    <div class="col mb-3">
+        <label for="cpw1" class="form-label text-white">Confirm Password</label>
+        <input type="password" class="form-control" id="cpwd"
+        formControlName="cpwd">
+        <div class="form-text text-danger" [ngStyle]="{'display' :confirmpass }">
+            Confirm Password in invalid....
+        </div>
+        <div class="form-text text-danger" [ngStyle]="{'display' :confirmpass }" *ngIf="Cpassword.errors?.['minlength']">
+            Confirm Password in short....
+        </div>
+        <div *ngIf="registerform.get('cpwd')?.hasError('confirmPassword')">
+            <p class="error-message text-danger">Passwords do not match.</p>
+          </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-6 offset-3">
+        <div class="d-grid">
+
+            <button type="submit" [disabled]="registerform.invalid"class="btn btn-success" >Submit</button><br>
+            <p class="text-white">Already have an account? <a routerLink="/login" class="text-success" >Login</a></p>
+        
+    </div>
+    </div>
+</div>
+</form>
