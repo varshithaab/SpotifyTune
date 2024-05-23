@@ -11,7 +11,7 @@
   float: left;
   margin-right: 8.25px;
   margin-bottom: 20px;
-  width: calc((100% - 50px) / 6); /* Adjust the width to fit 6 cards in one line */
+  width: calc((100% - 50px) / 7); /* Adjust the width to fit 6 cards in one line */
   height: 310px;
   display: flex;
   flex-direction: column;
@@ -100,4 +100,12 @@
 .artist_display 
 {
  height: 250px;
+}
+
+*{
+  max-width: 1300px;;
+}
+.align{
+  text-align: left;
+  margin-leff: 50%;
 }

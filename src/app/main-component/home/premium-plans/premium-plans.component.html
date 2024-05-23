@@ -1,0 +1,122 @@
+<div class="container-fluid" style="background-color: black;">
+    <br>
+    <div class="row division" ><br>
+        <br><h2>Get Premium free for 1 month</h2><br><br>
+        <h5>Just &#8377;119/month after. Debit and credit cards accepted.Cancel anytime.</h5><br><br>
+        <div class="col-12 d-flex justify-content-center align-items-center">
+          <!-- <button class="btn rounded-pill oval-button" id="bottom" style="background-color: #1db954; color: azure; width: 300px;" (click)="scrollToBottom()">View plans</button> -->
+
+        </div><br><br>
+       <p> <a href="#">Terms & Conditions apply.</a> 1 month free not available for the users who have already tried Premium.</p>
+      </div>
+
+    <div class="row">
+        <div class="col-10 text-center mt-5">
+          <h2>The Power of Premium</h2>
+        </div>
+    </div>
+    
+   
+      <div class="row mt-5">
+    
+        <div class="col-md-3 mb-4">
+          <div class="text-center">
+            <img src="assets\adfree.png" class="img-fluid rounded-circle equal-size-image" alt="Image 1">
+            <h4 class="mt-3">Ad-free music listening</h4>
+            <p>Enjoy uninterrupted music.</p>
+          </div>
+        </div>
+    
+      
+        <div class="col-md-3 mb-4">
+          <div class="text-center">
+            <img src="assets\images.png" class="img-fluid rounded-circle equal-size-image" alt="Image 2">
+            <h4 class="mt-3">Play everywhere</h4>
+            <p>Listen on your speakers, TV, and other favorite devices.</p>
+          </div>
+        </div>
+    
+      
+        <div class="col-md-3 mb-4">
+          <div class="text-center">
+            <img src="assets\phone.png" class="img-fluid rounded-circle equal-size-image" alt="Image 3">
+            <h4 class="mt-3">Play your way</h4>
+            <p>Prepay with Paytm, UPI and more.</p>
+          </div>
+        </div>
+      </div>
+      <hr>
+
+    <div class="row" #bottomElement>
+        
+        <div class="col-md-5 mb-4">
+          <div class="card position-relative square-card">
+
+            <div class="card-body text-center">
+              <h2 class="card-title">Mini</h2>
+              <h3>&#8377;7 for 1 day</h3><hr>
+              <ul class="card-text text-left">
+                <li>1 mobile-only Premium account</li>
+                <li>Offline listening of upto 30 songs on 1 device</li>
+                <li>One-time payment</li>
+                <li>Basic audio quality</li>
+              </ul>
+              <button class="btn btn-block oval-button" (click)="showPaymentForm('button1')" routerLink="/payment-form" (click)="scrollUp()">Get Premium Mini</button>
+              <p><a href="#">Terms apply.</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-5 mb-4">
+            <div class="card position-relative square-card">
+              <div class="card-body text-center">
+                <h2 class="card-title">Individual</h2>
+                <h3>&#8377;119 for 1 month</h3>
+                <h5>&#8377;119 / month after</h5><hr>
+                <ul class="card-text text-left">
+                  <li>1 Premium account</li>
+                  <li>Cancel anytime</li>
+                  <li>Subscribe or One-time payment</li>
+                </ul>
+                <button class="btn btn-block oval-button" (click)="showPaymentForm('button2')" routerLink="/payment-form" (click)="scrollUp()">Get Premium Individual</button>
+                <p><a href="#">Terms apply.</a></p>
+              </div>
+            </div>
+          </div>
+        
+        <div class="col-md-5 mb-4">
+          <div class="card position-relative square-card">
+            <div class="card-body text-center">
+              <h2 class="card-title">Student</h2>
+              <h3>&#8377;59 for 1 month</h3>
+              <h5>&#8377;59 / month after</h5><hr>
+              <ul class="card-text text-left">
+                <li>1 verified Premium account</li>
+                <li>Cancel anytime</li>
+                <li>Discount for eligible students</li>
+              </ul>
+              <button class="btn btn-block oval-button" (click)="showPaymentForm('button3')" routerLink="/payment-form" (click)="scrollUp()">Get Premium Student</button>
+              <p><a href="#">Terms apply.</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-5 mb-4">
+          <div class="card position-relative square-card">
+            <div class="card-body text-center">
+              <h2 class="card-title">Family</h2>
+              <h3>&#8377;179 for 1 month</h3>
+              <h5>&#8377;179 / month after</h5><hr>
+              <ul class="card-text text-left">
+                <li>5 verified Premium account</li>
+                <li>Cancel anytime</li>
+                <li>Subscribe or One-time payment</li>
+              </ul>
+              <button class="btn  oval-button" (click)="showPaymentForm('button4')" routerLink="/payment-form"  (click)="scrollUp()">Get Premium Family</button>
+              <p> <a href="#">Terms apply.</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+

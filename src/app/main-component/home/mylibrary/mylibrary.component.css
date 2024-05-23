@@ -1,89 +1,188 @@
-*{
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+.playlist-container {
+  /* padding: 200px; */
+  /* max-width: 1200px; */
+  margin: auto;
 }
-.library{
-  background-color: #3b3b3bf5;
-  color:white;
-}
-.playlist-container{
-  margin:20px;
 
-
-}
-.playlist-row{
+.playlist-row {
   display: flex;
   flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-between;
+}
+
+.playlist-item {
+  flex: 1 1 calc(35% - 20px);
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+.playlist-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px;
+  margin: 20px;
+  background-color: #191414;
+  color: #FFFFFF;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s;
+  text-align: center;
+}
+
+.playlist-card:hover {
+  transform: scale(1.05);
+}
+
+.playlist-card img {
+  height: 100px;
+  width: 100px;
+  margin-bottom: 15px;
+  border-radius: 10%;
+}
+
+.playlist-name {
+  font-size: 18px;
+  font-weight: bold;
+  color: var(--spotify-white);
+}
+
+.playlist-details-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px;
+  background-color: #191414;
+  color: #FFFFFF;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  min-height:650px;
+}
+
+@media (max-width: 992px) {
+  .playlist-item {
+      flex: 1 1 calc(33.33% - 20px);
+  }
+}
+
+@media (max-width: 768px) {
+  .playlist-item {
+      flex: 1 1 calc(50% - 20px);
+  }
+}
+
+@media (max-width: 576px) {
+  .playlist-item {
+      flex: 1 1 100%;
+  }
+}
+
+#addbutton {
+  background-color: #1DB954;
+  color: #FFFFFF;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin: 10px;
+}
+
+#addbutton:hover {
+  background-color: #1ed760;
+}
+
+/* Song card styling */
+
+#back-button {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+}
+.song-card {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  background-color: #282828;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  width:600px;
+}
+
+.song-cover img {
+  border-radius: 5px;
+}
+
+.song-info {
+  flex-grow: 1;
+  padding: 0 15px;
+}
+
+.song-title {
+  font-size: 18px;
+  margin: 0;
+}
+
+.song-artist {
+  font-size: 14px;
+  color: #B3B3B3;
+  margin: 5px 0 0 0;
+}
+
+.play-button-container {
+  display: flex;
+  justify-content: center;
   align-items: center;
 }
-.playlist-item{
-  padding:30px;
-  margin:20px;
-  
-  font-size: 30px;
-  border:1px solid white;
-  border-radius: 7px;
-  background-color:black;
- 
-}
-.playlist-item:hover{
-  border-color: #1db954;
-  background-color: #1db954;
 
-  color:white;
+#playbutton {
+  background: none;
+  border: none;
   cursor: pointer;
-  font-weight: bold;
-  
-
-}
-#playbutton:hover{
-  color:white;
-  background-color:#1db954;
-  
-  border: 1px solid #1db954;
-  border-radius: 100%;
-
-  padding: 5px 10px; 
-  font-size: 16px;
-  cursor: pointer; 
-  outline: none;
-}
-#addbutton{
-  color:white;
-  background-color:transparent;
-  
-  border: 1px solid white;
-  border-radius:10px;
-  
-  font-size: 26px;
-  cursor: pointer; 
-  outline: none;
-}
-#addbutton:hover{
-  background-color: #1db954;
-  color:black;
-}
-.song-card{
-  margin:15px;
+  color: #1DB954;
+  transition: color 0.3s ease;
 }
 
+#playbutton:hover {
+  color: #1ed760;
+}
 
-
-@media (min-width: 768px) {
-  .playlist-item {
-    flex: 1 1 20rem;
+@media (max-width: 576px) {
+  .song-card {
+      flex-direction: column;
+      align-items: flex-start;
   }
-  
-}
 
-@media (min-width: 992px) {
-  .playlist-item {
-    flex: 1 1 25rem;
+  .song-cover,
+  .song-info,
+  .play-button-container {
+      width: 100%;
+      text-align: left;
+  }
+
+  .song-cover {
+      margin-bottom: 10px;
+  }
+
+  .play-button-container {
+      text-align: right;
   }
 }
 
-@media (min-width: 1200px) {
-  .playlist-item {
-    flex: 1 1 30rem;
+  .backward_btn {
+    border-radius: 50%;
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    /* padding: 20px; */
+    width: 48px;
+    height: 45px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  }*
+  {
+    margin-top: 5%;
+    max-width: 950px;
   }
-} 
-

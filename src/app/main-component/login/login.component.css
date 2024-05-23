@@ -1,0 +1,64 @@
+/* Container */
+.container {
+    /* margin-top: 20rem;
+    margin-bottom: 5rem; */
+
+    align-items: center;
+    justify-content: center;
+    padding-top:15% ;
+    
+  }
+  
+  /* Card */
+ /* Card */
+.card {
+    background-color: #000; /* Black background color for card */
+    color: #fff; /* White text color for card */
+    box-shadow: 0px 0px  15px white; /* Added white box shadow */
+    border: 1px solid white; 
+  }
+  
+  
+  .card-title {
+    color: white; /* Spotify green for card title */
+    margin-bottom: 1.5rem; /* Increase margin bottom for spacing */
+  }
+  
+  .card-body {
+    padding: 2rem; /* Add padding inside card body */
+    background-color: #000;
+  }
+  
+  /* Form */
+  .form-group {
+    margin-bottom: 1.5rem; /* Increase margin bottom for spacing between form fields */
+  }
+  
+  .form-control {
+    background-color: #fff; /* White background color for form fields */
+    color: #000; /* Black text color for form fields */
+  }
+  
+  .form-control:focus {
+    background-color: #fff; /* White background color for focused form fields */
+    color: #000; /* Black text color for focused form fields */
+  }
+  
+  /* Button */
+  .btn-success {
+    background-color: #1db954; /* Spotify green for button background color */
+    border-color: #1db954; /* Spotify green for button border color */
+  }
+  
+  .btn-success:hover {
+    background-color: #1ed760; /* Darker shade of Spotify green on hover */
+    border-color: #1ed760; /* Darker shade of Spotify green on hover */
+  }
+  
+  /* Error Message */
+  .alert-danger {
+    background-color: #d32f2f; /* Red background color for error message */
+    color: #fff; /* White text color for error message */
+    border-color: #d32f2f; /* Red border color for error message */
+  }
+  

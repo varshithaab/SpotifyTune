@@ -1,55 +1,20 @@
-
-
 <div *ngIf="isFilterActive" class="filter-container">
   <!-- Filter by Genre card -->
-  <div class="filter-card" *ngIf="showFilter  ">
-
-    <img
-      src="assets/genre.jpg"
-      alt="Genre Image"
-      class="filter-image"
-      id="genreimg"
-    />
-    <button class="filter-button" (click)="toggleGenreAndArtist('genre')">
-      Filter by Genre
-    </button>
+  <div class="filter-card" *ngIf="showFilter">
+    <img src="assets/genre.jpg" alt="Genre Image" class="filter-image" id="genreimg" />
+    <button class="filter-button" (click)="toggleGenreAndArtist('genre')">Filter by Genre</button>
   </div>
 
   <!-- Filter by Artist card -->
-  <div class="filter-card" *ngIf="showFilter ">
+  <div class="filter-card" *ngIf="showFilter">
     <img src="assets/artist.jpg" alt="Artist Image" class="filter-image" />
-    <button class="filter-button" (click)="toggleGenreAndArtist('artist')">
-      Filter by Artist
-    </button>
+    <button class="filter-button" (click)="toggleGenreAndArtist('artist')">Filter by Artist</button>
   </div>
-  <router-outlet></router-outlet>
 </div>
 
-<div  id="display" class="col-10" style="width: 1300px">
-  <app-genre *ngIf="showGenreComponent "></app-genre>
+<div id="display" class="col-10" style="width: 1300px">
+  <button *ngIf="!showFilter" class="backward_btn" (click)="backToFilter()"><<</button><br>
+  <app-genre *ngIf="showGenreComponent"></app-genre>
   <app-artist *ngIf="showArtistComponent"></app-artist>
 
-  <div
-    class="card-container"
-    id="display_data"
-    *ngIf="showSongList && !this.isGenreFlow && !this.isArtistFlow"
-    class="col-10 row-5"
-  >
-    <ul>
-      <li class="filter_display" *ngFor="let song of songs">
-        <a routerLink="/music/{{ song.id }}">
-          <img class="image_display" [src]="song.image" [alt]="song.title" />
-          <div class="content">
-            <div class="name">
-              <h6>{{ song.title }}</h6>
-              <p>{{ song.artist }}</p>
-              <p>{{ song.album }}</p>
-              <p>{{ song.genre }}</p>
-              <audio>{{ song.audio }}<bR /></audio>
-            </div>
-          </div>
-        </a>
-      </li>
-    </ul>
-  </div>
-</div> 
+</div>

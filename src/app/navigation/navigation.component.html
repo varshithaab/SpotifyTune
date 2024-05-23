@@ -1,10 +1,10 @@
-<header>
+ <!-- <header>
   <div class="right-buttons">
     <nav class="spotify__top-nav">
       <div class="spotify__top-nav_focus_title">
         <ul class="spotify__top-nav_auth">
   
-          <li *ngIf="isSearchFieldVisible">
+          <li class="serach" *ngIf="isSearchFieldVisible">
             <app-search ></app-search>
             
           </li>
@@ -17,11 +17,38 @@
     </ul>
   </li>
   <li *ngIf="hasLoggedUser" class="dropdown">
-    <button class="dropdown-btn" (click)="Dropdowns()" routerLink="/main-component">Log Out</button>
+    <button class="dropdown-btn" (click)="Dropdowns()" routerLink="/">Log Out</button>
   </li>
         </ul>
       </div>
     </nav>
   </div>
   
+</header>  -->
+<header>
+  <div class="right-buttons">
+    <nav class="spotify__top-nav">
+      <div class="spotify__top-nav_focus_title">
+        <ul class="spotify__top-nav_auth">
+
+          <li class="serach" *ngIf="isSearchFieldVisible">
+            <app-search ></app-search>
+          </li>
+
+          <li *ngIf="isAdminFlow" class="dropdown">
+            <button class="dropdown-btn" (click)="Dropdowns()">Dropdown</button>
+            <ul *ngIf="showDropdown" class="dropdown-list">
+              <li (click)="usermanagement()">User Management</li>
+              <li (click)="songmanagement()">Song Management</li>
+            </ul>
+          </li>
+
+          <li *ngIf="hasLoggedUser" class="dropdown">
+            <button class="dropdown-btn">{{ username }}</button>
+            <button class="dropdown-btn" routerLink="/">Log Out</button>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
 </header>

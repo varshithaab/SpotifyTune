@@ -2,9 +2,10 @@
     
     justify-content: space-around;
     display: flex;
- 
+
+
   gap: 20px; /* Add gap between the cards */
-  padding-left: 200px; /* Adjust as needed */
+  /* padding-left: 150px; Adjust as needed */
  
   
   }

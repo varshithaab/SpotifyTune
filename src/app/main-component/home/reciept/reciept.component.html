@@ -1,0 +1,29 @@
+
+   <div class="receipt-container spotify-theme">
+    <div class="receipt-header">
+      <h2>Receipt</h2>
+    </div>
+    <div class="receipt-details">
+      <p *ngIf="recentData"><strong>Email:</strong> {{recentData.email}}</p>
+      <p *ngIf="recentData"><strong>Phone Number:</strong> {{recentData.phoneNo}}</p>
+    </div>
+    <div class="subscription-details">
+      <h3>Subscription Details :</h3>
+      <p><strong>Subscription Plan:</strong> Spotify Premium</p>
+      <p><strong>Duration:</strong> One Month</p>
+      <p><strong>Start Date:</strong> {{currentDate}} </p>
+      <p><strong>Billing Cycle:</strong> Monthly</p>
+    </div>
+    <div class="payment-details">
+      <h3>Payment Details :</h3>
+      <p *ngIf="recentData"><strong>Total Amount Paid:</strong> &#8377; {{recentData.amount}} </p>
+      <p><strong>Payment Method:</strong> Card Payment</p>
+      <p><strong>Transaction Date:</strong> {{currentDate}} </p>
+    </div>
+    <div class="footer alert alert-success">
+      <p>Thank you for choosing Spotify Premium!</p>
+      <p>Contact us at support&#64;spotify.com for any assistance.</p>
+    </div>
+    <button routerLink="/home" class="btn btn-info">Start tuning in !!!</button>
+  </div>
+  

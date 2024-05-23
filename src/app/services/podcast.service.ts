@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { Podcast } from '../shared/models/podcast';
 
 @Injectable({
   providedIn: 'root',
@@ -16,4 +17,10 @@ export class PodcastService {
   getPodcastById(id: number): Observable<any> {
     return this.http.get<any>(`${this.apiUrl}/${id}`);
   }
+  getPodcastByTitle(title: string): Observable<Podcast> {
+    
+    return this.http.get<Podcast>(`${this.apiUrl}/title/${title}`);
+  }
+
+
 }

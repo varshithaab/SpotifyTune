@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { SearchBarService } from '../../../services/search-bar.service';
 import { Song } from '../../../shared/models/song';
 
 import { SongService } from '../../../services/song.service';
+import { MusicService } from '../../../services/music.service';
+import { PodcastService } from '../../../services/podcast.service';
 @Component({
   selector: 'app-home-side',
   templateUrl: './home-side.component.html',
@@ -14,7 +16,10 @@ export class HomeSideComponent {
   cards: any[] = [];
   artist:any[]=[];
   podcast:any[]=[];
-  constructor() { }
+
+  songs: Song[] = [];
+
+  constructor(private router : Router , private musicService:MusicService,private podcastService:PodcastService) { }
 
   ngOnInit(): void {
     this.array()
@@ -147,10 +152,12 @@ audio:"laugh_factory.mp3"
         {
           image:"assets/kk.jpg",
           name:"KK"
-        },{
-          image:"assets/sachinJigar.jpg",
+        },
+        {
+          image:"assets/sachinandjigar.jpg",
           name:"Sachin And Jigar"
-        },{
+        },
+        {
           image:"assets/shilparao.jpg",
           name:"ShilpaRao"
         },{
@@ -162,5 +169,29 @@ audio:"laugh_factory.mp3"
         }
       ]
   }
+  navigateToPlay(songTitle:string){
+    // console.log(song);
+    // const songTitle=song.title;
+    this.musicService.getSongByTitle(songTitle).subscribe(
+      (res)=>{
+        console.log("REsopnse",res.id);
+        this.router.navigate(['/play',res.id]);
+      }
+    );
+
+  }
+  navigateToPlayPodcast(songTitle:string){
+    // console.log(song);
+    // const songTitle=song.title;
+    this.podcastService. getPodcastByTitle(songTitle).subscribe(
+      (res)=>{
+        console.log("REsopnse",res.id);
+        this.router.navigate(['/play/podcast',res.id]);
+      }
+    );
+
+  }
+
+
 
 }

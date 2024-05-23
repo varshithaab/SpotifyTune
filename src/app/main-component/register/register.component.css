@@ -1,7 +1,8 @@
-form{
+/* form{
+ 
     width: 500px; 
     background-color: #121212; 
-  }
+  } */
   .spotify-logo {
     height: 50px; /* Adjust the height as needed */
     margin-right: 20px; /* Adjust the margin as needed */
@@ -15,4 +16,12 @@ form{
 .success-snackbar{
 background-color: #121212;
 }
-  
+  .formdata
+  {
+    padding-top:10% ;
+margin-left: 30%;
+
+    justify-content: center;
+    width: 500px; 
+    background-color: #121212; 
+  }

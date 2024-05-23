@@ -1,20 +1,18 @@
-  <section>
-    <div class="podcast-container">
-      <div *ngFor="let podcast of podcasts" class="card" (click)="goToPlay(podcast.id)">
-        <img id img *ngIf="podcast.image" [src]="podcast.image" alt="{{ podcast.title }}">
-        <div class="podcast-details">
-          <h3>{{ podcast.title }}</h3>
-            <p>{{ podcast.artist }}</p>
-            <p>{{ podcast.album }}</p>
-      </div>
-      <div class="controls">
-        <button mat-icon-button id="add" (click)="addToPlaylist()"><mat-icon id="addicon">add</mat-icon></button>
-        <button mat-icon-button id="play"(click)="play(podcast.id)"><mat-icon id="playicon">play_arrow</mat-icon></button>
-      </div>
+<section>
+  <div class="podcast-container">
+    <div *ngFor="let podcast of podcasts" class="card" (click)="goToPlay(podcast.id)">
+      <img id img *ngIf="podcast.image" [src]="podcast.image" alt="{{ podcast.title }}">
+      <div class="podcast-details">
+        <h3>{{ podcast.title }}</h3>
+          <p>{{ podcast.artist }}</p>
+          <p>{{ podcast.album }}</p>
+    </div>
+    <div class="controls">
+      <!-- <button mat-icon-button id="add" (click)="addToPlaylist()"><mat-icon id="addicon">add</mat-icon></button> -->
+      <button mat-icon-button id="play"(click)="goToPlay(podcast.id)"><mat-icon id="playicon">play_arrow</mat-icon></button>
     </div>
   </div>
-  </section>
-
-
+</div>
+</section>
 
 

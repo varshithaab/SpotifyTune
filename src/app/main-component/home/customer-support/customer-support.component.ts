@@ -1,30 +1,39 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { FAQService } from '../../../services/faq.service';
 
 @Component({
   selector: 'app-customer-support',
   templateUrl: './customer-support.component.html',
   styleUrls: ['./customer-support.component.css']
 })
+
+
 export class CustomerSupportComponent implements OnInit {
-  support = [
-    { problem: 'How do I do this?', solution: 'heres how you can solve your issue..', visible: false },
-    { problem: 'How do I do This?', solution: 'Heres how you can solve your issue..', visible: false },
-    { problem: 'How do I do This?', solution: 'Heres how you can solve your issue..', visible: false },
-    { problem: 'How do I do This?', solution: 'Heres how you can solve your issue..', visible: false },
-    { problem: 'How do I do This?', solution: 'Heres how you can solve your issue..', visible: false }
-  ];
+  userInput: string = '';
+  messages: Array<{text: string, sender: string}> = [];
+
+  constructor(private http: HttpClient,private chatbotService:FAQService) {}
+
+  
+
+  sendMessage() {
+    if (this.userInput.trim()) {
+      this.messages.push({ text: this.userInput, sender: 'user' });
+      this.chatbotService.sendMessage(this.userInput).subscribe(
+        response => {
+          this.messages.push({ text: response.reply, sender: 'bot' });
+        }
+      );
+      this.userInput = '';
+    }
+  }
   
 
   ngOnInit(): void {
-    this.support[0].visible = true; // Make the solution for the first support item visible by default
+
+   
   }
 
-  viewSolution(index: number): void {
-    this.support.forEach((item, i) => {
-      if (i !== index) {
-        item.visible = false; // Hide other solutions
-      }
-    });
-    this.support[index].visible = !this.support[index].visible;
-  }
+ 
 }

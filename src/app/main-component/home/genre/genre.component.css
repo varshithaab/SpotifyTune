@@ -1,3 +1,14 @@
+
+/* Add styles for the genre images */
+.genre-image {
+  width: 100%; /* Ensure the image takes the full width of the card */
+  height: 65%; /* Ensure the image takes the full height of the card */
+  object-fit: cover; /* Maintain aspect ratio and cover the entire container */
+  border-top-left-radius: 8px; /* Match the card's border radius */
+  border-top-right-radius: 8px; /* Match the card's border radius */
+}
+
+
 /* Responsive styles */
 @media (max-width: 768px) {
   ul {
@@ -11,25 +22,10 @@
 }
 
 /* Button styles */
-button {
-  background-color: white; /* Set button background color to white */
-  color: black; /* Set button text color to black */
-  width: 80px;
-  height: 30px;
-  transition: background-color 0.3s; /* Add transition for smooth color change on hover */
-  border-radius: 10px; /* Add curved corners to the button */
-  font-size: 0.7rem; /* Further reduce font size */
-}
-
-button:hover {
-  background-color: green; /* Change button background color to green on hover */
-  color: white; /* Change button text color to white on hover */
-  cursor: pointer; /* Change cursor to pointer on hover */
-}
 
 /* General styles */
 #genreimg {
-  height: 386px;
+  /* height: 10px; */
 }
 
 .content {
@@ -41,7 +37,7 @@ button:hover {
 
 ul {
   display: flex; /* Displays the list items in a flex container */
-  justify-content:center; /* Aligns items to the start of the container (left side) */
+  justify-content: center; /* Aligns items to the center of the container */
   align-items: center; /* Centers the items vertically */
   flex-wrap: wrap; /* Allows items to wrap to the next line if they exceed the container's width */
   list-style-type: none; /* Removes the default bullet point style */
@@ -52,8 +48,8 @@ ul {
 }
 
 li {
-  width: calc(20% - 2rem); /*Sets the width of each list item to 20% of the container width (minus margin) */
-  margin: 2rem; /*Adds margin around each list item */
+ /* Sets the width of each list item to 25% of the container width (minus margin) */
+  margin: 10px; /* Adds margin around each list item */
 }
 
 li a {
@@ -76,13 +72,8 @@ li a:hover {
 }
 
 li a img {
-  object-fit: cover; /* Ensures the image covers the entire container */
-  height: 15rem; /* Sets the height of the image */
-  width: 100%; /* Ensures the image fills the container horizontally */
-  border-radius: 10px; /* Adds curved corners to the image */
-  padding-left: 15px;
-  padding-right: 15px;
-  padding-top: 15px;
+
+  border-radius: 8px; /* Adds curved corners to the image */
 }
 
 li a p {
@@ -92,6 +83,7 @@ li a p {
 
 .name {
   font-weight: bold;
+  font-size: medium;
   margin-bottom: 0.2rem; /* Adjust the margin bottom */
 }
 
@@ -105,4 +97,53 @@ li a p {
 
 .card-container {
   padding-left: 10px;
+}
+
+/* Card styles with 3D effect */
+.card {
+  width: 200px; /* Adjusted width to fit four cards per row with spacing */
+  height: 250px; /* Set a fixed height for all cards */
+  margin: 18px; /* Added spacing between cards */
+  background-color:black; /* Added background color */
+  border-radius: 8px; /* Added border radius */
+  overflow: hidden; /* Added to prevent content overflow */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Added box shadow for depth */
+  cursor: pointer; /* Added to indicate clickable */
+  transition: transform 0.5s, box-shadow 0.5s; /* Added transition for smooth 3D effect */
+  transform-style: preserve-3d; 
+  gap:60px
+}
+
+.card .content {
+  padding: 20px; /* Added padding */
+}
+
+.card .title {
+  margin: 0; /* Removed margin to align text */
+  font-size: 18px; /* Adjusted font size */
+  position: absolute; /* Position the genre name */
+  bottom: 10px; /* Adjust the distance from the bottom */
+  left: 50%; /* Center the genre name horizontally */
+  transform: translateX(-50%); /* Center the genre name horizontally */
+  background-color: rgba(0, 0, 0, 0.7); /* Add a background color to improve readability */
+  color: white; /* Set text color */
+  padding: 5px 10px; /* Add padding */
+  border-radius: 5px; /* Add rounded corners */
+  opacity: 0; /* Initially hide the genre name */
+  transition: opacity 0.3s; /* Add transition for smooth appearance */
+}
+
+.card:hover .title {
+  opacity: 1; /* Display the genre name when card is hovered */
+}
+
+
+.card:hover {
+  transform: rotateY(15deg) rotateX(15deg) translateZ(15px); /* 3D transformation on hover */
+  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.2); /* Enhanced box shadow on hover */
+}
+
+*
+{
+  max-width: 950px;
 }

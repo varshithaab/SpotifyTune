@@ -1,22 +1,11 @@
-
-<div class="container-fluid customer-support">
-    <div class="row">
-        <div class="col-12 heading"><h2>What do you need?</h2></div>
+<div class="chatbot-container">
+    <div class="chat-window">
+      <div *ngFor="let message of messages" [ngClass]="{'user-message': message.sender === 'user', 'bot-message': message.sender === 'bot'}">
+        {{ message.text }}
+      </div>
     </div>
-    <div *ngFor="let item of support;let i=index;">
-        <div class="row supportview">
-            <div class="col-6 problem" (click)="viewSolution(i)">{{item.problem}}</div>
-            <div class="col-6 solution" *ngIf="item.visible" [ngClass]="{ 'slide-in': item.visible }">{{item.solution}}</div>
-        </div>
+    <div class="chat-input">
+      <input [(ngModel)]="userInput" (keydown.enter)="sendMessage()" placeholder="Type a message...">
+      <button (click)="sendMessage()">Send</button>
     </div>
-    <div id="contact">
-        <div><h2>Contact Us</h2></div>
-        <div>
-            <p>9123451238</p><br>
-            <p>
-                spotifyTune
-
-            </p>
-        </div>
-    </div>
-</div>
+  </div>

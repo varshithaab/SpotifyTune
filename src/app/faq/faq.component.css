@@ -1,8 +1,11 @@
 .sctn2 {
-  margin: 90px auto;
-  max-width: 80%; /* Ensure content doesn't overflow on small screens */
+  margin: 90px 0px;
+  max-width: 70%; /* Ensure content doesn't overflow on small screens */
   align-items: center;
-  padding-right: 100px;
+  /* padding-right: 120px; */
+  justify-content: center;
+  padding-left: 0px;
+ 
 }
 
 .sctn2 .h1 {
@@ -36,3 +39,5 @@
 .expand .accordion-content.open {
   display: block; /* Show content when expanded */
 }
+
+

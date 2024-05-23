@@ -13,7 +13,7 @@
           <p class="card-text">{{ card.artist }}</p>
 
         
-          <a [routerLink]="['/music', card.id]" class="play-button">
+          <a (click)="navigateToPlay(card.title)" class="play-button">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-play-fill" viewBox="0 0 16 16">
               <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393"/>
             </svg>
@@ -24,21 +24,22 @@
     </div>
   </div>
 </div>
-
+<br><BR>
 <!-- PODCASTS  -->
 
 <div class="songs">
   <div class="songs-cat">
-    <h1 class="mb-3"> Podcasts!!</h1><br>
+    
 
     <div class="c-cart" style="width: 1160px">
-      <div class="card" *ngFor="let card of podcast" [routerLink]="['/play']">
+      <h1 class="mb-3"> Podcasts!!</h1><br>
+      <div class="card" *ngFor="let card of podcast">
         <img class="card-img-top" [src]="card.image" alt="Card image cap" />
         <div class="card-body">
           <h5 class="card-title">{{ card.title }}</h5>
           <p class="card-text">{{ card.artist }}</p><br>
 
-          <a [routerLink]="['/music', card.id]" class="play-button">
+          <a (click)="navigateToPlayPodcast(card.title)" class="play-button">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-play-fill" viewBox="0 0 16 16">
               <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393"/>
             </svg>
@@ -51,12 +52,15 @@
 </div>
 <br /><BR />
 <!--Artists-->
+<!-- <h1 class="mb-3">Artists!!</h1><br> -->
 <div class="songs">
   <div class="songs-cat">
-    <h1 class="mb-3">Artists!!</h1>
+    <!-- <br><BR><BR><BR><BR><BR><BR><BR><BR> -->
 
-    <div class="artist_display" class="c-cart" style="width: 1160px">
-      <div class="card" *ngFor="let card of artist" [routerLink]="['/filter']">
+    <div  class="c-cart" style="width: 1160px">
+
+
+      <div class="card" *ngFor="let card of artist" [routerLink]="['/filter/artist']">
         <img class="artist_display"  class="card-img-top" [src]="card.image" alt="Card image cap" />
         <div class="card-body">
           <h5>{{ card.name }}</h5>

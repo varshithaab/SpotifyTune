@@ -1,0 +1,96 @@
+
+
+<div class="container-fluid">
+  <button (click)="navigateBackToHome() " class ="backward_btn"><</button>
+
+  <div class="row justify-content-center">
+    <h1 class="gradient-text">SPOTIFY PREMIUM - Payment Gateway.</h1><br><br><br>
+    <div class="col-md-6">
+      <form [formGroup]="paymentForm" (ngSubmit)="submitPayment()" class="spotify-form">
+        <!-- Email Field -->
+        <div class="form-group">
+          <label>Email:</label>
+          <input type="email" formControlName="email" class="form-control">
+          <div *ngIf="paymentForm.get('email')?.errors && paymentForm.get('email')?.touched" class="error">
+            <div *ngIf="paymentForm.get('email')?.hasError('required')">Email is required</div>
+            <div *ngIf="paymentForm.get('email')?.hasError('email')">Invalid email format</div>
+          </div>
+        </div><br>
+
+        <!-- Phone Number Field -->
+        <div class="form-group">
+          <label>Phone Number:</label>
+          <input type="text" formControlName="phoneNo" class="form-control" maxlength="10">
+          <div *ngIf="paymentForm.get('phoneNo')?.errors && paymentForm.get('phoneNo')?.touched" class="error">
+            <div *ngIf="paymentForm.get('phoneNo')?.hasError('required')">Phone number is required</div>
+            <div *ngIf="paymentForm.get('phoneNo')?.hasError('pattern')">Invalid phone number format</div>
+          </div>
+        </div><br>
+
+        <!-- Card Number Field -->
+        <div class="form-group">
+          <label>Card Number:</label>
+          <input type="text" formControlName="cardNo" maxlength="16" class="form-control">
+          <div *ngIf="paymentForm.get('cardNo')?.errors && paymentForm.get('cardNo')?.touched" class="error">
+            <div *ngIf="paymentForm.get('cardNo')?.hasError('required')">Card number is required</div>
+            <div *ngIf="paymentForm.get('cardNo')?.hasError('pattern')">Invalid card number format</div>
+          </div>
+        </div><br>
+
+        <!-- Expiration Date Field -->
+        <div class="form-group">
+          <label>Expiration Date (MM/YY):</label>
+          <input type="text" formControlName="expDate" class="form-control">
+          <div *ngIf="paymentForm.get('expDate')?.errors && paymentForm.get('expDate')?.touched" class="error">
+            <div *ngIf="paymentForm.get('expDate')?.errors?.required">Expiration date is required</div>
+            <div *ngIf="paymentForm.get('expDate')?.errors?.expDateFormatError">Invalid expiration date format</div>
+          </div>
+        </div><br>
+
+        <!-- CVV Field -->
+        <div class="form-group">
+          <label for="cvv">CVV:</label>
+          <input type="password" id="cvv" formControlName="cvv" maxlength="3" minlength="3" class="form-control">
+          <div *ngIf="paymentForm.get('cvv')?.errors && paymentForm.get('cvv')?.touched" class="error">
+            <div *ngIf="paymentForm.get('cvv')?.hasError('required')">CVV is required</div>
+            <div *ngIf="paymentForm.get('cvv')?.hasError('pattern')">Invalid CVV format</div>
+          </div>
+        </div><br>
+
+        <!-- Plan Selection Field -->
+        <div class="form-group">
+          <label>Select Plan:</label>
+          <select class="form-control" formControlName="selectedPlan" (change)="selectPlan($event)">
+            <option value="">Select a plan</option>
+            <option *ngFor="let plan of plans" [value]="plan.value">{{ plan.name }}</option>
+          </select>
+          <div *ngIf="paymentForm.get('selectedPlan')?.errors && paymentForm.get('selectedPlan')?.touched" class="error">
+            <div *ngIf="paymentForm.get('selectedPlan')?.hasError('required')">Please select a plan</div>
+          </div>
+        </div><br>
+
+        <!-- Amount Field -->
+        <div class="form-group">
+          <label>Amount:</label>
+          <input type="text" formControlName="amount" class="form-control" readonly>
+          <div *ngIf="paymentForm.get('amount')?.errors && paymentForm.get('amount')?.touched" class="error">
+            <div *ngIf="paymentForm.get('amount')?.hasError('pattern')">Invalid amount format</div>
+          </div>
+        </div><br>
+
+        <!-- Payment Buttons -->
+        <div class="form-group">
+          <button type="submit" class="btn btn-primary" (click)="proceedWithPayment()">Proceed with Payment</button>
+          <button *ngIf="paymentMade" type="button" class="btn btn-success" (click)="navigate()">View Receipt</button>
+        </div><br>
+
+        <!-- Payment Success Message -->
+        <div class="form-group">
+          <div *ngIf="paymentSuccessful" class="alert alert-success">
+            {{ successMsg }}
+          </div>
+        </div><br>
+      </form>
+    </div>
+  </div>
+</div>

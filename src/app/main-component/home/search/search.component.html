@@ -1,8 +1,11 @@
-<div>
-    <input #s type="text" placeholder="What Do you Want to listen to?"
-     (keyup.enter)="search(s.value)"
-     [value]="searchTerm" />
-    <button (click)="search(s.value)" >Search</button>
-  </div>
 
-  
+<div>
+  <input #s type="text" placeholder="What Do you Want to listen to?" [formControl]="searchControl"(keyup.enter)="search(s.value)"
+  [value]="searchTerm" />
+  <button (click)="search(s.value)">Search</button>
+
+
+</div>
+
+
+

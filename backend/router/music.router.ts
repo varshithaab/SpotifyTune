@@ -1,5 +1,3 @@
-//music router
-
 import express, { Router } from "express";
 import asyncHandler from "express-async-handler";
 import { MusicModel } from "../models/music.model";
@@ -22,7 +20,17 @@ router.get("/:id", asyncHandler(async (req, res) => {
     }
 }));
 
-
+// Get music by title
+router.get('/title/:title', asyncHandler(async (req, res) => {
+    const title = req.params.title;
+    const music = await MusicModel.findOne({ title: title }).exec();
+  
+    if (!music) {
+      res.status(404).json({ error: 'Music not found' });
+    } else {
+      res.json(music);
+    }
+  }));
 //Delete Code - Admin Functionality
 // Delete music by ID
 router.delete('/:id', asyncHandler(async (req, res) => {

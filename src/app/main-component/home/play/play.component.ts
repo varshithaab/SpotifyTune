@@ -97,7 +97,9 @@ export class PlayComponent implements OnInit {
     this.isPlaying = true;
     this.audio.addEventListener('timeupdate', this.updateProgress.bind(this));
     this.audio.addEventListener('ended', this.onAudioEnded.bind(this));
-}
+    this.displayMusic = !!this.music;
+
+  }
 
   pause(): void {
     if (this.audio) {
@@ -165,6 +167,10 @@ export class PlayComponent implements OnInit {
   }
 
   
+  navigateBackToHome(): void {
+   
+    this.router.navigate(['/home']);
+  }
 
   addToPlaylist() {
     throw new Error('Method not implemented.');

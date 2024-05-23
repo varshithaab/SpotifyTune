@@ -1,4 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
 
 html, body { height: 100%; }
-body {  background-color: black;}
+body {  background-color: black;  margin: 0; }
+@import '~bootstrap/dist/css/bootstrap.min.css';
+.backward_btn {
+    border-radius: 50%;
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    /* padding: 20px; */
+    width: 48px;
+    height: 45px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+
+    display: inline-block; /* Ensures the button stays in the same line */
+    vertical-align: middle; /* Aligns the button vertically with other elements */
+    margin-right: 10px; 
+  }
+

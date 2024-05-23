@@ -23,16 +23,12 @@ export class MusicComponent implements OnInit {
       });
   }
 
-  // goToPlay(id: number): void {
-  //   this.router.navigate(['/play/music', id]);
-  // }
+  
   play(musicId: number): void {
    
     this.router.navigate(['/play', musicId]);
   }
-  // play(musicId: string): void {
-  //   this.router.navigate(['/play', musicId]);
-  // }
+  
   addToPlaylist(musicId:number) {
    this.router.navigate(['/library',musicId]);
     }

@@ -33,4 +33,102 @@ div{
   div button:hover{
     opacity: 1;
     cursor: pointer;
+  }.suggestions {
+    position: absolute;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    z-index: 1000;
+    width: 100%;
   }
+  
+  .suggestions ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .suggestions li {
+    padding: 8px 16px;
+    cursor: pointer;
+  }
+  
+  .suggestions li:hover {
+    background-color: #f0f0f0;
+  }
+  /* search.component.css */
+
+/* Style for search input */
+input[type="text"] {
+  width: 300px;
+  padding: 8px;
+  font-size: 16px;
+}
+
+button {
+  padding: 8px 12px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* Style for search suggestions */
+.suggestions {
+  margin-top: 10px;
+}
+
+.suggestions ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.suggestions li {
+  cursor: pointer;
+  padding: 8px;
+}
+
+.suggestions li:hover {
+  background-color: #f0f0f0;
+}
+
+/* Style for search results */
+.search-results {
+  margin-top: 20px;
+}
+
+.search-results ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.search-results li {
+  margin-bottom: 20px;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 10px;
+}
+
+.search-results li:last-child {
+  border-bottom: none;
+}
+
+.search-results img {
+  width: 100px; /* Adjust the size as needed */
+  height: 100px; /* Adjust the size as needed */
+  margin-right: 20px;
+}
+
+.search-results .content {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.search-results h6 {
+  font-size: 18px;
+  margin: 0;
+}
+
+.search-results p {
+  margin: 5px 0;
+  font-size: 14px;
+  color: #666;
+}

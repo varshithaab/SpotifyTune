@@ -8,24 +8,25 @@ import { PodcastService } from '../../../services/podcast.service';
   styleUrl: './podcast.component.css'
 })
 export class PodcastComponent implements OnInit {
-addToPlaylist() {
-throw new Error('Method not implemented.');
-}
-  podcasts: any[] = [];
-
-  constructor(private router: Router,private podcastService: PodcastService) { }
-
-    ngOnInit(): void {
-      this.podcastService.getPodcasts().subscribe(
-        (data: any[]) => {
-          this.podcasts = data;
-        } );
-      }
-
-goToPlay(id: number): void {
-  this.router.navigate(['/play/podcast', id]);
-}
-play(musicId: number): void {
-  this.router.navigate(['/play', musicId]);
-}
+  addToPlaylist() {
+    throw new Error('Method not implemented.');
+    }
+      podcasts: any[] = [];
+    
+      constructor(private router: Router,private podcastService: PodcastService) { }
+    
+        ngOnInit(): void {
+          this.podcastService.getPodcasts().subscribe(
+            (data: any[]) => {
+              this.podcasts = data;
+            } );
+          }
+    
+    goToPlay(id: number): void {
+      this.router.navigate(['/play/podcast', id]);
+    }
+    play(musicId: number): void {
+      this.router.navigate(['/play', musicId]);
+    }
+    
 }

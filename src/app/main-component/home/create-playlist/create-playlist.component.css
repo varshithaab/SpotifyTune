@@ -1,32 +1,46 @@
-.form{
-    padding:40px;
-    margin:10px;
-    background-color: #f5f5f5;
-    width:60%;
+.container {
+    display: flex;
     justify-content: center;
     align-items: center;
-    position: relative;
-    left:50px;
+    height: 100vh;
 }
-.form .form-group{
-    padding:10px;
-    margin:5px;
+
+.form {
+    padding: 40px;
+    margin: 10px;
+    background-color: #121212; 
+    max-width: 600px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
-.form-group label{
+
+.form .form-group {
+    padding: 10px;
+    margin: 5px;
+}
+
+.form-group label {
     padding: 0 5px 0 0;
     font-size: 20px;
     display: block;
     margin-bottom: 5px;
+    color: #1DB954; 
 }
 
 .form-group input,
 .form-group textarea {
-    width: 40%;
+    width: 100%;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
     font-size: 15px;
     line-height: 1.5;
+    background-color: #282828; 
+    color: #fff; 
+}
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: rgba(255, 255, 255, 0.5); 
 }
 
 .form-group textarea {
@@ -41,25 +55,33 @@
 
 .createplaylist-btn {
     display: block;
-    width: 30%;
+    width: 100%;
     padding: 10px;
-    background-color: green;
+    background-color: #1DB954; 
     color: white;
     border: none;
     border-radius: 4px;
     font-size: 18px;
     cursor: pointer;
-    position: relative;
-    left:30px;
     transition: transform 0.3s;
 }
 
-.createplaylist-btn:hover{
+.createplaylist-btn:hover {
     transform: translateY(-5px);
-    background-color: rgb(9, 65, 9);
-    
+    background-color: #1ed760; 
 }
-#small{
-    color:red;
+
+#small {
+    color: red;
     font-size: 15px;
+
+}
+.new{
+    color:white;
+    font-size: 15px;
+}
+*
+{
+  margin-right: 40%;
+  max-width: 950px;
 }

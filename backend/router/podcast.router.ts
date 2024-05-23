@@ -19,4 +19,16 @@ router.get("/:id", asyncHandler(async (req, res) => {
     }
 }));
 
+
+router.get('/title/:title', asyncHandler(async (req, res) => {
+    const title = req.params.title;
+    const music = await PodcastModel.findOne({ title: title }).exec();
+  
+    if (!music) {
+      res.status(404).json({ error: 'Music not found' });
+    } else {
+      res.json(music);
+    }
+  }));
+
 export default router;

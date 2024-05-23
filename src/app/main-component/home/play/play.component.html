@@ -1,3 +1,5 @@
+<button class="backward_btn"(click)="navigateBackToHome() "><</button>
+
 <div class="background">
   <div class="music-container">
     <div class="music-body">
@@ -11,7 +13,7 @@
           <p>{{ (displayMusic ? music?.album : podcast?.album) }}</p>
         </div>
         <div class="addbtn">
-          <button mat-icon-button id="add" (click)="addToPlaylist()"><mat-icon id="addicon">add</mat-icon></button>
+          <button mat-icon-button id="add"><mat-icon id="addicon">add</mat-icon></button>
         </div>
       </div>
        <audio><source [src]="(displayMusic ?  music?.audio :  podcast?.audio)" type="audio/mpeg"></audio>
@@ -31,3 +33,5 @@
     </div>
   </div>
 </div>
+<!-- play-layout.component.html -->
+<!-- <router-outlet></router-outlet> -->

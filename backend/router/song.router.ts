@@ -7,20 +7,7 @@ import { SongModel } from "../models/song.model";
 import {PlaylistModel} from "../models/playlist.model"
 
 
-// router.get("/seed",asyncHandler(
 
-//     async(req,res)=>
-//     {
-//         const songsCOunt=await SongModel.countDocuments();
-//         if(songsCOunt>0)
-//         {
-//             res.send("Seed is already done");
-//             return;
-//         }
-//         await SongModel.create(sample_songs);
-
-//         res.send("Seed is done");
-//     }
 // ))
 router.get("/",asyncHandler(
 async(req,res)=>{
@@ -47,9 +34,31 @@ async(req,res)=>
 
   
     const songs = [...songsBySongName, ...songsByGenre, ...songsByArtistName,...songsByAlbumName];
-res.send(songs);
+res.json(songs);
+
+
     
 }))
+
+router.get("/recommendations/:searchTerm", asyncHandler(async (req, res) => {
+  try {
+      const searchRegex = new RegExp(req.params.searchTerm, 'i');
+
+      const songsBySongName = await SongModel.find({ title: { $regex: searchRegex } });
+      const songsByGenre = await SongModel.find({ genre: { $regex: searchRegex } });
+      const songsByArtistName = await SongModel.find({ artist: { $regex: searchRegex } });
+      const songsByAlbumName = await SongModel.find({ album: { $regex: searchRegex } });
+
+      const recommendations = [...songsBySongName, ...songsByGenre, ...songsByArtistName, ...songsByAlbumName];
+      
+      res.json(recommendations);
+  } catch (error) {
+      console.error(error);
+      res.status(500).json({ error: 'Internal Server Error' });
+  }
+}));
+
+
 
 router.get(
     '/genre',

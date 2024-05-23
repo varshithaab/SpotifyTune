@@ -15,7 +15,7 @@
       <div class="left-options"  (click)="onNavigation('search')" >
         <mat-icon> search </mat-icon> <span>Search</span>
       </div>
-      <div class="left-options"  (click)="displayContent('filter')" (click)="navigateToFilter()" >
+      <div class="left-options"  (click)="displayContent('filter')"  >
         <mat-icon> filter_alt </mat-icon> <span>Filter</span>
       </div>
       <div class="left-options"  (click)="displayContent('library')">
@@ -25,7 +25,7 @@
       <div class="left-options" (click)="displayContent('createplaylist')">
         <mat-icon> add_box </mat-icon> <span>Create Playlist</span>
       </div>
-      <div class="left-options">
+      <div class="left-options" (click)="displayContent('Premium')">
         <mat-icon> star </mat-icon> <span>Premium</span>
       </div>
 
@@ -42,8 +42,11 @@
     <div class="col-10 right">
       <div class="col-10 row-2" style="width: 1300px">
         <app-navigation></app-navigation>
-        <button class="btn btn-primary">Back To Home</button>
-        <!-- <app-search></app-search> -->
+
+        <div id="display" *ngIf="isshowSearch" class="col-10">
+      
+        <app-search></app-search>
+        </div>
 
         <!-- To Display filter data -->
         <div id="display" *ngIf="showFilter" class="col-10">
@@ -75,43 +78,48 @@
           <ng-container *ngIf="showPLAYLIST" class="col-10">
             <app-create-playlist></app-create-playlist>
           </ng-container>
+          <ng-container *ngIf="showPremium"  class="col-10">
+          <app-premium-plans></app-premium-plans>
+          </ng-container>
           <!--to display support-->
           <ng-container *ngIf="showSUPPORT" class="col-10">
             <app-customer-support></app-customer-support>
           </ng-container>
 
         <!-- To display Search Data -->
-        <ng-container id="display" *ngIf="isshowSearch || this.message">
-          
-          <div id="display" class="col-10 row-5">
-            <ul>
-              <li class="search_display" *ngFor="let song of songs">
-                <a >
-                  <img
-                    class="image_display"
-                    [src]="song.image"
-                    [alt]="song.title" [routerLink]="['/music/musicID', song.id]" 
-                      
-                  />
-                  <div class="content">
-                    <div class="name">
-                      <h6>{{ song.title }}</h6>
-                      <p>{{ song.artist }}</p>
-                      <p>{{ song.album }}</p>
-                      <p>{{ song.genre }}</p>
-                    </div>
-                  </div>
-                </a>
-              </li>
-            </ul>
+        <!-- home.component.html -->
+
+<ng-container *ngIf="isshowSearch || this.message">
+
+
+  <div id="display" class="col-10 row-5">
+    <ul>
+      <li class="search_display" *ngFor="let song of songs">
+        <a >
+          <img class="image_display" [src]="song.image" [alt]="song.title" (click)="navigateToPlay(song)" />          <div class="content">
+            <div class="name">
+              <h6>{{ song.title }}</h6>
+              <p>{{ song.artist }}</p>
+              <p>{{ song.album }}</p>
+              <p>{{ song.genre }}</p>
+            </div>
           </div>
-        </ng-container>
+        </a>
+      </li>
+    </ul>
+  </div>
+</ng-container>
+
+        
 
         <!-- TO display Home data -->
 
-        <ng-container *ngIf="isShowHome && !isshowSearch && !message && !showFilter && !showPODCAST && !showMUSIC">
+        <ng-container *ngIf="isShowHome && !isshowSearch && !message && !showPremium &&!showFilter && !showPODCAST && !showMUSIC">
           <app-home-side></app-home-side>
         </ng-container>
+
+      
+        
       </div>
     </div>
   </div>

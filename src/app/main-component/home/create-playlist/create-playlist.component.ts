@@ -15,11 +15,10 @@ export class CreatePlaylistComponent {
 playlistData: PlayList[] = [];
 NewPlayListForm: FormGroup;
 
-
 ngOnInit(): void {
   this.NewPlayListForm = new FormGroup({
     newplaylistname: new FormControl(null, [Validators.required]),
-    newplaylistdesc: new FormControl(null)
+    newplaylistdesc: new FormControl(null,Validators.required)
   });
   this.getAllPlaylists();
 }
@@ -29,34 +28,41 @@ this.playlistservice.getAllPlaylists().subscribe(playlists => {
   console.log(this.playlistData);
 });
 }
+newplaylistcreated:boolean=false;
+createdmessage='';
 
+
+
+nameExists: boolean = false;
 
 onCreatePlaylist(): void {
-  const newPlaylist: PlayList = {
-    id: '',
-    playlistName: '',
-    description: '',
-    playlistSongs: []
-  };
-  
-  
-  newPlaylist.playlistName = this.NewPlayListForm.get('newplaylistname').value;
-  newPlaylist.description = this.NewPlayListForm.get('newplaylistdesc').value;
-  console.log(newPlaylist)
-  this.playlistservice.createPlaylist(newPlaylist).subscribe((response) => {
+    const newPlaylistName = this.NewPlayListForm.get('newplaylistname').value;
+    const existingPlaylist = this.playlistData.find(pl => pl.playlistName === newPlaylistName);
+
+    if (existingPlaylist) {
+      this.nameExists = true;
+      this.createdmessage = 'Playlist name already exists. Please choose a different name.';
+      this.NewPlayListForm.reset();
+      return;
+    }
+
+    const newPlaylist: PlayList = {
+      id: '',
+      playlistName: newPlaylistName,
+      description: this.NewPlayListForm.get('newplaylistdesc').value,
+      playlistSongs: []
+    };
+
+    this.playlistservice.createPlaylist(newPlaylist).subscribe((response) => {
       console.log('Playlist created successfully:', response);
       this.playlistData.push(response);
       this.getAllPlaylists();
       this.NewPlayListForm.reset();
-  });
-}
-
-
-
-
-
-
-
+      this.createdmessage = 'Created Playlist successfully. Go to Library to check out your new playlist.';
+      this.newplaylistcreated = true;
+      this.nameExists = false;
+    });
+  }
 
 
 

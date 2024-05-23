@@ -9,11 +9,16 @@ import { FaqItem } from '../models/faq.model';
 })
 export class FAQService {
  
+  
   private faqUrl = 'assets/faq-data.json';
-
+  private apiUrl='http://localhost:5000/chatbot'
   constructor(private http: HttpClient) {}
 
   getFAQ(): Observable<FaqItem[]> {
     return this.http.get<FaqItem[]>(this.faqUrl);
   }
+  sendMessage(message: string): Observable<any> {
+    return this.http.post<any>(this.apiUrl, { message });
+  }
+
 }

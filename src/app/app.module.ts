@@ -29,7 +29,7 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { NavigationComponent } from './navigation/navigation.component';
 
 
-
+import { DatePipe } from '@angular/common';
 
 
 
@@ -59,6 +59,11 @@ import { DeleteuserComponent } from './navigation/user-management/deleteuser/del
 import { EdituserComponent } from './navigation/user-management/edituser/edituser.component';
 import { ViewsongsComponent } from './navigation/song-management/viewsongs/viewsongs.component';
 import { DeletesongsComponent } from './navigation/song-management/deletesongs/deletesongs.component';
+import { MusicService } from './services/music.service';
+import { PremiumPlansComponent } from './main-component/home/premium-plans/premium-plans.component';
+import { PaymentFormComponent } from './main-component/home/payment-form/payment-form.component';
+import { RecieptComponent } from './main-component/home/reciept/reciept.component';
+
 
 @NgModule({
   declarations: [
@@ -90,6 +95,10 @@ import { DeletesongsComponent } from './navigation/song-management/deletesongs/d
     EdituserComponent,
     ViewsongsComponent,
     DeletesongsComponent,
+    PremiumPlansComponent,
+    PaymentFormComponent,
+    RecieptComponent,
+  
     
   
    
@@ -122,6 +131,8 @@ import { DeletesongsComponent } from './navigation/song-management/deletesongs/d
     provideClientHydration(),
     provideAnimationsAsync(),
     provideHttpClient(withFetch()),
+    MusicService,
+
   ],
   bootstrap: [AppComponent],
 })
